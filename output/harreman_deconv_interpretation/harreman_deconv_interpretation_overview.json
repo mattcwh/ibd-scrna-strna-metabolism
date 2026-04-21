@@ -1,0 +1,477 @@
+{
+  "n_focus_metabolites": 14,
+  "focus_metabolites": [
+    "L-Histidine",
+    "L-Serine",
+    "Citric acid",
+    "L-Cysteine",
+    "L-Asparagine",
+    "L-Alanine",
+    "L-Leucine",
+    "Urea",
+    "Propionate",
+    "beta-Dhydroxybutyrate",
+    "Bile acid",
+    "Cholic acid",
+    "Cholesterol",
+    "Fatty acid"
+  ],
+  "strongest_positive_slide_level_correlations": [
+    {
+      "metabolite": "Bile acid",
+      "cell_type": "Microfold",
+      "spearman_r": 0.9340659340659341,
+      "p_value": 1.0279787693084372e-06,
+      "n_slides": 14
+    },
+    {
+      "metabolite": "Urea",
+      "cell_type": "Absorptive",
+      "spearman_r": 0.9147058823529413,
+      "p_value": 7.011802190203182e-07,
+      "n_slides": 16
+    },
+    {
+      "metabolite": "Urea",
+      "cell_type": "Microfold",
+      "spearman_r": 0.9139075321874164,
+      "p_value": 7.468092298951483e-07,
+      "n_slides": 16
+    },
+    {
+      "metabolite": "Bile acid",
+      "cell_type": "Absorptive",
+      "spearman_r": 0.9120879120879121,
+      "p_value": 5.502099746344892e-06,
+      "n_slides": 14
+    },
+    {
+      "metabolite": "Cholic acid",
+      "cell_type": "Microfold",
+      "spearman_r": 0.8734557323716945,
+      "p_value": 2.20655359239529e-06,
+      "n_slides": 18
+    },
+    {
+      "metabolite": "Cholic acid",
+      "cell_type": "Absorptive",
+      "spearman_r": 0.8658410732714137,
+      "p_value": 3.434510604967862e-06,
+      "n_slides": 18
+    },
+    {
+      "metabolite": "Cholic acid",
+      "cell_type": "Epithelial_stem",
+      "spearman_r": 0.8293573093559632,
+      "p_value": 2.0847341827497425e-05,
+      "n_slides": 18
+    },
+    {
+      "metabolite": "Cholic acid",
+      "cell_type": "Transit_amplifying",
+      "spearman_r": 0.8117907745501074,
+      "p_value": 4.304008420425394e-05,
+      "n_slides": 18
+    },
+    {
+      "metabolite": "Urea",
+      "cell_type": "Enteroendocrine",
+      "spearman_r": 0.8088235294117646,
+      "p_value": 0.0001484755922323442,
+      "n_slides": 16
+    },
+    {
+      "metabolite": "Cholic acid",
+      "cell_type": "Secretory",
+      "spearman_r": 0.8059855521155831,
+      "p_value": 5.3816356061133154e-05,
+      "n_slides": 18
+    },
+    {
+      "metabolite": "Cholesterol",
+      "cell_type": "Microfold",
+      "spearman_r": 0.7749066889330828,
+      "p_value": 0.00015894489093309634,
+      "n_slides": 18
+    },
+    {
+      "metabolite": "Cholesterol",
+      "cell_type": "Absorptive",
+      "spearman_r": 0.7688338493292053,
+      "p_value": 0.00019261872998026163,
+      "n_slides": 18
+    },
+    {
+      "metabolite": "Urea",
+      "cell_type": "Epithelial_stem",
+      "spearman_r": 0.7259458424088008,
+      "p_value": 0.0014533335465374917,
+      "n_slides": 16
+    },
+    {
+      "metabolite": "Bile acid",
+      "cell_type": "Enteroendocrine",
+      "spearman_r": 0.7098901098901099,
+      "p_value": 0.004450741418764228,
+      "n_slides": 14
+    },
+    {
+      "metabolite": "beta-Dhydroxybutyrate",
+      "cell_type": "Enteroendocrine",
+      "spearman_r": 0.7090909090909092,
+      "p_value": 0.014552051953727713,
+      "n_slides": 11
+    }
+  ],
+  "strongest_negative_slide_level_correlations": [
+    {
+      "metabolite": "L-Histidine",
+      "cell_type": "Enteroendocrine",
+      "spearman_r": -0.8307533539731682,
+      "p_value": 1.9612643482449597e-05,
+      "n_slides": 18
+    },
+    {
+      "metabolite": "Cholesterol",
+      "cell_type": "DC",
+      "spearman_r": -0.7915376676986584,
+      "p_value": 9.10340755405878e-05,
+      "n_slides": 18
+    },
+    {
+      "metabolite": "Cholesterol",
+      "cell_type": "Cycling_T/NK",
+      "spearman_r": -0.7706575582040175,
+      "p_value": 0.0001819272363063573,
+      "n_slides": 18
+    },
+    {
+      "metabolite": "Cholesterol",
+      "cell_type": "Lymphoid_stromal_cell",
+      "spearman_r": -0.760577915376677,
+      "p_value": 0.00024790654537860496,
+      "n_slides": 18
+    },
+    {
+      "metabolite": "L-Serine",
+      "cell_type": "Salivary/Submucosal_glands",
+      "spearman_r": -0.756036933321774,
+      "p_value": 0.00028363897065946254,
+      "n_slides": 18
+    },
+    {
+      "metabolite": "Urea",
+      "cell_type": "Monocyte",
+      "spearman_r": -0.7529411764705882,
+      "p_value": 0.0007610810731946066,
+      "n_slides": 16
+    },
+    {
+      "metabolite": "L-Histidine",
+      "cell_type": "Microfold",
+      "spearman_r": -0.7354870715576382,
+      "p_value": 0.0005044283389117635,
+      "n_slides": 18
+    },
+    {
+      "metabolite": "Bile acid",
+      "cell_type": "Lymphoid_stromal_cell",
+      "spearman_r": -0.7230769230769231,
+      "p_value": 0.0034752946180943048,
+      "n_slides": 14
+    },
+    {
+      "metabolite": "Urea",
+      "cell_type": "Lymphoid_stromal_cell",
+      "spearman_r": -0.7205882352941175,
+      "p_value": 0.0016381911638796128,
+      "n_slides": 16
+    },
+    {
+      "metabolite": "Bile acid",
+      "cell_type": "Monocyte",
+      "spearman_r": -0.7186813186813187,
+      "p_value": 0.003779579961412291,
+      "n_slides": 14
+    },
+    {
+      "metabolite": "Cholesterol",
+      "cell_type": "Conventional_CD8",
+      "spearman_r": -0.7048503611971104,
+      "p_value": 0.0010886663167765575,
+      "n_slides": 18
+    },
+    {
+      "metabolite": "Cholesterol",
+      "cell_type": "NK",
+      "spearman_r": -0.6955539786560321,
+      "p_value": 0.001350056074994488,
+      "n_slides": 18
+    },
+    {
+      "metabolite": "L-Histidine",
+      "cell_type": "Salivary/Submucosal_glands",
+      "spearman_r": -0.6892971212768174,
+      "p_value": 0.001553753317460502,
+      "n_slides": 18
+    },
+    {
+      "metabolite": "L-Histidine",
+      "cell_type": "Absorptive",
+      "spearman_r": -0.6821465428276574,
+      "p_value": 0.0018170810177521768,
+      "n_slides": 18
+    },
+    {
+      "metabolite": "L-Serine",
+      "cell_type": "Enteroendocrine",
+      "spearman_r": -0.6697626418988648,
+      "p_value": 0.0023600851881755394,
+      "n_slides": 18
+    }
+  ],
+  "strongest_positive_paired_difference_correlations": [
+    {
+      "metabolite": "Cholic acid",
+      "cell_type": "Microfold",
+      "spearman_r": 0.9047619047619048,
+      "p_value": 0.002008275505429469,
+      "n_patients": 8
+    },
+    {
+      "metabolite": "Citric acid",
+      "cell_type": "Lymphoid_stromal_cell",
+      "spearman_r": 0.9047619047619048,
+      "p_value": 0.002008275505429469,
+      "n_patients": 8
+    },
+    {
+      "metabolite": "Cholic acid",
+      "cell_type": "Absorptive",
+      "spearman_r": 0.9047619047619048,
+      "p_value": 0.002008275505429469,
+      "n_patients": 8
+    },
+    {
+      "metabolite": "Bile acid",
+      "cell_type": "Microfold",
+      "spearman_r": 0.8999999999999998,
+      "p_value": 0.03738607346849874,
+      "n_patients": 5
+    },
+    {
+      "metabolite": "Bile acid",
+      "cell_type": "Absorptive",
+      "spearman_r": 0.8999999999999998,
+      "p_value": 0.03738607346849874,
+      "n_patients": 5
+    },
+    {
+      "metabolite": "Urea",
+      "cell_type": "Granulocyte",
+      "spearman_r": 0.8857142857142858,
+      "p_value": 0.01884548104956266,
+      "n_patients": 6
+    },
+    {
+      "metabolite": "L-Histidine",
+      "cell_type": "Vascular_endothelia",
+      "spearman_r": 0.8333333333333335,
+      "p_value": 0.010175540123456752,
+      "n_patients": 8
+    },
+    {
+      "metabolite": "Urea",
+      "cell_type": "Erythrocyte",
+      "spearman_r": 0.8285714285714287,
+      "p_value": 0.04156268221574335,
+      "n_patients": 6
+    },
+    {
+      "metabolite": "Urea",
+      "cell_type": "Megakaryocyte/platelet",
+      "spearman_r": 0.8285714285714287,
+      "p_value": 0.04156268221574335,
+      "n_patients": 6
+    },
+    {
+      "metabolite": "Citric acid",
+      "cell_type": "B_plasma",
+      "spearman_r": 0.8095238095238096,
+      "p_value": 0.014902667686230072,
+      "n_patients": 8
+    },
+    {
+      "metabolite": "L-Alanine",
+      "cell_type": "Glia",
+      "spearman_r": 0.8095238095238096,
+      "p_value": 0.014902667686230072,
+      "n_patients": 8
+    },
+    {
+      "metabolite": "L-Asparagine",
+      "cell_type": "Granulocyte",
+      "spearman_r": 0.7857142857142858,
+      "p_value": 0.020815127253525273,
+      "n_patients": 8
+    },
+    {
+      "metabolite": "Citric acid",
+      "cell_type": "Unconventional_T/ILC",
+      "spearman_r": 0.7784570702436183,
+      "p_value": 0.022867333969736833,
+      "n_patients": 8
+    },
+    {
+      "metabolite": "L-Serine",
+      "cell_type": "Lymphatic_endothelia",
+      "spearman_r": 0.7619047619047621,
+      "p_value": 0.028004939153071805,
+      "n_patients": 8
+    },
+    {
+      "metabolite": "L-Asparagine",
+      "cell_type": "Glia",
+      "spearman_r": 0.7619047619047621,
+      "p_value": 0.028004939153071805,
+      "n_patients": 8
+    }
+  ],
+  "strongest_negative_paired_difference_correlations": [
+    {
+      "metabolite": "Bile acid",
+      "cell_type": "Fibroblast",
+      "spearman_r": -0.8999999999999998,
+      "p_value": 0.03738607346849874,
+      "n_patients": 5
+    },
+    {
+      "metabolite": "L-Histidine",
+      "cell_type": "Transit_amplifying",
+      "spearman_r": -0.880952380952381,
+      "p_value": 0.0038503204637324005,
+      "n_patients": 8
+    },
+    {
+      "metabolite": "Urea",
+      "cell_type": "Cycling_epithelia",
+      "spearman_r": -0.8406680016960504,
+      "p_value": 0.036057572845159175,
+      "n_patients": 6
+    },
+    {
+      "metabolite": "Bile acid",
+      "cell_type": "Lymphoid_stromal_cell",
+      "spearman_r": -0.7999999999999999,
+      "p_value": 0.10408803866182788,
+      "n_patients": 5
+    },
+    {
+      "metabolite": "Bile acid",
+      "cell_type": "B_plasma",
+      "spearman_r": -0.7999999999999999,
+      "p_value": 0.10408803866182788,
+      "n_patients": 5
+    },
+    {
+      "metabolite": "L-Histidine",
+      "cell_type": "Secretory",
+      "spearman_r": -0.7857142857142858,
+      "p_value": 0.020815127253525273,
+      "n_patients": 8
+    },
+    {
+      "metabolite": "Fatty acid",
+      "cell_type": "Treg",
+      "spearman_r": -0.7857142857142858,
+      "p_value": 0.020815127253525273,
+      "n_patients": 8
+    },
+    {
+      "metabolite": "Fatty acid",
+      "cell_type": "Enteroendocrine",
+      "spearman_r": -0.7857142857142858,
+      "p_value": 0.020815127253525273,
+      "n_patients": 8
+    },
+    {
+      "metabolite": "Cholesterol",
+      "cell_type": "B_plasma",
+      "spearman_r": -0.7857142857142858,
+      "p_value": 0.020815127253525273,
+      "n_patients": 8
+    },
+    {
+      "metabolite": "Cholic acid",
+      "cell_type": "Lymphoid_stromal_cell",
+      "spearman_r": -0.7619047619047621,
+      "p_value": 0.028004939153071805,
+      "n_patients": 8
+    },
+    {
+      "metabolite": "L-Asparagine",
+      "cell_type": "Conventional_CD4",
+      "spearman_r": -0.7619047619047621,
+      "p_value": 0.028004939153071805,
+      "n_patients": 8
+    },
+    {
+      "metabolite": "L-Cysteine",
+      "cell_type": "Conventional_CD4",
+      "spearman_r": -0.7619047619047621,
+      "p_value": 0.028004939153071805,
+      "n_patients": 8
+    },
+    {
+      "metabolite": "L-Serine",
+      "cell_type": "Basal",
+      "spearman_r": -0.7619047619047621,
+      "p_value": 0.028004939153071805,
+      "n_patients": 8
+    },
+    {
+      "metabolite": "L-Cysteine",
+      "cell_type": "Treg",
+      "spearman_r": -0.7619047619047621,
+      "p_value": 0.028004939153071805,
+      "n_patients": 8
+    },
+    {
+      "metabolite": "L-Asparagine",
+      "cell_type": "Treg",
+      "spearman_r": -0.7619047619047621,
+      "p_value": 0.028004939153071805,
+      "n_patients": 8
+    }
+  ],
+  "selected_marker_validation": [
+    {
+      "marker_set": "B_plasma",
+      "cell_type": "B_plasma",
+      "spearman_r": 0.9804511278195487,
+      "p_value": 3.6893592442965844e-14,
+      "n_slides": 20
+    },
+    {
+      "marker_set": "Absorptive",
+      "cell_type": "Absorptive",
+      "spearman_r": 0.9293233082706768,
+      "p_value": 3.2275217543825805e-09,
+      "n_slides": 20
+    },
+    {
+      "marker_set": "Macrophage",
+      "cell_type": "Macrophage",
+      "spearman_r": 0.7804511278195487,
+      "p_value": 4.913952964223649e-05,
+      "n_slides": 20
+    },
+    {
+      "marker_set": "Fibroblast",
+      "cell_type": "Fibroblast",
+      "spearman_r": 0.7609022556390977,
+      "p_value": 9.796553338830222e-05,
+      "n_slides": 20
+    }
+  ]
+}

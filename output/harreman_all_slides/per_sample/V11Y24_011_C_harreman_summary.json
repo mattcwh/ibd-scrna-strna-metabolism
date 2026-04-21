@@ -1,0 +1,14 @@
+{
+  "sample": "V11Y24-011_C",
+  "n_spots": 2580,
+  "n_genes": 36601,
+  "n_transport_metabolites_after_database": 204,
+  "n_transporter_genes_after_filtering": 176,
+  "n_gene_pairs": 852,
+  "n_metabolites_tested": 204,
+  "n_spatial_weight_edges": 15480,
+  "runtime_seconds": 45.643,
+  "Disease Label": "Adjacent",
+  "Patient_ID": 120359,
+  "General Categorization": "Ulcer, inflammatory"
+}

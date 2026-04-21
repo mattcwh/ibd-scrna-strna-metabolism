@@ -1,0 +1,112 @@
+{
+  "n_spots": 58815,
+  "n_cell_types": 42,
+  "n_signature_genes": 7458,
+  "n_common_signature_spatial_genes": 7350,
+  "n_selected_genes": 2000,
+  "median_relative_residual": 0.8210338282810217,
+  "top_fibrotic_enriched_cell_types": [
+    {
+      "cell_type": "B_plasma",
+      "mean_paired_fibrotic_minus_adjacent": 0.16367407334736794,
+      "positive_patient_fraction": 0.75
+    },
+    {
+      "cell_type": "Lymphoid_stromal_cell",
+      "mean_paired_fibrotic_minus_adjacent": 0.009474297040620614,
+      "positive_patient_fraction": 0.375
+    },
+    {
+      "cell_type": "Immature_B",
+      "mean_paired_fibrotic_minus_adjacent": 0.006966881290287692,
+      "positive_patient_fraction": 0.625
+    },
+    {
+      "cell_type": "Monocyte",
+      "mean_paired_fibrotic_minus_adjacent": 0.003528117414300024,
+      "positive_patient_fraction": 0.5
+    },
+    {
+      "cell_type": "Macrophage",
+      "mean_paired_fibrotic_minus_adjacent": 0.0028368764837806352,
+      "positive_patient_fraction": 0.5
+    },
+    {
+      "cell_type": "Granulocyte",
+      "mean_paired_fibrotic_minus_adjacent": 0.002576956883912165,
+      "positive_patient_fraction": 0.75
+    },
+    {
+      "cell_type": "Mature_B",
+      "mean_paired_fibrotic_minus_adjacent": 0.002332860788559822,
+      "positive_patient_fraction": 0.625
+    },
+    {
+      "cell_type": "Conventional_CD8",
+      "mean_paired_fibrotic_minus_adjacent": 0.0014292343600598586,
+      "positive_patient_fraction": 0.5
+    },
+    {
+      "cell_type": "Epithelial_stem",
+      "mean_paired_fibrotic_minus_adjacent": 0.00014749054747383597,
+      "positive_patient_fraction": 0.125
+    },
+    {
+      "cell_type": "Cycling_T/NK",
+      "mean_paired_fibrotic_minus_adjacent": 0.00011826840332674791,
+      "positive_patient_fraction": 0.375
+    }
+  ],
+  "top_adjacent_enriched_cell_types": [
+    {
+      "cell_type": "Absorptive",
+      "mean_paired_fibrotic_minus_adjacent": -0.046003276202574744,
+      "positive_patient_fraction": 0.25
+    },
+    {
+      "cell_type": "Myofibroblast",
+      "mean_paired_fibrotic_minus_adjacent": -0.03298576423399523,
+      "positive_patient_fraction": 0.25
+    },
+    {
+      "cell_type": "Smooth_muscle",
+      "mean_paired_fibrotic_minus_adjacent": -0.031530004142495724,
+      "positive_patient_fraction": 0.5
+    },
+    {
+      "cell_type": "Secretory",
+      "mean_paired_fibrotic_minus_adjacent": -0.027674880115028694,
+      "positive_patient_fraction": 0.25
+    },
+    {
+      "cell_type": "Fibroblast",
+      "mean_paired_fibrotic_minus_adjacent": -0.00998488166103793,
+      "positive_patient_fraction": 0.5
+    },
+    {
+      "cell_type": "Lymphatic_endothelia",
+      "mean_paired_fibrotic_minus_adjacent": -0.009271792294369785,
+      "positive_patient_fraction": 0.25
+    },
+    {
+      "cell_type": "Microfold",
+      "mean_paired_fibrotic_minus_adjacent": -0.009208361246680997,
+      "positive_patient_fraction": 0.25
+    },
+    {
+      "cell_type": "Vascular_endothelia",
+      "mean_paired_fibrotic_minus_adjacent": -0.007092897832941656,
+      "positive_patient_fraction": 0.375
+    },
+    {
+      "cell_type": "Pericyte",
+      "mean_paired_fibrotic_minus_adjacent": -0.004180933959918503,
+      "positive_patient_fraction": 0.375
+    },
+    {
+      "cell_type": "Transit_amplifying",
+      "mean_paired_fibrotic_minus_adjacent": -0.003847118114860695,
+      "positive_patient_fraction": 0.375
+    }
+  ]
+}

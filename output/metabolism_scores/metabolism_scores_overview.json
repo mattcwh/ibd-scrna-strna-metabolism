@@ -1,0 +1,34 @@
+{
+  "n_spots": 58815,
+  "n_slides": 20,
+  "gene_sets": [
+    "glycolysis",
+    "oxidative_phosphorylation",
+    "hypoxia",
+    "retinoid_vitamin_a",
+    "ecm_remodeling",
+    "inflammation",
+    "epithelial_repair",
+    "fatty_acid_metabolism",
+    "bile_acid_transport"
+  ],
+  "matched_genes_by_set": {
+    "bile_acid_transport": 11,
+    "ecm_remodeling": 12,
+    "epithelial_repair": 11,
+    "fatty_acid_metabolism": 11,
+    "glycolysis": 14,
+    "hypoxia": 10,
+    "inflammation": 10,
+    "oxidative_phosphorylation": 13,
+    "retinoid_vitamin_a": 11
+  },
+  "missing_genes_by_set": {},
+  "outputs": {
+    "spot_scores": "spot_metabolism_scores.parquet",
+    "sample_summary": "sample_metabolism_score_summary.csv",
+    "disease_summary": "disease_label_metabolism_score_summary.csv",
+    "paired_differences": "paired_patient_metabolism_score_differences.csv"
+  },
+  "n_paired_patients": 8
+}

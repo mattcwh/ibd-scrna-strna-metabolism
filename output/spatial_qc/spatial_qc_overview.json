@@ -1,0 +1,11 @@
+{
+  "n_slides": 20,
+  "total_spots": 58815,
+  "total_anndata_barcodes_missing_from_archive": 0,
+  "total_archive_barcodes_missing_from_anndata": 41025,
+  "slides_by_disease_label": {
+    "Fibrotic": 10,
+    "Adjacent": 8,
+    "Adjacent (Disease Control)": 2
+  }
+}

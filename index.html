@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.551">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Matthew Chung">
+<meta name="dcterms.date" content="2026-04-21">
+
+<title>IBD scRNA-seq and Spatial Transcriptomics Metabolism Analysis</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="index_files/libs/clipboard/clipboard.min.js"></script>
+<script src="index_files/libs/quarto-html/quarto.js"></script>
+<script src="index_files/libs/quarto-html/popper.min.js"></script>
+<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="index_files/libs/quarto-html/anchor.min.js"></script>
+<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="index_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+<link rel="stylesheet" href="styles/sonrai.css">
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
+  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods"><span class="header-section-number">2</span> Methods</a>
+  <ul class="collapse">
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data"><span class="header-section-number">2.1</span> Data</a></li>
+  <li><a href="#software-environment" id="toc-software-environment" class="nav-link" data-scroll-target="#software-environment"><span class="header-section-number">2.2</span> Software Environment</a></li>
+  <li><a href="#analysis-pipeline" id="toc-analysis-pipeline" class="nav-link" data-scroll-target="#analysis-pipeline"><span class="header-section-number">2.3</span> Analysis Pipeline</a></li>
+  </ul></li>
+  <li><a href="#progress" id="toc-progress" class="nav-link" data-scroll-target="#progress"><span class="header-section-number">3</span> Progress</a></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results"><span class="header-section-number">4</span> Results</a>
+  <ul class="collapse">
+  <li><a href="#inventory" id="toc-inventory" class="nav-link" data-scroll-target="#inventory"><span class="header-section-number">4.1</span> Inventory</a></li>
+  <li><a href="#scrna-seq-composition" id="toc-scrna-seq-composition" class="nav-link" data-scroll-target="#scrna-seq-composition"><span class="header-section-number">4.2</span> scRNA-seq Composition</a></li>
+  <li><a href="#spatial-transcriptomics-summary" id="toc-spatial-transcriptomics-summary" class="nav-link" data-scroll-target="#spatial-transcriptomics-summary"><span class="header-section-number">4.3</span> Spatial Transcriptomics Summary</a></li>
+  <li><a href="#spatial-qc" id="toc-spatial-qc" class="nav-link" data-scroll-target="#spatial-qc"><span class="header-section-number">4.4</span> Spatial QC</a></li>
+  <li><a href="#metabolism-and-fibrosis-scores" id="toc-metabolism-and-fibrosis-scores" class="nav-link" data-scroll-target="#metabolism-and-fibrosis-scores"><span class="header-section-number">4.5</span> Metabolism And Fibrosis Scores</a></li>
+  <li><a href="#harreman-pilot" id="toc-harreman-pilot" class="nav-link" data-scroll-target="#harreman-pilot"><span class="header-section-number">4.6</span> Harreman Pilot</a></li>
+  <li><a href="#harreman-paired-slide-scale-up" id="toc-harreman-paired-slide-scale-up" class="nav-link" data-scroll-target="#harreman-paired-slide-scale-up"><span class="header-section-number">4.7</span> Harreman Paired-Slide Scale-Up</a></li>
+  <li><a href="#spatial-deconvolution" id="toc-spatial-deconvolution" class="nav-link" data-scroll-target="#spatial-deconvolution"><span class="header-section-number">4.8</span> Spatial Deconvolution</a></li>
+  <li><a href="#harreman-and-cell-type-interpretation" id="toc-harreman-and-cell-type-interpretation" class="nav-link" data-scroll-target="#harreman-and-cell-type-interpretation"><span class="header-section-number">4.9</span> Harreman And Cell-Type Interpretation</a></li>
+  </ul></li>
+  <li><a href="#next-analyses" id="toc-next-analyses" class="nav-link" data-scroll-target="#next-analyses"><span class="header-section-number">5</span> Next Analyses</a></li>
+  <li><a href="#limitations" id="toc-limitations" class="nav-link" data-scroll-target="#limitations"><span class="header-section-number">6</span> Limitations</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">7</span> Conclusion</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">IBD scRNA-seq and Spatial Transcriptomics Metabolism Analysis</h1>
+<p class="subtitle lead">Reproducible inventory, baseline summaries, and planned Harreman workflow</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Matthew Chung </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">April 21, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><img src="images/amber_on_leaf_circle.png" class="sonrai-logo img-fluid"></p>
+<section id="introduction" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
+<p>Stricturing Crohn’s disease involves inflammation, tissue remodeling, fibrosis, and altered epithelial and stromal biology. This report tracks a reproducible analysis of paired single-cell RNA-seq and Visium spatial transcriptomics data for stricturing Crohn’s disease, with an emphasis on metabolism-aware spatial inference.</p>
+<p>The initial goals are:</p>
+<ul>
+<li>establish a reproducible Python workflow using <code>uv</code>;</li>
+<li>inventory the single-cell and spatial data objects;</li>
+<li>generate baseline scRNA-seq and spatial transcriptomics summaries;</li>
+<li>build quality-control outputs that can be reused in downstream reporting;</li>
+<li>prepare for metabolic pathway scoring and Harreman-based spatial metabolic crosstalk inference <span class="citation" data-cites="harreman2025 harremanDocs">(<a href="#ref-harreman2025" role="doc-biblioref">Etxezarreta Arrastoa et al. 2025</a>; <a href="#ref-harremanDocs" role="doc-biblioref">Yosef Lab 2026</a>)</span>.</li>
+</ul>
+<p>The dataset was obtained from Zenodo record <code>10.5281/zenodo.14509802</code> <span class="citation" data-cites="kongStricturingCrohnZenodo2024">(<a href="#ref-kongStricturingCrohnZenodo2024" role="doc-biblioref">Kong et al. 2024</a>)</span>. Analysis uses AnnData-compatible Python tooling, including Scanpy <span class="citation" data-cites="wolfScanpy2018">(<a href="#ref-wolfScanpy2018" role="doc-biblioref">Wolf, Angerer, and Theis 2018</a>)</span> and Squidpy <span class="citation" data-cites="pallaSquidpy2022">(<a href="#ref-pallaSquidpy2022" role="doc-biblioref">Palla et al. 2022</a>)</span>.</p>
+</section>
+<section id="methods" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="methods"><span class="header-section-number">2</span> Methods</h2>
+<section id="data" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="data"><span class="header-section-number">2.1</span> Data</h3>
+<p>The repository contains two processed AnnData files and 20 raw Visium-style spatial transcriptomics archives.</p>
+<table class="table">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 36%">
+<col style="width: 36%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>File</th>
+<th style="text-align: right;">Role</th>
+<th style="text-align: right;">Current dimensions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>data/Cleaned_raw_annotated_object_LK.v2.h5ad</code></td>
+<td style="text-align: right;">annotated scRNA-seq object</td>
+<td style="text-align: right;">347,017 cells by 33,551 genes</td>
+</tr>
+<tr class="even">
+<td><code>data/anndata.h5ad</code></td>
+<td style="text-align: right;">spatial transcriptomics AnnData object</td>
+<td style="text-align: right;">58,815 spots by 36,601 genes</td>
+</tr>
+<tr class="odd">
+<td><code>data/V*.tar.gz</code></td>
+<td style="text-align: right;">raw Visium-style slide archives</td>
+<td style="text-align: right;">20 archives</td>
+</tr>
+<tr class="even">
+<td><code>data/sample_metadata.csv</code></td>
+<td style="text-align: right;">patient-level metadata</td>
+<td style="text-align: right;">34 rows</td>
+</tr>
+<tr class="odd">
+<td><code>data/spatial_transcriptome_slide_metadata.csv</code></td>
+<td style="text-align: right;">slide-level spatial metadata</td>
+<td style="text-align: right;">20 rows</td>
+</tr>
+<tr class="even">
+<td><code>data/ibd_atlas_signature_matrix.txt</code></td>
+<td style="text-align: right;">CIBERSORTx signature matrix from Gut Atlas IBD scRNA-seq</td>
+<td style="text-align: right;">7,458 genes by 42 cell types</td>
+</tr>
+<tr class="odd">
+<td><code>data/ibd_atlas_cell_type_sourceGEP.txt</code></td>
+<td style="text-align: right;">CIBERSORTx source GEP from downsampled scRNA-seq cell types</td>
+<td style="text-align: right;">27,848 genes by 42 cell types</td>
+</tr>
+</tbody>
+</table>
+<p>The spatial metadata describes 20 Visium slides from 10 patients. Disease labels include 10 fibrotic slides, 8 adjacent slides, and 2 adjacent disease-control slides. Raw spatial archive names and metadata slide names use slightly different separators, so slide IDs are normalized by replacing hyphens with underscores before joining.</p>
+</section>
+<section id="software-environment" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="software-environment"><span class="header-section-number">2.2</span> Software Environment</h3>
+<p>The project is managed with <code>uv</code>. Direct <code>pip install</code> is not used.</p>
+<p>The current analysis environment was initialized with:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> init <span class="at">--name</span> ibd-scrna-strna-metabolism <span class="at">--python</span> 3.12</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> add scanpy squidpy decoupler harreman openpyxl pyarrow</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> add <span class="st">'scanpy&lt;1.12'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Harreman 0.1.3 required a Scanpy version below 1.12 because it imports a private Scanpy helper that is not available in Scanpy 1.12. The project is therefore pinned to <code>scanpy&lt;1.12</code>.</p>
+<p>The ambient Anaconda environment had a broken <code>anndata</code>/<code>h5py</code> binary stack, so all Python analysis should be run through the project environment:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> run python scripts/00_inventory.py</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> run python scripts/01_baseline_overview.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="analysis-pipeline" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="analysis-pipeline"><span class="header-section-number">2.3</span> Analysis Pipeline</h3>
+<p>Two scripts have been implemented so far.</p>
+<p><code>scripts/00_inventory.py</code> inventories the data directory, raw spatial archives, metadata tables, and AnnData objects using backed AnnData reads where possible. It writes outputs to <code>output/inventory/</code>.</p>
+<p><code>scripts/01_baseline_overview.py</code> creates first-pass scRNA-seq and spatial metadata summaries. It writes outputs to <code>output/baseline_overview/</code>.</p>
+<p><code>scripts/02_spatial_qc.py</code> creates per-slide spatial coordinate plots and low-resolution tissue-image overlays using the raw Visium archive contents. For each slide, the script reads the archive position list, scale factors, and tissue image, then verifies that AnnData spot barcodes are present in the raw archive.</p>
+<p><code>scripts/03_metabolism_scores.py</code> computes first-pass spatial scores for curated metabolism and fibrosis-relevant gene sets. Scores are calculated as the mean expression of matched genes in the spatial AnnData <code>X</code> matrix, followed by global z-scoring across spots. These scores are intended as sanity checks and exploratory spatial summaries before Harreman, not as formal metabolic flux estimates.</p>
+<p><code>scripts/04_harreman_pilot.py</code> runs a Harreman transporter communication pilot on a paired adjacent and fibrotic slide subset from patient 110201. It extracts the human extracellular transporter database, constructs a spatial nearest-neighbor graph, filters sparse transporter genes, computes transporter gene pairs, and runs Harreman’s parametric communication test on CPU.</p>
+<p><code>scripts/05_harreman_all_slides.py</code> scales the same Harreman workflow to all paired adjacent and fibrotic slides. It writes per-sample cached outputs, so interrupted or repeated runs can resume without recomputing completed slides.</p>
+<p><code>scripts/06_spatial_deconvolution.py</code> performs first-pass spatial deconvolution using the provided CIBERSORTx Gut Atlas IBD signature matrix. It fits non-negative least-squares coefficients for each Visium spot using 2,000 shared high-variance signature genes, then normalizes coefficients into cell-type proportions.</p>
+<p><code>scripts/07_harreman_deconv_interpretation.py</code> connects Harreman metabolite shifts to deconvolved cell-type proportions and marker-gene validation. It computes slide-level and paired-difference correlations, exports top evidence tables, and checks expected marker-set correlations for major deconvolved cell types.</p>
+<p>The current workflow avoids loading the full expression matrices into memory during inventory and metadata summarization.</p>
+</section>
+</section>
+<section id="progress" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="progress"><span class="header-section-number">3</span> Progress</h2>
+<table class="table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Step</th>
+<th>Status</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Create <code>uv</code> project</td>
+<td>Complete</td>
+<td><code>pyproject.toml</code>, <code>uv.lock</code>, <code>.python-version</code></td>
+</tr>
+<tr class="even">
+<td>Add analysis dependencies</td>
+<td>Complete</td>
+<td>Scanpy, Squidpy, decoupler, Harreman, openpyxl, pyarrow</td>
+</tr>
+<tr class="odd">
+<td>Inventory data files and AnnData structure</td>
+<td>Complete</td>
+<td><code>output/inventory/</code></td>
+</tr>
+<tr class="even">
+<td>Baseline scRNA-seq metadata summaries</td>
+<td>Complete</td>
+<td><code>output/baseline_overview/scrna/</code></td>
+</tr>
+<tr class="odd">
+<td>Baseline spatial metadata summaries</td>
+<td>Complete</td>
+<td><code>output/baseline_overview/spatial/</code></td>
+</tr>
+<tr class="even">
+<td>Spatial QC with coordinate and image overlays</td>
+<td>Complete</td>
+<td><code>output/spatial_qc/</code></td>
+</tr>
+<tr class="odd">
+<td>Metabolic gene-set scoring</td>
+<td>Complete</td>
+<td><code>output/metabolism_scores/</code></td>
+</tr>
+<tr class="even">
+<td>Harreman pilot</td>
+<td>Complete</td>
+<td><code>output/harreman_pilot/</code></td>
+</tr>
+<tr class="odd">
+<td>Harreman paired-slide scale-up</td>
+<td>Complete</td>
+<td><code>output/harreman_all_slides/</code></td>
+</tr>
+<tr class="even">
+<td>CIBERSORTx signature-matrix spatial deconvolution</td>
+<td>Complete</td>
+<td><code>output/spatial_deconvolution/</code></td>
+</tr>
+<tr class="odd">
+<td>Harreman and deconvolution interpretation</td>
+<td>Complete</td>
+<td><code>output/harreman_deconv_interpretation/</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="results" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="results"><span class="header-section-number">4</span> Results</h2>
+<section id="inventory" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="inventory"><span class="header-section-number">4.1</span> Inventory</h3>
+<p>The inventory script confirmed that all expected data assets are present and internally consistent at the file and metadata level.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Metric</th>
+<th style="text-align: right;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Data files in <code>data/</code></td>
+<td style="text-align: right;">24</td>
+</tr>
+<tr class="even">
+<td>Raw spatial archives</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="odd">
+<td>Spatial metadata rows</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td>Patient metadata rows</td>
+<td style="text-align: right;">34</td>
+</tr>
+<tr class="odd">
+<td>Spatial archive to metadata matches</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td>Spatial archive to metadata mismatches</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+<p>Detailed output files:</p>
+<ul>
+<li><code>output/inventory/inventory_overview.json</code></li>
+<li><code>output/inventory/h5ad_summary.json</code></li>
+<li><code>output/inventory/data_files.csv</code></li>
+<li><code>output/inventory/spatial_archive_summary.csv</code></li>
+<li><code>output/inventory/spatial_archive_metadata_join.csv</code></li>
+<li><code>output/inventory/h5ad_obs_columns.csv</code></li>
+<li><code>output/inventory/h5ad_obs_categories.csv</code></li>
+</ul>
+</section>
+<section id="scrna-seq-composition" class="level3" data-number="4.2">
+<h3 data-number="4.2" class="anchored" data-anchor-id="scrna-seq-composition"><span class="header-section-number">4.2</span> scRNA-seq Composition</h3>
+<p>The annotated scRNA-seq object contains 347,017 cells. Current status-level counts are:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Status</th>
+<th style="text-align: right;">Cells</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>N</td>
+<td style="text-align: right;">137,740</td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td style="text-align: right;">130,269</td>
+</tr>
+<tr class="odd">
+<td>H</td>
+<td style="text-align: right;">71,981</td>
+</tr>
+<tr class="even">
+<td>I</td>
+<td style="text-align: right;">7,027</td>
+</tr>
+</tbody>
+</table>
+<p>The epithelial and immune fraction counts are:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Fraction</th>
+<th style="text-align: right;">Cells</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>imu</td>
+<td style="text-align: right;">229,847</td>
+</tr>
+<tr class="even">
+<td>epi</td>
+<td style="text-align: right;">117,170</td>
+</tr>
+</tbody>
+</table>
+<p>The largest tissue category is small intestine:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Tissue</th>
+<th style="text-align: right;">Cells</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>small intestine</td>
+<td style="text-align: right;">284,542</td>
+</tr>
+<tr class="even">
+<td>colon</td>
+<td style="text-align: right;">55,065</td>
+</tr>
+<tr class="odd">
+<td>ascending colon</td>
+<td style="text-align: right;">7,410</td>
+</tr>
+</tbody>
+</table>
+<p>The most abundant top-level annotation categories include enterocytes, T cells, B cells, plasma cells, stem-like epithelial cells, colonocytes, goblet cells, and myeloid cells.</p>
+<p><img src="output/baseline_overview/scrna/cell_counts_by_status_fraction.png" class="img-fluid"></p>
+<p><img src="output/baseline_overview/scrna/cell_counts_by_status_annotation.png" class="img-fluid"></p>
+<p>QC distributions were also generated:</p>
+<ul>
+<li><code>output/baseline_overview/scrna/hist_total_counts.png</code></li>
+<li><code>output/baseline_overview/scrna/hist_pct_counts_mt.png</code></li>
+<li><code>output/baseline_overview/scrna/hist_doublet_score.png</code></li>
+</ul>
+</section>
+<section id="spatial-transcriptomics-summary" class="level3" data-number="4.3">
+<h3 data-number="4.3" class="anchored" data-anchor-id="spatial-transcriptomics-summary"><span class="header-section-number">4.3</span> Spatial Transcriptomics Summary</h3>
+<p>The spatial AnnData object contains 58,815 spots across 20 slides. Slide labels in the metadata are:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Disease label</th>
+<th style="text-align: right;">Slides</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Fibrotic</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr class="even">
+<td>Adjacent</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="odd">
+<td>Adjacent (Disease Control)</td>
+<td style="text-align: right;">2</td>
+</tr>
+</tbody>
+</table>
+<p>The slide metadata reports 58,815 total spots, matching the spatial AnnData object. The largest slides by spot count include <code>V10S15-055_A</code>, <code>V10A14-143_D</code>, <code>V10S15-054_A</code>, and <code>V11Y24-011_D</code>.</p>
+<p><img src="output/baseline_overview/spatial/slides_by_disease_label.png" class="img-fluid"></p>
+<p><img src="output/baseline_overview/spatial/spots_by_slide.png" class="img-fluid"></p>
+<p>Detailed spatial outputs:</p>
+<ul>
+<li><code>output/baseline_overview/spatial/spatial_slide_metadata.csv</code></li>
+<li><code>output/baseline_overview/spatial/spot_counts_by_sample.csv</code></li>
+<li><code>output/baseline_overview/spatial/spot_metadata.csv</code></li>
+</ul>
+</section>
+<section id="spatial-qc" class="level3" data-number="4.4">
+<h3 data-number="4.4" class="anchored" data-anchor-id="spatial-qc"><span class="header-section-number">4.4</span> Spatial QC</h3>
+<p>Spatial QC confirmed that all AnnData spot barcodes are present in the corresponding raw Visium archive position lists. Each raw archive contains 4,992 grid positions. The processed AnnData object contains the in-tissue subset for each slide.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Metric</th>
+<th style="text-align: right;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Slides checked</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td>AnnData spots checked</td>
+<td style="text-align: right;">58,815</td>
+</tr>
+<tr class="odd">
+<td>AnnData barcodes missing from raw archives</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td>Raw archive positions not present in AnnData</td>
+<td style="text-align: right;">41,025</td>
+</tr>
+</tbody>
+</table>
+<p>The 41,025 raw archive positions not present in AnnData correspond to off-tissue or filtered positions. This is expected because the number of in-tissue positions in each archive matches the number of AnnData spots for that slide.</p>
+<p><img src="output/spatial_qc/all_slides_coordinates.png" class="img-fluid"></p>
+<p>Representative low-resolution tissue-image overlays:</p>
+<p><img src="output/spatial_qc/overlays/V10S15_055_A_lowres_overlay.png" class="img-fluid"></p>
+<p><img src="output/spatial_qc/overlays/V10S15_055_B_lowres_overlay.png" class="img-fluid"></p>
+<p>Detailed spatial QC outputs:</p>
+<ul>
+<li><code>output/spatial_qc/spatial_qc_overview.json</code></li>
+<li><code>output/spatial_qc/spatial_qc_summary.csv</code></li>
+<li><code>output/spatial_qc/all_slides_coordinates.png</code></li>
+<li><code>output/spatial_qc/plots/</code></li>
+<li><code>output/spatial_qc/overlays/</code></li>
+</ul>
+</section>
+<section id="metabolism-and-fibrosis-scores" class="level3" data-number="4.5">
+<h3 data-number="4.5" class="anchored" data-anchor-id="metabolism-and-fibrosis-scores"><span class="header-section-number">4.5</span> Metabolism And Fibrosis Scores</h3>
+<p>Nine curated gene sets were scored across all 58,815 spatial spots:</p>
+<ul>
+<li>glycolysis;</li>
+<li>oxidative phosphorylation;</li>
+<li>hypoxia;</li>
+<li>retinoid/vitamin A biology;</li>
+<li>ECM remodeling;</li>
+<li>inflammation;</li>
+<li>epithelial repair;</li>
+<li>fatty acid metabolism;</li>
+<li>bile acid transport.</li>
+</ul>
+<p>All requested genes were present in the spatial AnnData object for each gene set. Scores were summarized per slide and by disease label. At the disease-label level, fibrotic slides had the highest mean scores for inflammation and ECM remodeling among the tested programs. Adjacent slides had relatively higher mean bile-acid transport, epithelial repair, fatty-acid metabolism, oxidative phosphorylation, and glycolysis scores. These are exploratory summaries; spot-level observations are spatially structured and not independent.</p>
+<p><img src="output/metabolism_scores/sample_mean_score_heatmap.png" class="img-fluid"></p>
+<p><img src="output/metabolism_scores/disease_label_score_boxplots.png" class="img-fluid"></p>
+<p>Representative all-slide spatial maps:</p>
+<p><img src="output/metabolism_scores/maps/ecm_remodeling_all_slides.png" class="img-fluid"></p>
+<p><img src="output/metabolism_scores/maps/inflammation_all_slides.png" class="img-fluid"></p>
+<p><img src="output/metabolism_scores/maps/bile_acid_transport_all_slides.png" class="img-fluid"></p>
+<p>Paired adjacent-versus-fibrotic comparisons were available for 8 patients. Mean paired fibrotic-minus-adjacent differences were positive for ECM remodeling and inflammation, and negative for bile-acid transport, epithelial repair, fatty-acid metabolism, oxidative phosphorylation, glycolysis, retinoid/vitamin A, and hypoxia. These paired summaries are useful for prioritizing Harreman pilot slides, but should not yet be treated as formal differential testing.</p>
+<p>Detailed metabolism outputs:</p>
+<ul>
+<li><code>output/metabolism_scores/metabolism_scores_overview.json</code></li>
+<li><code>output/metabolism_scores/gene_set_membership.csv</code></li>
+<li><code>output/metabolism_scores/spot_metabolism_scores.parquet</code></li>
+<li><code>output/metabolism_scores/spot_metabolism_scores_selected.csv</code></li>
+<li><code>output/metabolism_scores/sample_metabolism_score_summary.csv</code></li>
+<li><code>output/metabolism_scores/disease_label_metabolism_score_summary.csv</code></li>
+<li><code>output/metabolism_scores/paired_patient_metabolism_score_differences.csv</code></li>
+<li><code>output/metabolism_scores/maps/</code></li>
+</ul>
+</section>
+<section id="harreman-pilot" class="level3" data-number="4.6">
+<h3 data-number="4.6" class="anchored" data-anchor-id="harreman-pilot"><span class="header-section-number">4.6</span> Harreman Pilot</h3>
+<p>The Harreman pilot was run on the paired adjacent and fibrotic slides from patient 110201:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Slide</th>
+<th>Disease label</th>
+<th>General categorization</th>
+<th style="text-align: right;">Spots</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>V10S15-054_B</code></td>
+<td>Adjacent</td>
+<td>Normal</td>
+<td style="text-align: right;">2,472</td>
+</tr>
+<tr class="even">
+<td><code>V10S15-054_A</code></td>
+<td>Fibrotic</td>
+<td>Chronic changes, early stricture</td>
+<td style="text-align: right;">4,019</td>
+</tr>
+</tbody>
+</table>
+<p>The pilot used the human extracellular transporter database, a 6-nearest-neighbor spatial graph within each slide, expression filtering at a 1% spot threshold, and Harreman’s parametric transporter communication test. The script uses CPU execution. A small compatibility workaround is included for a read-only NumPy/Pandas diagonal operation in Harreman’s local-correlation matrix construction.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Metric</th>
+<th style="text-align: right;">Adjacent <code>V10S15-054_B</code></th>
+<th style="text-align: right;">Fibrotic <code>V10S15-054_A</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Transport metabolites after database/filtering</td>
+<td style="text-align: right;">216</td>
+<td style="text-align: right;">211</td>
+</tr>
+<tr class="even">
+<td>Transporter genes after filtering</td>
+<td style="text-align: right;">190</td>
+<td style="text-align: right;">195</td>
+</tr>
+<tr class="odd">
+<td>Gene pairs tested</td>
+<td style="text-align: right;">935</td>
+<td style="text-align: right;">993</td>
+</tr>
+<tr class="even">
+<td>Spatial weight edges</td>
+<td style="text-align: right;">14,832</td>
+<td style="text-align: right;">24,114</td>
+</tr>
+<tr class="odd">
+<td>Runtime, seconds</td>
+<td style="text-align: right;">39.4</td>
+<td style="text-align: right;">44.0</td>
+</tr>
+</tbody>
+</table>
+<p>There were 211 metabolites tested in both slides. The largest fibrotic-minus-adjacent z-score differences were observed for iron, fatty acid, L-leucine, choline, heme, zinc, folic acid, L-glutamine, L-serine, acetate, and several amino acids. The largest adjacent-shifted differences were observed for urea, propionate, beta-hydroxybutyrate, bile acid, lysophosphatidylcholine, glycyl-glycine, alpha-tocopherol, malate, fumarate, citrate, vitamin A, and butyrate.</p>
+<p><img src="output/harreman_pilot/top_metabolite_z_scores.png" class="img-fluid"></p>
+<p><img src="output/harreman_pilot/paired_metabolite_z_differences.png" class="img-fluid"></p>
+<p>Detailed Harreman pilot outputs:</p>
+<ul>
+<li><code>output/harreman_pilot/harreman_pilot_overview.json</code></li>
+<li><code>output/harreman_pilot/harreman_pilot_run_summary.csv</code></li>
+<li><code>output/harreman_pilot/harreman_metabolite_results.csv</code></li>
+<li><code>output/harreman_pilot/harreman_gene_pair_results.csv</code></li>
+<li><code>output/harreman_pilot/harreman_paired_metabolite_differences.csv</code></li>
+<li><code>output/harreman_pilot/top_metabolite_z_scores.png</code></li>
+<li><code>output/harreman_pilot/paired_metabolite_z_differences.png</code></li>
+</ul>
+</section>
+<section id="harreman-paired-slide-scale-up" class="level3" data-number="4.7">
+<h3 data-number="4.7" class="anchored" data-anchor-id="harreman-paired-slide-scale-up"><span class="header-section-number">4.7</span> Harreman Paired-Slide Scale-Up</h3>
+<p>The Harreman workflow was scaled to all patients with both adjacent and fibrotic spatial transcriptomics slides. This included 18 slides across 8 paired patients: 8 adjacent slides and 10 fibrotic slides.</p>
+<p>The all-slide script reused the pilot settings: human extracellular transporter database, 6-nearest-neighbor spatial graph, 1% expression filtering, and Harreman’s parametric transporter communication test. Per-slide results are cached under <code>output/harreman_all_slides/per_sample/</code>.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Metric</th>
+<th style="text-align: right;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Slides analyzed</td>
+<td style="text-align: right;">18</td>
+</tr>
+<tr class="even">
+<td>Paired patients</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="odd">
+<td>Adjacent slides</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="even">
+<td>Fibrotic slides</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr class="odd">
+<td>Metabolites with paired results</td>
+<td style="text-align: right;">215</td>
+</tr>
+<tr class="even">
+<td>Mean per-slide runtime, seconds</td>
+<td style="text-align: right;">41.6</td>
+</tr>
+<tr class="odd">
+<td>Total per-slide runtime, seconds</td>
+<td style="text-align: right;">748.5</td>
+</tr>
+</tbody>
+</table>
+<p>Across paired patients, the largest mean fibrotic-minus-adjacent z-score differences were observed for L-histidine, L-serine, citric acid, oxalic acid, D-maltose, D-xylose, L-cysteine, L-asparagine, L-alanine, L-methionine, and L-leucine. Several of these were positive in at least 6 of 8 paired patients.</p>
+<p>The strongest mean adjacent-shifted differences included urea, propionate, beta-hydroxybutyrate, adenosylcobalamin, sodium, taurocholic acid, L-dopa, bile acid, cholic acid, cholesterol, fatty acid, D-fructose, and hyodeoxycholic acid. Some of these were present in fewer paired patients, so <code>n_patients</code> and patient-level consistency should be considered alongside the mean difference.</p>
+<p><img src="output/harreman_all_slides/mean_paired_metabolite_differences.png" class="img-fluid"></p>
+<p><img src="output/harreman_all_slides/paired_difference_heatmap.png" class="img-fluid"></p>
+<p><img src="output/harreman_all_slides/harreman_runtime_by_slide.png" class="img-fluid"></p>
+<p>Detailed all-slide Harreman outputs:</p>
+<ul>
+<li><code>output/harreman_all_slides/harreman_all_slides_overview.json</code></li>
+<li><code>output/harreman_all_slides/harreman_all_run_summary.csv</code></li>
+<li><code>output/harreman_all_slides/harreman_all_metabolite_results.csv</code></li>
+<li><code>output/harreman_all_slides/harreman_all_gene_pair_results.csv</code></li>
+<li><code>output/harreman_all_slides/harreman_patient_paired_metabolite_differences.csv</code></li>
+<li><code>output/harreman_all_slides/harreman_metabolite_difference_summary.csv</code></li>
+<li><code>output/harreman_all_slides/mean_paired_metabolite_differences.png</code></li>
+<li><code>output/harreman_all_slides/paired_difference_heatmap.png</code></li>
+<li><code>output/harreman_all_slides/harreman_runtime_by_slide.png</code></li>
+<li><code>output/harreman_all_slides/per_sample/</code></li>
+</ul>
+</section>
+<section id="spatial-deconvolution" class="level3" data-number="4.8">
+<h3 data-number="4.8" class="anchored" data-anchor-id="spatial-deconvolution"><span class="header-section-number">4.8</span> Spatial Deconvolution</h3>
+<p>The provided CIBERSORTx Gut Atlas IBD signature matrix was used as a direct reference for first-pass Visium spot deconvolution. The matrix contains 42 cell types. Of 7,458 signature genes, 7,350 overlapped the spatial AnnData gene symbols. The initial NNLS model used the 2,000 shared genes with the highest variance across signature cell types.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Metric</th>
+<th style="text-align: right;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Spots deconvolved</td>
+<td style="text-align: right;">58,815</td>
+</tr>
+<tr class="even">
+<td>Signature cell types</td>
+<td style="text-align: right;">42</td>
+</tr>
+<tr class="odd">
+<td>Signature genes</td>
+<td style="text-align: right;">7,458</td>
+</tr>
+<tr class="even">
+<td>Signature genes overlapping spatial data</td>
+<td style="text-align: right;">7,350</td>
+</tr>
+<tr class="odd">
+<td>Selected genes used in NNLS</td>
+<td style="text-align: right;">2,000</td>
+</tr>
+<tr class="even">
+<td>Median relative residual</td>
+<td style="text-align: right;">0.821</td>
+</tr>
+<tr class="odd">
+<td>Mean relative residual</td>
+<td style="text-align: right;">0.825</td>
+</tr>
+</tbody>
+</table>
+<p>The high residual indicates that this transparent NNLS deconvolution is useful as an initial composition estimate, but should be interpreted cautiously. Potential reasons include platform differences between the CIBERSORTx scRNA-seq reference and Visium profiles, broad spot mixtures, scale differences between signature values and spatial expression values, and the use of a deliberately simple constrained regression model.</p>
+<p>Mean paired fibrotic-minus-adjacent differences suggested higher B/plasma signal in fibrotic slides and lower absorptive, secretory, myofibroblast, smooth muscle, fibroblast, lymphatic endothelial, microfold, vascular endothelial, and pericyte signals on average. Some of these directions are biologically plausible, while others need scrutiny against histology, marker expression, and fit diagnostics before interpretation.</p>
+<p><img src="output/spatial_deconvolution/sample_cell_type_heatmap.png" class="img-fluid"></p>
+<p><img src="output/spatial_deconvolution/paired_cell_type_differences.png" class="img-fluid"></p>
+<p>Representative spatial deconvolution maps:</p>
+<p><img src="output/spatial_deconvolution/maps/Absorptive_all_slides.png" class="img-fluid"></p>
+<p><img src="output/spatial_deconvolution/maps/Fibroblast_all_slides.png" class="img-fluid"></p>
+<p><img src="output/spatial_deconvolution/maps/Macrophage_all_slides.png" class="img-fluid"></p>
+<p>Detailed deconvolution outputs:</p>
+<ul>
+<li><code>output/spatial_deconvolution/spatial_deconvolution_overview.json</code></li>
+<li><code>output/spatial_deconvolution/deconvolution_fit_summary.csv</code></li>
+<li><code>output/spatial_deconvolution/signature_gene_overlap_summary.csv</code></li>
+<li><code>output/spatial_deconvolution/selected_signature_genes.csv</code></li>
+<li><code>output/spatial_deconvolution/spot_cell_type_proportions.parquet</code></li>
+<li><code>output/spatial_deconvolution/spot_cell_type_proportions_selected.csv</code></li>
+<li><code>output/spatial_deconvolution/sample_cell_type_proportion_summary.csv</code></li>
+<li><code>output/spatial_deconvolution/disease_label_cell_type_proportion_summary.csv</code></li>
+<li><code>output/spatial_deconvolution/paired_patient_cell_type_differences.csv</code></li>
+<li><code>output/spatial_deconvolution/paired_cell_type_difference_summary.csv</code></li>
+<li><code>output/spatial_deconvolution/maps/</code></li>
+</ul>
+</section>
+<section id="harreman-and-cell-type-interpretation" class="level3" data-number="4.9">
+<h3 data-number="4.9" class="anchored" data-anchor-id="harreman-and-cell-type-interpretation"><span class="header-section-number">4.9</span> Harreman And Cell-Type Interpretation</h3>
+<p>Harreman results were compared against the CIBERSORTx signature-matrix deconvolution and marker-gene summaries. The analysis focused on 14 metabolites prioritized from the all-slide Harreman results, including amino acid and epithelial-associated signals.</p>
+<p>Marker validation supported several major deconvolved signatures:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Marker set</th>
+<th>Deconvolved cell type</th>
+<th style="text-align: right;">Spearman rho across slides</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>B/plasma markers</td>
+<td><code>B_plasma</code></td>
+<td style="text-align: right;">0.980</td>
+</tr>
+<tr class="even">
+<td>Absorptive markers</td>
+<td><code>Absorptive</code></td>
+<td style="text-align: right;">0.929</td>
+</tr>
+<tr class="odd">
+<td>Macrophage markers</td>
+<td><code>Macrophage</code></td>
+<td style="text-align: right;">0.780</td>
+</tr>
+<tr class="even">
+<td>Fibroblast markers</td>
+<td><code>Fibroblast</code></td>
+<td style="text-align: right;">0.761</td>
+</tr>
+<tr class="odd">
+<td>Myofibroblast markers</td>
+<td><code>Myofibroblast</code></td>
+<td style="text-align: right;">0.514</td>
+</tr>
+</tbody>
+</table>
+<p>Across slides, bile-acid and cholic-acid Harreman z-scores were strongly correlated with absorptive and microfold deconvolution estimates. Urea also tracked absorptive and microfold estimates. This supports the interpretation that several adjacent-shifted bile-acid and related transport signals are epithelial-associated rather than broadly stromal.</p>
+<p>Examples of strong slide-level correlations:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Metabolite</th>
+<th>Cell type</th>
+<th style="text-align: right;">Spearman rho</th>
+<th style="text-align: right;">Slides</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Bile acid</td>
+<td>Microfold</td>
+<td style="text-align: right;">0.934</td>
+<td style="text-align: right;">14</td>
+</tr>
+<tr class="even">
+<td>Urea</td>
+<td>Absorptive</td>
+<td style="text-align: right;">0.915</td>
+<td style="text-align: right;">16</td>
+</tr>
+<tr class="odd">
+<td>Urea</td>
+<td>Microfold</td>
+<td style="text-align: right;">0.914</td>
+<td style="text-align: right;">16</td>
+</tr>
+<tr class="even">
+<td>Bile acid</td>
+<td>Absorptive</td>
+<td style="text-align: right;">0.912</td>
+<td style="text-align: right;">14</td>
+</tr>
+<tr class="odd">
+<td>Cholic acid</td>
+<td>Microfold</td>
+<td style="text-align: right;">0.873</td>
+<td style="text-align: right;">18</td>
+</tr>
+<tr class="even">
+<td>Cholic acid</td>
+<td>Absorptive</td>
+<td style="text-align: right;">0.866</td>
+<td style="text-align: right;">18</td>
+</tr>
+</tbody>
+</table>
+<p>Paired patient-level differences showed similar epithelial associations for bile acid and cholic acid, but these correlations should be interpreted cautiously because the paired sample size is small.</p>
+<p><img src="output/harreman_deconv_interpretation/marker_deconvolution_validation.png" class="img-fluid"></p>
+<p><img src="output/harreman_deconv_interpretation/slide_level_harreman_deconv_correlation_heatmap.png" class="img-fluid"></p>
+<p><img src="output/harreman_deconv_interpretation/paired_difference_top_correlation_heatmap.png" class="img-fluid"></p>
+<p>Detailed interpretation outputs:</p>
+<ul>
+<li><code>output/harreman_deconv_interpretation/harreman_deconv_interpretation_overview.json</code></li>
+<li><code>output/harreman_deconv_interpretation/slide_level_harreman_deconv_correlations.csv</code></li>
+<li><code>output/harreman_deconv_interpretation/paired_difference_harreman_deconv_correlations.csv</code></li>
+<li><code>output/harreman_deconv_interpretation/top_metabolite_gene_pair_evidence.csv</code></li>
+<li><code>output/harreman_deconv_interpretation/marker_scores_by_slide.csv</code></li>
+<li><code>output/harreman_deconv_interpretation/marker_deconvolution_correlations.csv</code></li>
+<li><code>output/harreman_deconv_interpretation/marker_deconvolution_validation.png</code></li>
+<li><code>output/harreman_deconv_interpretation/slide_level_harreman_deconv_correlation_heatmap.png</code></li>
+<li><code>output/harreman_deconv_interpretation/paired_difference_top_correlation_heatmap.png</code></li>
+</ul>
+</section>
+</section>
+<section id="next-analyses" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="next-analyses"><span class="header-section-number">5</span> Next Analyses</h2>
+<p>The next step is interpretation and refinement rather than another broad method run. Priority analyses are:</p>
+<ul>
+<li>inspect whether high-ranking Harreman metabolites are driven by broad expression, tissue area, or a small set of transporter genes;</li>
+<li>connect metabolite differences back to transporter gene pairs and spatial regions;</li>
+<li>compare Harreman results with the simpler gene-set scores;</li>
+<li>compare Harreman results with the CIBERSORTx signature-matrix deconvolution;</li>
+<li>refine deconvolution using marker-gene diagnostics, alternative gene selection, or a heavier method if needed;</li>
+<li>run focused visualizations for the most plausible fibrosis, epithelial, stromal, and bile-acid-related signals.</li>
+</ul>
+<p>The immediate next refinement should focus on transporter gene-pair inspection for the strongest epithelial-associated and fibrotic-associated metabolites. In particular, bile acid, cholic acid, urea, L-histidine, L-serine, citric acid, and L-cysteine should be traced back to the transporter genes and spatial expression maps that drive the Harreman scores.</p>
+</section>
+<section id="limitations" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="limitations"><span class="header-section-number">6</span> Limitations</h2>
+<p>Current results include inventory, metadata-level summaries, spatial coordinate/image QC, exploratory metabolism/fibrosis gene-set scores, one Harreman pilot, an all-paired-slide Harreman transporter communication run, first-pass CIBERSORTx signature-matrix deconvolution, and an initial Harreman-cell-type interpretation layer. No cell-type-aware Harreman model or formal statistical model of patient-paired differences has been generated yet. The current Harreman and deconvolution results should be treated as prioritization and hypothesis-generation output rather than final biological conclusions.</p>
+</section>
+<section id="conclusion" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">7</span> Conclusion</h2>
+<p>The project now has a reproducible Python environment, data inventory scripts, baseline scRNA-seq and spatial metadata summaries, spatial QC overlays, exploratory metabolism/fibrosis gene-set scores, a Harreman pilot, an all-paired-slide Harreman run, first-pass CIBERSORTx signature-matrix deconvolution, an initial cell-type interpretation layer, and a Quarto report that records methods, progress, output-backed results, and references. The next analysis step is focused transporter-gene and spatial-region validation for the strongest Harreman signals.</p>
+</section>
+<section id="references" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="references">References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-harreman2025" class="csl-entry" role="listitem">
+Etxezarreta Arrastoa, Oier, Anna-Chiara Pirona, Allon Wagner, and Nir Yosef. 2025. <span>“Metabolic Zonation and Characterization of Tissue Slices with Spatial Transcriptomics.”</span> <em>bioRxiv</em>. <a href="https://doi.org/10.1101/2025.11.11.687271">https://doi.org/10.1101/2025.11.11.687271</a>.
+</div>
+<div id="ref-kongStricturingCrohnZenodo2024" class="csl-entry" role="listitem">
+Kong, Lingjia, Sathish Subramanian, Asa Segerstolpe, Vy Tran, Angela Shih, Grace Carter, Hiroko Kunitake, et al. 2024. <span>“Single-Cell and Spatial Transcriptomics of Stricturing Crohn’s Disease.”</span> Zenodo. <a href="https://doi.org/10.5281/zenodo.14509802">https://doi.org/10.5281/zenodo.14509802</a>.
+</div>
+<div id="ref-pallaSquidpy2022" class="csl-entry" role="listitem">
+Palla, Giovanni, Hannah Spitzer, Michal Klein, David Fischer, Anna Christina Schaar, Louis Benedikt Kuemmerle, Sergei Rybakov, et al. 2022. <span>“Squidpy: A Scalable Framework for Spatial Omics Analysis.”</span> <em>Nature Methods</em> 19: 171–78. <a href="https://doi.org/10.1038/s41592-021-01358-2">https://doi.org/10.1038/s41592-021-01358-2</a>.
+</div>
+<div id="ref-wolfScanpy2018" class="csl-entry" role="listitem">
+Wolf, F. Alexander, Philipp Angerer, and Fabian J. Theis. 2018. <span>“<span>SCANPY</span>: Large-Scale Single-Cell Gene Expression Data Analysis.”</span> <em>Genome Biology</em> 19 (1): 15. <a href="https://doi.org/10.1186/s13059-017-1382-0">https://doi.org/10.1186/s13059-017-1382-0</a>.
+</div>
+<div id="ref-harremanDocs" class="csl-entry" role="listitem">
+Yosef Lab. 2026. <em>Harreman Documentation</em>. <a href="https://harreman.readthedocs.io/">https://harreman.readthedocs.io/</a>.
+</div>
+</div>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

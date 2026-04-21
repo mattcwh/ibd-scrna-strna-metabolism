@@ -1,0 +1,95 @@
+{
+  "samples": [
+    "V10S15-054_B",
+    "V10S15-054_A"
+  ],
+  "adjacent_sample": "V10S15-054_B",
+  "fibrotic_sample": "V10S15-054_A",
+  "n_neighbors": 6,
+  "expression_threshold": 0.01,
+  "n_metabolites_tested_intersection": 211,
+  "top_fibrotic_minus_adjacent_metabolites": [
+    {
+      "metabolite": "Iron",
+      "fibrotic_minus_adjacent_z": 16.96747628028312
+    },
+    {
+      "metabolite": "Fatty acid",
+      "fibrotic_minus_adjacent_z": 15.838459930380587
+    },
+    {
+      "metabolite": "L-Leucine",
+      "fibrotic_minus_adjacent_z": 13.805088246386772
+    },
+    {
+      "metabolite": "Choline",
+      "fibrotic_minus_adjacent_z": 12.739537394797082
+    },
+    {
+      "metabolite": "Heme",
+      "fibrotic_minus_adjacent_z": 12.66344204145707
+    },
+    {
+      "metabolite": "Zinc",
+      "fibrotic_minus_adjacent_z": 12.263366482012284
+    },
+    {
+      "metabolite": "5-Hydroxyomeprazole",
+      "fibrotic_minus_adjacent_z": 11.884871263436366
+    },
+    {
+      "metabolite": "Folic acid",
+      "fibrotic_minus_adjacent_z": 10.94207995520138
+    },
+    {
+      "metabolite": "L-Glutamine",
+      "fibrotic_minus_adjacent_z": 10.384710440121268
+    },
+    {
+      "metabolite": "L-Serine",
+      "fibrotic_minus_adjacent_z": 9.423095013883302
+    }
+  ],
+  "top_adjacent_minus_fibrotic_metabolites": [
+    {
+      "metabolite": "Urea",
+      "fibrotic_minus_adjacent_z": -221.9684893564589
+    },
+    {
+      "metabolite": "Propionate",
+      "fibrotic_minus_adjacent_z": -32.3745159798147
+    },
+    {
+      "metabolite": "beta-Dhydroxybutyrate",
+      "fibrotic_minus_adjacent_z": -32.3745159798147
+    },
+    {
+      "metabolite": "Bile acid",
+      "fibrotic_minus_adjacent_z": -28.738207762118634
+    },
+    {
+      "metabolite": "Lysophosphatidylcholine",
+      "fibrotic_minus_adjacent_z": -23.793123764385957
+    },
+    {
+      "metabolite": "Glycyl-glycine",
+      "fibrotic_minus_adjacent_z": -19.34864794772708
+    },
+    {
+      "metabolite": "alpha-Tocopherol",
+      "fibrotic_minus_adjacent_z": -17.576811953855444
+    },
+    {
+      "metabolite": "Malate",
+      "fibrotic_minus_adjacent_z": -16.81232130174059
+    },
+    {
+      "metabolite": "Fumarate",
+      "fibrotic_minus_adjacent_z": -16.81232130174059
+    },
+    {
+      "metabolite": "Citrate",
+      "fibrotic_minus_adjacent_z": -16.81232130174059
+    }
+  ]
+}

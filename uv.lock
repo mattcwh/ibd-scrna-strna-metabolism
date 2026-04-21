@@ -661,14 +661,6 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/ea/28/aad6d6b63085766c994cf50f2e1f7bd514bd20eb149ad15477db8339420a/fast_array_utils-1.4.1-py3-none-any.whl", hash = "sha256:cad55a58359cac4084445d801b50904357093a94863aca7ff7118bd4bd38ce7c", size = 39859, upload-time = "2026-04-10T10:05:49.875Z" },
 ]
 
-[package.optional-dependencies]
-accel = [
-    { name = "numba" },
-]
-sparse = [
-    { name = "scipy" },
-]
-
 [[package]]
 name = "filelock"
 version = "3.29.0"
@@ -950,7 +942,7 @@ requires-dist = [
     { name = "harreman", specifier = ">=0.1.3" },
     { name = "openpyxl", specifier = ">=3.1.5" },
     { name = "pyarrow", specifier = ">=24.0.0" },
-    { name = "scanpy", specifier = ">=1.12.1" },
+    { name = "scanpy", specifier = "<1.12" },
     { name = "squidpy", specifier = ">=1.8.1" },
 ]
 
@@ -2630,12 +2622,10 @@ wheels = [
 
 [[package]]
 name = "scanpy"
-version = "1.12.1"
+version = "1.11.5"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "anndata" },
-    { name = "certifi" },
-    { name = "fast-array-utils", extra = ["accel", "sparse"] },
     { name = "h5py" },
     { name = "joblib" },
     { name = "legacy-api-wrap" },
@@ -2657,9 +2647,9 @@ dependencies = [
     { name = "typing-extensions", marker = "python_full_version < '3.13'" },
     { name = "umap-learn" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/11/18/1ed26bd2231d9bbe9bfe6ba678fdd261d1ec664ab1bca1d30401dc2a9193/scanpy-1.12.1.tar.gz", hash = "sha256:489c6a3763311721089bf0d78e65fd1555606b45f1a9ee97aa85291a12ade67a", size = 14418570, upload-time = "2026-04-10T12:14:00.161Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/d2/a8/285f1a9c995906b7e0ae3c399208fe67cfba8126dd31359dfef0908f6edc/scanpy-1.11.5.tar.gz", hash = "sha256:b2ef5476dfb1144b7dd0fae90b0198699c7988e6b27f083904150642c7ba6b89", size = 14088122, upload-time = "2025-10-21T08:24:43.999Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/e9/e4/b648ac3267001e1582e0b6ffc22b16dada83e206d783115992e83a07773f/scanpy-1.12.1-py3-none-any.whl", hash = "sha256:d482c92d0d7ae7b954a603e16dfcf5f062c511bd5e30e5dfd701c28e1d6b0e78", size = 2148436, upload-time = "2026-04-10T12:13:58.061Z" },
+    { url = "https://files.pythonhosted.org/packages/32/e9/c1d43543da87cd27e8e2a74db85cf0b6c5cff2d5f04a86bd584d2fbc2bb0/scanpy-1.11.5-py3-none-any.whl", hash = "sha256:fcd383ddcf7acbf7c0ca232c25ad51b00aec9f8d2f7c8954b8c6ee0962257166", size = 2097836, upload-time = "2025-10-21T08:24:41.741Z" },
 ]
 
 [[package]]

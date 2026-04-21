@@ -1,6 +1,9 @@
 # Data
 data/
 
+# Virtual environments
+.venv/
+
 # Quarto
 .quarto/
 *_files/

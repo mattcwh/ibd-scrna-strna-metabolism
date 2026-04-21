@@ -1,0 +1,3 @@
+Visium Slide ID,General Categorization,Mucosa,Submucosa,Muscularis Propria,Disease Label,Patient_ID,Shorthand_ID,Spots,Mean nGene,Mean nUMI,sample
+V10S15-054_A,"Chronic changes, early stricture",x,x,x,Fibrotic,110201,110201.F,4019,2262.89325702911,7914.71137098781,V10S15-054_A
+V10S15-054_B,Normal,x,x,x,Adjacent,110201,110201.A,2472,1953.33009708738,5113.44053398058,V10S15-054_B

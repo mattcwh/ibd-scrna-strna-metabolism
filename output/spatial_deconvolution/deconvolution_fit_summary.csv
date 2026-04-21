@@ -1,0 +1,8 @@
+metric,value
+n_spots,58815.0
+n_cell_types,42.0
+n_signature_genes_total,7458.0
+n_common_signature_spatial_genes,7350.0
+n_selected_genes,2000.0
+median_relative_residual,0.8210338282810217
+mean_relative_residual,0.824894167746884

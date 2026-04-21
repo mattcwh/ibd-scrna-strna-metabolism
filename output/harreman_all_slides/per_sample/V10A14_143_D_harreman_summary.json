@@ -1,0 +1,14 @@
+{
+  "sample": "V10A14-143_D",
+  "n_spots": 4037,
+  "n_genes": 36601,
+  "n_transport_metabolites_after_database": 206,
+  "n_transporter_genes_after_filtering": 182,
+  "n_gene_pairs": 885,
+  "n_metabolites_tested": 206,
+  "n_spatial_weight_edges": 24222,
+  "runtime_seconds": 44.889,
+  "Disease Label": "Fibrotic",
+  "Patient_ID": 117351,
+  "General Categorization": "Ulcer, inflammatory"
+}

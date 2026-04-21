@@ -1,0 +1,193 @@
+{
+  "n_slides": 18,
+  "n_patients": 8,
+  "n_adjacent_slides": 8,
+  "n_fibrotic_slides": 10,
+  "n_metabolites_with_paired_results": 215,
+  "mean_runtime_seconds": 41.58083333333334,
+  "total_runtime_seconds": 748.455,
+  "top_fibrotic_shifted_metabolites": [
+    {
+      "metabolite": "L-Histidine",
+      "mean_fibrotic_minus_adjacent_z": 6.852926850952151,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.875
+    },
+    {
+      "metabolite": "L-Serine",
+      "mean_fibrotic_minus_adjacent_z": 5.42932123358258,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.875
+    },
+    {
+      "metabolite": "Citric acid",
+      "mean_fibrotic_minus_adjacent_z": 4.938813914188508,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.75
+    },
+    {
+      "metabolite": "Oxalic acid",
+      "mean_fibrotic_minus_adjacent_z": 4.938813914188508,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.75
+    },
+    {
+      "metabolite": "D-Maltose",
+      "mean_fibrotic_minus_adjacent_z": 4.664022722454848,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.625
+    },
+    {
+      "metabolite": "D-Xylose",
+      "mean_fibrotic_minus_adjacent_z": 4.664022722454848,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.625
+    },
+    {
+      "metabolite": "L-Cysteine",
+      "mean_fibrotic_minus_adjacent_z": 4.508941783421307,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.75
+    },
+    {
+      "metabolite": "L-Asparagine",
+      "mean_fibrotic_minus_adjacent_z": 4.111189229980087,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.75
+    },
+    {
+      "metabolite": "L-Alanine",
+      "mean_fibrotic_minus_adjacent_z": 3.7180165605131763,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.75
+    },
+    {
+      "metabolite": "L-Methionine",
+      "mean_fibrotic_minus_adjacent_z": 3.6961333491787673,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.75
+    },
+    {
+      "metabolite": "L-Leucine",
+      "mean_fibrotic_minus_adjacent_z": 3.5766030623620253,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.625
+    },
+    {
+      "metabolite": "Calcium release-activated calcium transport",
+      "mean_fibrotic_minus_adjacent_z": 2.8230284148536655,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.75
+    },
+    {
+      "metabolite": "Glycine",
+      "mean_fibrotic_minus_adjacent_z": 2.7824611551656795,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.75
+    },
+    {
+      "metabolite": "Adenosine diphosphate ribose",
+      "mean_fibrotic_minus_adjacent_z": 2.61229691626772,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.875
+    },
+    {
+      "metabolite": "Adenosine triphosphate",
+      "mean_fibrotic_minus_adjacent_z": 2.4674690688079775,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.75
+    }
+  ],
+  "top_adjacent_shifted_metabolites": [
+    {
+      "metabolite": "Urea",
+      "mean_fibrotic_minus_adjacent_z": -56.8719262307685,
+      "n_patients": 6,
+      "positive_patient_fraction": 0.3333333333333333
+    },
+    {
+      "metabolite": "Propionate",
+      "mean_fibrotic_minus_adjacent_z": -12.644455113695953,
+      "n_patients": 3,
+      "positive_patient_fraction": 0.3333333333333333
+    },
+    {
+      "metabolite": "beta-Dhydroxybutyrate",
+      "mean_fibrotic_minus_adjacent_z": -12.644455113695953,
+      "n_patients": 3,
+      "positive_patient_fraction": 0.3333333333333333
+    },
+    {
+      "metabolite": "Adenosylcobalamin",
+      "mean_fibrotic_minus_adjacent_z": -11.566873039432005,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.5
+    },
+    {
+      "metabolite": "Sodium",
+      "mean_fibrotic_minus_adjacent_z": -9.848227163025472,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.5
+    },
+    {
+      "metabolite": "O-Desmethylverapamil (D-702)",
+      "mean_fibrotic_minus_adjacent_z": -7.896236157143492,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.5
+    },
+    {
+      "metabolite": "Taurocholic acid",
+      "mean_fibrotic_minus_adjacent_z": -7.717142011434974,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.5
+    },
+    {
+      "metabolite": "L-Dopa",
+      "mean_fibrotic_minus_adjacent_z": -7.56674840622042,
+      "n_patients": 6,
+      "positive_patient_fraction": 0.3333333333333333
+    },
+    {
+      "metabolite": "Hydroxylansoprazole",
+      "mean_fibrotic_minus_adjacent_z": -7.430072205515477,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.5
+    },
+    {
+      "metabolite": "Cortisol",
+      "mean_fibrotic_minus_adjacent_z": -7.430072205515477,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.5
+    },
+    {
+      "metabolite": "N-desmethylimatinib",
+      "mean_fibrotic_minus_adjacent_z": -7.430072205515477,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.5
+    },
+    {
+      "metabolite": "N-Desmethyltamoxifen",
+      "mean_fibrotic_minus_adjacent_z": -7.430072205515477,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.5
+    },
+    {
+      "metabolite": "Bile acid",
+      "mean_fibrotic_minus_adjacent_z": -6.989169946064557,
+      "n_patients": 5,
+      "positive_patient_fraction": 0.4
+    },
+    {
+      "metabolite": "Cholic acid",
+      "mean_fibrotic_minus_adjacent_z": -6.558298089141241,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.375
+    },
+    {
+      "metabolite": "Cholesterol",
+      "mean_fibrotic_minus_adjacent_z": -6.424470075667324,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.5
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "sample": "V10A14-143_A",
+  "n_spots": 2958,
+  "n_genes": 36601,
+  "n_transport_metabolites_after_database": 218,
+  "n_transporter_genes_after_filtering": 211,
+  "n_gene_pairs": 1075,
+  "n_metabolites_tested": 218,
+  "n_spatial_weight_edges": 17748,
+  "runtime_seconds": 45.36,
+  "Disease Label": "Adjacent",
+  "Patient_ID": 117351,
+  "General Categorization": "Normal"
+}
