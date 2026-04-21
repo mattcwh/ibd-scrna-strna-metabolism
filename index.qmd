@@ -1,0 +1,53 @@
+---
+title: "Use Case Title"
+subtitle: "Brief description of the analysis"
+author: "Author"
+date: last-modified
+date-format: "MMMM D, YYYY"
+title-block-banner: false
+
+format:
+  html:
+    title-block-banner: false
+
+title-block-style: default
+
+bibliography: references.bib
+---
+
+![](../images/amber_on_leaf_circle.png){.sonrai-logo}
+
+## Introduction
+
+Provide context and motivation for the analysis. What is the biological or analytical question? Why does it matter?
+
+## Methods
+
+### Data
+
+Describe the dataset: source, sample size, experimental design.
+
+### Analysis Pipeline
+
+Describe the tools, software, and statistical methods used.
+
+## Results
+
+Present key findings with figures and tables. Use code chunks to generate results dynamically where possible.
+
+```{r}
+#| label: example-plot
+#| eval: false
+# Example R code chunk
+# library(ggplot2)
+# ggplot(data, aes(x, y)) + geom_point()
+```
+
+## Conclusion
+
+Summarise the main findings and their implications. Note any limitations.
+
+## References {.unnumbered}
+
+::: {#refs}
+:::

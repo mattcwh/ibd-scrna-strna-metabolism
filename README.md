@@ -26,3 +26,26 @@ unzip download.zip
     - stricture (inflamed tissues with fibrotic areas)
 - These samples were used to generate single-cell transcriptomes. In the original publication, after filtering and quality control, 347,017 cells were obtained.
 - To directly interrogate the interactions underpinning local cellular networks, we used Visium spatial transcriptomics to profile 20 resections from 10 patients, partially overlapping with our single-cell cohort: 10 tissue sections with stricturing (from 8 CD patients) and 10 without stricturing (from 8 patients, including 2 non-IBD controls). For 7 patients, we obtained adjacent strictured and non-strictured regions.
+
+## Getting Started
+
+### Prerequisites
+
+- [Quarto](https://quarto.org/) (>= 1.4)
+- [uv](https://docs.astral.sh/uv/) for Python tooling and `pre-commit`
+
+### Render a Report
+
+```bash
+# Render a single use case
+quarto render index.qmd
+
+# Render all use cases
+quarto render
+```
+
+### Adding a New Use Case
+
+1. Update the YAML front matter in `index.qmd` (title, subtitle, author)
+2. Add your analysis code and references
+3. Render with `quarto render my_analysis/index.qmd`

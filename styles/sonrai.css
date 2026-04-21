@@ -1,0 +1,76 @@
+/* Sonrai Analytics branded Quarto theme */
+
+:root {
+  --sonrai-green: #1E7A2F;
+  --sonrai-dark: #2D3E50;
+}
+
+/* Corner logo */
+.sonrai-logo {
+  position: fixed;
+  top: 12px;
+  right: 16px;
+  z-index: 1000;
+  width: 60px;
+  height: auto;
+}
+
+/* Title page styling */
+.quarto-title h1.title,
+h1.title {
+  color: var(--sonrai-green);
+  font-weight: 700;
+}
+
+.quarto-title .subtitle,
+p.subtitle {
+  color: var(--sonrai-dark);
+}
+
+/* Logo in title block */
+.quarto-title-block .quarto-title-banner {
+  margin-bottom: 1.5rem;
+}
+
+/* Section headers */
+h2, h3 {
+  color: var(--sonrai-dark);
+  border-bottom: 2px solid var(--sonrai-green);
+  padding-bottom: 0.3rem;
+}
+
+h4, h5, h6 {
+  color: var(--sonrai-dark);
+}
+
+/* TOC active link */
+.sidebar nav[role="doc-toc"] .active {
+  color: var(--sonrai-green) !important;
+  font-weight: 600;
+}
+
+/* Links */
+a {
+  color: var(--sonrai-green);
+}
+
+a:hover {
+  color: #2E8F3A;
+}
+
+/* Code block accent */
+div.sourceCode {
+  border-left: 3px solid var(--sonrai-green);
+}
+
+/* Tables */
+.table thead th {
+  background-color: var(--sonrai-green);
+  color: white;
+}
+
+/* Footer / author block */
+.quarto-title-meta {
+  border-top: 2px solid var(--sonrai-green);
+  padding-top: 1rem;
+}
