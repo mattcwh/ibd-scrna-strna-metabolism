@@ -1,0 +1,9 @@
+file,var_column
+anndata.h5ad,gene_ids
+anndata.h5ad,feature_types
+anndata.h5ad,genome
+Cleaned_raw_annotated_object_LK.v2.h5ad,feature_type
+Cleaned_raw_annotated_object_LK.v2.h5ad,genome
+Cleaned_raw_annotated_object_LK.v2.h5ad,gene_id
+Cleaned_raw_annotated_object_LK.v2.h5ad,mt
+Cleaned_raw_annotated_object_LK.v2.h5ad,n_counts

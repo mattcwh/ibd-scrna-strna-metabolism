@@ -4,7 +4,7 @@
 
 Dataset includes:
 - anndata.h5ad: anndata object (scanpy)
-- V*tar.gz: raw spatial transcriptomics files
+- V*.tar.gz: raw spatial transcriptomics files
 
 Data was downloaded by running:
 ```

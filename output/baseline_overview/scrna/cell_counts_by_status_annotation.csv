@@ -1,0 +1,114 @@
+status,annotation,n_cells
+F,Activated T cells,7180
+F,B cells,14670
+F,Colonocytes-CAECAM-hi,8192
+F,Colonocytes-LGALS4-hi,11084
+F,Cycling B cells,2182
+F,Cycling T cells,659
+F,Endothelial cells,2015
+F,Enterocyte-ANPEP-hi,5667
+F,Enterocyte-FABP-hi,2281
+F,Enterocyte-mito-hi,11317
+F,Enterocytes-COX-hi,94
+F,Enteroendocrine cells,246
+F,Fibroblasts-C1R-hi,675
+F,Fibroblasts-COL-hi,2825
+F,Goblet cells,6059
+F,Goblet cells-DEF-hi,2
+F,Lymphatic endothelium,171
+F,Mast cells,1446
+F,Myeloid cells,7904
+F,Neutrophils,1536
+F,Paneth cells,421
+F,Pericyte,515
+F,Plasma cells-IgA,9742
+F,Plasma cells-IgG,5028
+F,Stem-like cells-OLFM4-hi,6515
+F,T cells-AREG-hi,549
+F,T cells-IL7R-hi,21104
+F,Tuft cells,190
+H,Activated T cells,4602
+H,B cells,5209
+H,Colonocytes-CAECAM-hi,1913
+H,Colonocytes-LGALS4-hi,2939
+H,Cycling B cells,516
+H,Cycling T cells,28
+H,Endothelial cells,624
+H,Enterocyte-ANPEP-hi,13574
+H,Enterocyte-FABP-hi,14622
+H,Enterocyte-mito-hi,3807
+H,Enterocytes-FTL-hi,43
+H,Enterocytes-FTL-hi2,8
+H,Enterocytes-MT-hi,889
+H,Enteroendocrine cells,395
+H,Fibroblasts-C1R-hi,461
+H,Fibroblasts-COL-hi,952
+H,Goblet cells,3078
+H,Lymphatic endothelium,304
+H,Mast cells,580
+H,Myeloid cells,1694
+H,Neutrophils,8
+H,Paneth cells,1399
+H,Pericyte,61
+H,Plasma cells-IgA,2307
+H,Plasma cells-IgG,262
+H,Ribo-hi subset,1698
+H,Stem-like cells-OLFM4-hi,4641
+H,T cells-AREG-hi,98
+H,T cells-IL7R-hi,4520
+H,Tuft cells,749
+I,Activated T cells,586
+I,B cells,267
+I,Colonocytes-CAECAM-hi,17
+I,Colonocytes-LGALS4-hi,225
+I,Cycling B cells,1
+I,Cycling T cells,36
+I,Endothelial cells,532
+I,Enterocyte-FABP-hi,8
+I,Enterocyte-mito-hi,437
+I,Enteroendocrine cells,6
+I,Fibroblasts-C1R-hi,1
+I,Fibroblasts-COL-hi,197
+I,Goblet cells,203
+I,Lymphatic endothelium,11
+I,Mast cells,161
+I,Myeloid cells,1588
+I,Neutrophils,343
+I,Paneth cells,4
+I,Pericyte,13
+I,Plasma cells-IgA,779
+I,Plasma cells-IgG,128
+I,Stem-like cells-OLFM4-hi,93
+I,T cells-AREG-hi,40
+I,T cells-IL7R-hi,1344
+I,Tuft cells,7
+N,Activated T cells,6294
+N,B cells,7067
+N,Colonocytes-CAECAM-hi,4193
+N,Colonocytes-LGALS4-hi,5209
+N,Cycling B cells,2761
+N,Cycling T cells,121
+N,Endothelial cells,1416
+N,Enterocyte-ANPEP-hi,29806
+N,Enterocyte-FABP-hi,5057
+N,Enterocyte-mito-hi,14097
+N,Enterocytes-COX-hi,1
+N,Enterocytes-MT-hi,1
+N,Enteroendocrine cells,460
+N,Fibroblasts-C1R-hi,949
+N,Fibroblasts-COL-hi,3209
+N,Goblet cells,7538
+N,Goblet cells-DEF-hi,1
+N,Lymphatic endothelium,353
+N,Mast cells,1626
+N,Myeloid cells,5374
+N,Neutrophils,2038
+N,Paneth cells,1697
+N,Pericyte,162
+N,Plasma cells-IgA,11319
+N,Plasma cells-IgG,1047
+N,Ribo-hi subset,4315
+N,Stem-like cells-OLFM4-hi,10131
+N,T cells-AREG-hi,262
+N,T cells-IL7R-hi,10699
+N,Tuft cells,537

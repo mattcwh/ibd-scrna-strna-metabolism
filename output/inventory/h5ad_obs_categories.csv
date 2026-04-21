@@ -1,0 +1,281 @@
+file,obs_column,category
+anndata.h5ad,sample,V10A14-143_A
+anndata.h5ad,sample,V10A14-143_B
+anndata.h5ad,sample,V10A14-143_C
+anndata.h5ad,sample,V10A14-143_D
+anndata.h5ad,sample,V10S15-054_A
+anndata.h5ad,sample,V10S15-054_B
+anndata.h5ad,sample,V10S15-054_C
+anndata.h5ad,sample,V10S15-054_D
+anndata.h5ad,sample,V10S15-055_A
+anndata.h5ad,sample,V10S15-055_B
+anndata.h5ad,sample,V10S15-055_C
+anndata.h5ad,sample,V10S15-055_D
+anndata.h5ad,sample,V11Y24-010_A
+anndata.h5ad,sample,V11Y24-010_B
+anndata.h5ad,sample,V11Y24-010_C
+anndata.h5ad,sample,V11Y24-010_D
+anndata.h5ad,sample,V11Y24-011_A
+anndata.h5ad,sample,V11Y24-011_B
+anndata.h5ad,sample,V11Y24-011_C
+anndata.h5ad,sample,V11Y24-011_D
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,100397_F8_epi
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,100397_F8_imu
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,100397_N8_epi
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,100397_N8_imu
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,105387_F11_epi
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,105387_F11_imu
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,105387_N11_epi
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,105387_N11_imu
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,105446_F14_imu
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,105446_N14_imu
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,105569_F12_2_epi
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,105569_F12_2_imu
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,105569_F12_epi
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,105569_F12_imu
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,105569_N12_epi
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,105569_N12_imu
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,110201_F18_epi
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,110201_F18_imu
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,110201_N18_epi
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,110201_N18_imu
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,110748_F20A_epi
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,110748_F20B_epi
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,110748_F20B_imu
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,110748_N20_imu
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,112584_F25epi_pilot6
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,112584_F25imu_pilot6
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,112584_N25epi_pilot6
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,112584_N25imu_pilot6
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,115284_F_immune
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,115284_N_epithelial
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,115284_N_immune
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,117351_F17B_epi
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,117351_F17B_imu
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,117351_F17C_epi
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,117351_F17C_imu
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,117351_F17_epi
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,117351_F17_imu
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,117351_I15_imu
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,117351_N15_epi
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,117351_N15_imu
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,117351_N17_epi
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,117351_N17_imu
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,127643_F16_epi
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,127643_F16_imu
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,127643_N16_epi
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,127643_N16_imu
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,144119_F19_epi
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,144119_F19_imu
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,144119_N19_epi
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,161862_SP1_epi
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,161862_SP1_imu
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,161862_SP2_imu
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,178961_F6_epi
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,178961_F6_imu
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,178961_N6_epi
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,178961_N6_imu
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,181961_F3_immune
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,182097_F9_imu
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,182097_N9_imu
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,197414_F10_epi
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,197414_F10_imu
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,197414_N10_epi
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,197414_N10_imu
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,1108147_CD1_imu
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,1109422_F4_imu
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,20210208_110645_N21_epi
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,20210208_110645_N21_imu
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,20210216_143371_F23_imu
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,20210216_143371_I23_epi
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,20210216_143371_I23_imu
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,20210216_143371_N23_imu
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,F2_imu
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,F20A_imu
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,F21_epi
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,F21_imu
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,H10_epi
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,H10_imu
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,HC1_epi
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,HC1_imu
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,HC2_epi
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,HC2_imu
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,HC3_epi
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,HC3_imu
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,HC4_imu
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,HC5_epi
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,HC5_imu
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,HC7_epi
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,HC7_imu
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,HC8_epi
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,HC8_imu
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,N2_imu
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,N3_imu
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,N10resample_epi
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,N10resample_imu
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,N19_imu
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,N20_epi
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,N22_colon_epi
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,N22_colon_imu
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,N22_ileum_epi
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,N22_ileum_imu
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,N24_epi
+Cleaned_raw_annotated_object_LK.v2.h5ad,biosample_id,N24_imu
+Cleaned_raw_annotated_object_LK.v2.h5ad,chemistry,SC3Pv3
+Cleaned_raw_annotated_object_LK.v2.h5ad,donor_id,100397
+Cleaned_raw_annotated_object_LK.v2.h5ad,donor_id,100629
+Cleaned_raw_annotated_object_LK.v2.h5ad,donor_id,102713
+Cleaned_raw_annotated_object_LK.v2.h5ad,donor_id,103292
+Cleaned_raw_annotated_object_LK.v2.h5ad,donor_id,105387
+Cleaned_raw_annotated_object_LK.v2.h5ad,donor_id,105446
+Cleaned_raw_annotated_object_LK.v2.h5ad,donor_id,105569
+Cleaned_raw_annotated_object_LK.v2.h5ad,donor_id,110201
+Cleaned_raw_annotated_object_LK.v2.h5ad,donor_id,110645
+Cleaned_raw_annotated_object_LK.v2.h5ad,donor_id,110748
+Cleaned_raw_annotated_object_LK.v2.h5ad,donor_id,110763
+Cleaned_raw_annotated_object_LK.v2.h5ad,donor_id,111891
+Cleaned_raw_annotated_object_LK.v2.h5ad,donor_id,112584
+Cleaned_raw_annotated_object_LK.v2.h5ad,donor_id,113916
+Cleaned_raw_annotated_object_LK.v2.h5ad,donor_id,115284
+Cleaned_raw_annotated_object_LK.v2.h5ad,donor_id,117351
+Cleaned_raw_annotated_object_LK.v2.h5ad,donor_id,123696
+Cleaned_raw_annotated_object_LK.v2.h5ad,donor_id,127643
+Cleaned_raw_annotated_object_LK.v2.h5ad,donor_id,143371
+Cleaned_raw_annotated_object_LK.v2.h5ad,donor_id,144119
+Cleaned_raw_annotated_object_LK.v2.h5ad,donor_id,161862
+Cleaned_raw_annotated_object_LK.v2.h5ad,donor_id,178961
+Cleaned_raw_annotated_object_LK.v2.h5ad,donor_id,181961
+Cleaned_raw_annotated_object_LK.v2.h5ad,donor_id,182097
+Cleaned_raw_annotated_object_LK.v2.h5ad,donor_id,197414
+Cleaned_raw_annotated_object_LK.v2.h5ad,donor_id,1107081
+Cleaned_raw_annotated_object_LK.v2.h5ad,donor_id,1108107
+Cleaned_raw_annotated_object_LK.v2.h5ad,donor_id,1108108
+Cleaned_raw_annotated_object_LK.v2.h5ad,donor_id,1108121
+Cleaned_raw_annotated_object_LK.v2.h5ad,donor_id,1108152
+Cleaned_raw_annotated_object_LK.v2.h5ad,donor_id,1108156
+Cleaned_raw_annotated_object_LK.v2.h5ad,status,F
+Cleaned_raw_annotated_object_LK.v2.h5ad,status,H
+Cleaned_raw_annotated_object_LK.v2.h5ad,status,I
+Cleaned_raw_annotated_object_LK.v2.h5ad,status,N
+Cleaned_raw_annotated_object_LK.v2.h5ad,fraction,epi
+Cleaned_raw_annotated_object_LK.v2.h5ad,fraction,imu
+Cleaned_raw_annotated_object_LK.v2.h5ad,tissue,ascending colon
+Cleaned_raw_annotated_object_LK.v2.h5ad,tissue,colon
+Cleaned_raw_annotated_object_LK.v2.h5ad,tissue,small intestine
+Cleaned_raw_annotated_object_LK.v2.h5ad,procedure,biopsy
+Cleaned_raw_annotated_object_LK.v2.h5ad,procedure,resection
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation,Activated T cells
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation,B cells
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation,Colonocytes-CAECAM-hi
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation,Colonocytes-LGALS4-hi
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation,Cycling B cells
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation,Cycling T cells
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation,Endothelial cells
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation,Enterocyte-ANPEP-hi
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation,Enterocyte-FABP-hi
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation,Enterocyte-mito-hi
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation,Enterocytes-COX-hi
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation,Enterocytes-FTL-hi
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation,Enterocytes-FTL-hi2
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation,Enterocytes-MT-hi
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation,Enteroendocrine cells
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation,Fibroblasts-C1R-hi
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation,Fibroblasts-COL-hi
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation,Goblet cells
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation,Goblet cells-DEF-hi
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation,Lymphatic endothelium
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation,Mast cells
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation,Myeloid cells
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation,Neutrophils
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation,Paneth cells
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation,Pericyte
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation,Plasma cells-IgA
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation,Plasma cells-IgG
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation,Ribo-hi subset
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation,Stem-like cells-OLFM4-hi
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation,T cells-AREG-hi
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation,T cells-IL7R-hi
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation,Tuft cells
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,Arterial endothelium
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,B cells
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,CCR7hi CD4 T cells
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,CD4 T cells
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,CD8 intraepithelial cells
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,CD63+CD81+ macrophage
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,CD69+ CD4 T cells
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,CXCR6-hi CD4 T cells
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,Collagen-hi tissue fibroblast
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,Colonocytes-CAECAM-hi
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,Colonocytes-LGALS4-hi
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,Contractile pericytes
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,Cycling B cells
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,Cycling T cells
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,Cycling endothelium
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,Cycling myeloid
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,Dendritic cell - CCR7-hi
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,Dendritic cell - cDC1
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,Dendritic cell - cDC2
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,Enteric glia
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,Enterocyte-ANPEP-hi
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,Enterocyte-FABP-hi
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,Enterocyte-mito-hi
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,Enterocytes-COX-hi
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,Enterocytes-FTL-hi
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,Enterocytes-FTL-hi2
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,Enterocytes-MT-hi
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,Enteroendocrine cells
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,Follicular helper T cells
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,GZMB-hi B cell
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,GZMK-hi CD8 T cells
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,Goblet cells
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,Goblet cells-DEF-hi
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,ILCs
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,Inflammatory fibroblasts
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,Intraepithelial Tgd
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,LP-associated NK-Tgd
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,Lymphatic endothelium
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,Lyve1 macrophage
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,M2-like macrophage
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,M2-like macrophage-A2M-hi
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,Mast cells
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,Mito-hi endothelium
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,Monocyte
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,Monocyte-CCL3-4-hi
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,Monocyte-FPR1-hi
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,Monocyte-HSP-hi
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,Monocyte-IL1B-hi
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,Myofibroblasts
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,NAMPThi-Neutrophils
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,Neutrophils
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,PLGC2-hi T cells
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,Paneth cells
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,Pericytes
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,Plasma cells-IgA
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,Plasma cells-IgG
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,Regulatory T cells
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,Ribo-hi subset
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,SIP syncytium fibroblast
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,Stem-like cells-OLFM4-hi
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,Telocyte
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,Tissue fibroblast
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,Tissue macrophage
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,Tissue macrophage-KRT-hi
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,Trophocyte
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,Trophocyte-TGFBI hi
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,Tuft cells
+Cleaned_raw_annotated_object_LK.v2.h5ad,annotation2v2,Venous endothelium
+Cleaned_raw_annotated_object_LK.v2.h5ad,sex,unknown
+Cleaned_raw_annotated_object_LK.v2.h5ad,species,NCBITaxon_9606
+Cleaned_raw_annotated_object_LK.v2.h5ad,species__ontology_label,Homo sapiens
+Cleaned_raw_annotated_object_LK.v2.h5ad,library_preparation_protocol,EFO_0009922
+Cleaned_raw_annotated_object_LK.v2.h5ad,library_preparation_protocol__ontology_label,10x 3' v3
+Cleaned_raw_annotated_object_LK.v2.h5ad,organ,UBERON_0001155
+Cleaned_raw_annotated_object_LK.v2.h5ad,organ,UBERON_0001156
+Cleaned_raw_annotated_object_LK.v2.h5ad,organ,UBERON_0002108
+Cleaned_raw_annotated_object_LK.v2.h5ad,organ__ontology_label,ascending colon
+Cleaned_raw_annotated_object_LK.v2.h5ad,organ__ontology_label,colon
+Cleaned_raw_annotated_object_LK.v2.h5ad,organ__ontology_label,small intestine
+Cleaned_raw_annotated_object_LK.v2.h5ad,disease,MONDO_0005011
+Cleaned_raw_annotated_object_LK.v2.h5ad,disease,PATO_0000461
+Cleaned_raw_annotated_object_LK.v2.h5ad,disease__ontology_label,Crohn's disease
+Cleaned_raw_annotated_object_LK.v2.h5ad,disease__ontology_label,normal

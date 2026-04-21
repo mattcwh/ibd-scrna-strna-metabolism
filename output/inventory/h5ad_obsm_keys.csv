@@ -1,0 +1,5 @@
+file,obsm_key
+anndata.h5ad,spatial
+Cleaned_raw_annotated_object_LK.v2.h5ad,X_pca
+Cleaned_raw_annotated_object_LK.v2.h5ad,X_umap
+Cleaned_raw_annotated_object_LK.v2.h5ad,latent_gene_encoding

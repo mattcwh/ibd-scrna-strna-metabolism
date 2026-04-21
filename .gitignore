@@ -9,8 +9,10 @@ data/
 **/*.quarto_ipynb
 
 # Agents local state
+.claude
 .claude/
 **/.claude/
+.codex
 .codex/
 **/.codex/
 

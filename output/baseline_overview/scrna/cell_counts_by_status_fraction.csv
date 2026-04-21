@@ -1,0 +1,9 @@
+status,fraction,n_cells
+F,epi,44201
+F,imu,86068
+H,epi,28496
+H,imu,43485
+I,epi,721
+I,imu,6306
+N,epi,43752
+N,imu,93988

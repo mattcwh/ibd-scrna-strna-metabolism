@@ -1,0 +1,21 @@
+{
+  "n_data_files": 24,
+  "n_spatial_archives": 20,
+  "n_spatial_metadata_rows": 20,
+  "n_sample_metadata_rows": 34,
+  "spatial_archive_metadata_join_counts": {
+    "both": 20,
+    "left_only": 0,
+    "right_only": 0
+  },
+  "h5ad_shapes": {
+    "anndata.h5ad": {
+      "n_obs": 58815,
+      "n_vars": 36601
+    },
+    "Cleaned_raw_annotated_object_LK.v2.h5ad": {
+      "n_obs": 347017,
+      "n_vars": 33551
+    }
+  }
+}
