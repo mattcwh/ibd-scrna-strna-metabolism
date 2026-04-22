@@ -1,0 +1,524 @@
+{
+  "scrna_statuses": [
+    "F",
+    "H",
+    "I",
+    "N"
+  ],
+  "scrna_healthy_status": "H",
+  "scrna_healthy_donors": 10,
+  "spatial_disease_control_label": "Adjacent (Disease Control)",
+  "spatial_sample_counts": [
+    {
+      "Disease Label": "Adjacent",
+      "n_slides": 8
+    },
+    {
+      "Disease Label": "Adjacent (Disease Control)",
+      "n_slides": 2
+    },
+    {
+      "Disease Label": "Fibrotic",
+      "n_slides": 10
+    }
+  ],
+  "top_scrna_differences_vs_healthy": [
+    {
+      "annotation2v2": "Inflammatory fibroblasts",
+      "feature": "ecm_remodeling_mean",
+      "comparison": "F_minus_H",
+      "healthy_mean": 0.19792419500000002,
+      "comparison_mean": 0.9116726842857144,
+      "difference_vs_healthy": 0.7137484892857143,
+      "cohens_d": 2.6332633144207915,
+      "mannwhitney_p_value": 0.05555555555555555,
+      "n_healthy_donors": 2,
+      "n_comparison_donors": 7
+    },
+    {
+      "annotation2v2": "Myofibroblasts",
+      "feature": "ecm_remodeling_mean",
+      "comparison": "F_minus_H",
+      "healthy_mean": 0.7609782549999999,
+      "comparison_mean": 1.1419894679999998,
+      "difference_vs_healthy": 0.38101121299999985,
+      "cohens_d": 2.1817991798336958,
+      "mannwhitney_p_value": 0.09523809523809523,
+      "n_healthy_donors": 2,
+      "n_comparison_donors": 5
+    },
+    {
+      "annotation2v2": "Inflammatory fibroblasts",
+      "feature": "ecm_remodeling_mean",
+      "comparison": "I_minus_H",
+      "healthy_mean": 0.19792419500000002,
+      "comparison_mean": 0.57047445,
+      "difference_vs_healthy": 0.37255025499999994,
+      "cohens_d": NaN,
+      "mannwhitney_p_value": NaN,
+      "n_healthy_donors": 2,
+      "n_comparison_donors": 1
+    },
+    {
+      "annotation2v2": "Enterocyte-FABP-hi",
+      "feature": "bile_acid_transport_mean",
+      "comparison": "F_minus_H",
+      "healthy_mean": 0.36730994975000003,
+      "comparison_mean": 0.15418891,
+      "difference_vs_healthy": -0.21312103975000002,
+      "cohens_d": -1.1871687340397417,
+      "mannwhitney_p_value": 0.21414141414141416,
+      "n_healthy_donors": 8,
+      "n_comparison_donors": 4
+    },
+    {
+      "annotation2v2": "Myofibroblasts",
+      "feature": "ecm_remodeling_mean",
+      "comparison": "I_minus_H",
+      "healthy_mean": 0.7609782549999999,
+      "comparison_mean": 0.9549475,
+      "difference_vs_healthy": 0.193969245,
+      "cohens_d": NaN,
+      "mannwhitney_p_value": NaN,
+      "n_healthy_donors": 2,
+      "n_comparison_donors": 1
+    },
+    {
+      "annotation2v2": "Enterocyte-ANPEP-hi",
+      "feature": "epithelial_repair_mean",
+      "comparison": "F_minus_H",
+      "healthy_mean": 0.280959485,
+      "comparison_mean": 0.424217518,
+      "difference_vs_healthy": 0.143258033,
+      "cohens_d": 1.2195545685242695,
+      "mannwhitney_p_value": 0.03427944604415192,
+      "n_healthy_donors": 8,
+      "n_comparison_donors": 10
+    },
+    {
+      "annotation2v2": "Inflammatory fibroblasts",
+      "feature": "inflammation_mean",
+      "comparison": "F_minus_H",
+      "healthy_mean": 0.059456021000000005,
+      "comparison_mean": 0.19999614428571427,
+      "difference_vs_healthy": 0.14054012328571427,
+      "cohens_d": 1.8588318792811673,
+      "mannwhitney_p_value": 0.05555555555555555,
+      "n_healthy_donors": 2,
+      "n_comparison_donors": 7
+    },
+    {
+      "annotation2v2": "Enterocyte-FABP-hi",
+      "feature": "epithelial_repair_mean",
+      "comparison": "F_minus_H",
+      "healthy_mean": 0.3563815,
+      "comparison_mean": 0.491029225,
+      "difference_vs_healthy": 0.134647725,
+      "cohens_d": 0.8626632752844887,
+      "mannwhitney_p_value": 0.15353535353535355,
+      "n_healthy_donors": 8,
+      "n_comparison_donors": 4
+    },
+    {
+      "annotation2v2": "Inflammatory fibroblasts",
+      "feature": "fibrotic_amino_acid_transport_mean",
+      "comparison": "F_minus_H",
+      "healthy_mean": 0.23965013,
+      "comparison_mean": 0.11779758571428571,
+      "difference_vs_healthy": -0.12185254428571428,
+      "cohens_d": -3.300401675403713,
+      "mannwhitney_p_value": 0.05555555555555555,
+      "n_healthy_donors": 2,
+      "n_comparison_donors": 7
+    },
+    {
+      "annotation2v2": "Inflammatory fibroblasts",
+      "feature": "fibrotic_amino_acid_transport_mean",
+      "comparison": "N_minus_H",
+      "healthy_mean": 0.23965013,
+      "comparison_mean": 0.12090288675000001,
+      "difference_vs_healthy": -0.11874724324999998,
+      "cohens_d": -1.7922760711436627,
+      "mannwhitney_p_value": 0.26666666666666666,
+      "n_healthy_donors": 2,
+      "n_comparison_donors": 4
+    },
+    {
+      "annotation2v2": "Enterocyte-ANPEP-hi",
+      "feature": "bile_acid_transport_mean",
+      "comparison": "F_minus_H",
+      "healthy_mean": 0.358521514375,
+      "comparison_mean": 0.25337071,
+      "difference_vs_healthy": -0.10515080437500002,
+      "cohens_d": -0.6861943396275463,
+      "mannwhitney_p_value": 0.17281411399058458,
+      "n_healthy_donors": 8,
+      "n_comparison_donors": 10
+    },
+    {
+      "annotation2v2": "M2-like macrophage",
+      "feature": "inflammation_mean",
+      "comparison": "N_minus_H",
+      "healthy_mean": 0.39629972599999996,
+      "comparison_mean": 0.2937904542857143,
+      "difference_vs_healthy": -0.10250927171428564,
+      "cohens_d": -0.4133627484181429,
+      "mannwhitney_p_value": 0.8762626262626263,
+      "n_healthy_donors": 5,
+      "n_comparison_donors": 7
+    },
+    {
+      "annotation2v2": "Inflammatory fibroblasts",
+      "feature": "inflammation_mean",
+      "comparison": "I_minus_H",
+      "healthy_mean": 0.059456021000000005,
+      "comparison_mean": 0.1591272,
+      "difference_vs_healthy": 0.099671179,
+      "cohens_d": NaN,
+      "mannwhitney_p_value": NaN,
+      "n_healthy_donors": 2,
+      "n_comparison_donors": 1
+    },
+    {
+      "annotation2v2": "Tissue fibroblast",
+      "feature": "ecm_remodeling_mean",
+      "comparison": "F_minus_H",
+      "healthy_mean": 0.664581525,
+      "comparison_mean": 0.7504755879999999,
+      "difference_vs_healthy": 0.08589406299999991,
+      "cohens_d": 0.4457944121008493,
+      "mannwhitney_p_value": 0.5714285714285714,
+      "n_healthy_donors": 2,
+      "n_comparison_donors": 5
+    },
+    {
+      "annotation2v2": "Tissue fibroblast",
+      "feature": "ecm_remodeling_mean",
+      "comparison": "N_minus_H",
+      "healthy_mean": 0.664581525,
+      "comparison_mean": 0.75022575625,
+      "difference_vs_healthy": 0.08564423124999998,
+      "cohens_d": 0.4731713533369156,
+      "mannwhitney_p_value": 0.7111111111111111,
+      "n_healthy_donors": 2,
+      "n_comparison_donors": 8
+    },
+    {
+      "annotation2v2": "Inflammatory fibroblasts",
+      "feature": "fibrotic_amino_acid_transport_mean",
+      "comparison": "I_minus_H",
+      "healthy_mean": 0.23965013,
+      "comparison_mean": 0.15689914,
+      "difference_vs_healthy": -0.08275099,
+      "cohens_d": NaN,
+      "mannwhitney_p_value": NaN,
+      "n_healthy_donors": 2,
+      "n_comparison_donors": 1
+    },
+    {
+      "annotation2v2": "Enterocyte-ANPEP-hi",
+      "feature": "epithelial_repair_mean",
+      "comparison": "N_minus_H",
+      "healthy_mean": 0.280959485,
+      "comparison_mean": 0.36238941,
+      "difference_vs_healthy": 0.08142992500000001,
+      "cohens_d": 0.7164485851086628,
+      "mannwhitney_p_value": 0.06909581646423751,
+      "n_healthy_donors": 8,
+      "n_comparison_donors": 12
+    },
+    {
+      "annotation2v2": "Myofibroblasts",
+      "feature": "ecm_remodeling_mean",
+      "comparison": "N_minus_H",
+      "healthy_mean": 0.7609782549999999,
+      "comparison_mean": 0.8420345140000002,
+      "difference_vs_healthy": 0.08105625900000024,
+      "cohens_d": 0.2558157189052712,
+      "mannwhitney_p_value": 0.5714285714285714,
+      "n_healthy_donors": 2,
+      "n_comparison_donors": 5
+    },
+    {
+      "annotation2v2": "Enterocyte-FABP-hi",
+      "feature": "fatty_acid_metabolism_mean",
+      "comparison": "F_minus_H",
+      "healthy_mean": 0.5981460375000001,
+      "comparison_mean": 0.531815355,
+      "difference_vs_healthy": -0.06633068250000007,
+      "cohens_d": -0.4993279310558876,
+      "mannwhitney_p_value": 0.5696969696969697,
+      "n_healthy_donors": 8,
+      "n_comparison_donors": 4
+    },
+    {
+      "annotation2v2": "M2-like macrophage",
+      "feature": "epithelial_repair_mean",
+      "comparison": "F_minus_H",
+      "healthy_mean": 0.0238476448,
+      "comparison_mean": 0.07490540574999999,
+      "difference_vs_healthy": 0.05105776094999999,
+      "cohens_d": 0.8575974134517537,
+      "mannwhitney_p_value": 0.2857142857142857,
+      "n_healthy_donors": 5,
+      "n_comparison_donors": 4
+    }
+  ],
+  "top_spatial_differences_vs_disease_control": [
+    {
+      "analysis_layer": "region_transporter_expression",
+      "feature": "epithelial_bile_region::SLC5A1",
+      "comparison": "Fibrotic_minus_DiseaseControl",
+      "disease_control_mean": 2.2922204088265286,
+      "comparison_mean": 0.8924810323989971,
+      "difference_vs_disease_control": -1.3997393764275314,
+      "n_disease_control_slides": 2,
+      "n_comparison_slides": 10
+    },
+    {
+      "analysis_layer": "region_transporter_expression",
+      "feature": "epithelial_bile_region::SLC10A2",
+      "comparison": "Fibrotic_minus_DiseaseControl",
+      "disease_control_mean": 1.1617031415604133,
+      "comparison_mean": 0.032982903511265246,
+      "difference_vs_disease_control": -1.1287202380491481,
+      "n_disease_control_slides": 2,
+      "n_comparison_slides": 10
+    },
+    {
+      "analysis_layer": "spatial_metabolism_score",
+      "feature": "bile_acid_transport",
+      "comparison": "Fibrotic_minus_DiseaseControl",
+      "disease_control_mean": 0.5721486714426919,
+      "comparison_mean": -0.26181286190880654,
+      "difference_vs_disease_control": -0.8339615333514985,
+      "n_disease_control_slides": 2,
+      "n_comparison_slides": 10
+    },
+    {
+      "analysis_layer": "region_transporter_expression",
+      "feature": "epithelial_bile_region::SLC10A2",
+      "comparison": "Adjacent_minus_DiseaseControl",
+      "disease_control_mean": 1.1617031415604133,
+      "comparison_mean": 0.5466963096994809,
+      "difference_vs_disease_control": -0.6150068318609324,
+      "n_disease_control_slides": 2,
+      "n_comparison_slides": 8
+    },
+    {
+      "analysis_layer": "spatial_metabolism_score",
+      "feature": "inflammation",
+      "comparison": "Fibrotic_minus_DiseaseControl",
+      "disease_control_mean": -0.3548590372800901,
+      "comparison_mean": 0.21294757361903544,
+      "difference_vs_disease_control": 0.5678066108991255,
+      "n_disease_control_slides": 2,
+      "n_comparison_slides": 10
+    },
+    {
+      "analysis_layer": "region_transporter_expression",
+      "feature": "epithelial_bile_region::SLC5A1",
+      "comparison": "Adjacent_minus_DiseaseControl",
+      "disease_control_mean": 2.2922204088265286,
+      "comparison_mean": 1.7359059024593617,
+      "difference_vs_disease_control": -0.5563145063671668,
+      "n_disease_control_slides": 2,
+      "n_comparison_slides": 8
+    },
+    {
+      "analysis_layer": "slide_transporter_expression",
+      "feature": "SLC5A1",
+      "comparison": "Fibrotic_minus_DiseaseControl",
+      "disease_control_mean": 0.9277090296507319,
+      "comparison_mean": 0.40606990748140176,
+      "difference_vs_disease_control": -0.5216391221693302,
+      "n_disease_control_slides": 2,
+      "n_comparison_slides": 10
+    },
+    {
+      "analysis_layer": "region_transporter_expression",
+      "feature": "epithelial_bile_region::SLC51A",
+      "comparison": "Fibrotic_minus_DiseaseControl",
+      "disease_control_mean": 0.7327241611691568,
+      "comparison_mean": 0.28554404624093643,
+      "difference_vs_disease_control": -0.4471801149282204,
+      "n_disease_control_slides": 2,
+      "n_comparison_slides": 10
+    },
+    {
+      "analysis_layer": "spatial_metabolism_score",
+      "feature": "ecm_remodeling",
+      "comparison": "Fibrotic_minus_DiseaseControl",
+      "disease_control_mean": -0.2619701448598364,
+      "comparison_mean": 0.15205944328419102,
+      "difference_vs_disease_control": 0.4140295881440274,
+      "n_disease_control_slides": 2,
+      "n_comparison_slides": 10
+    },
+    {
+      "analysis_layer": "region_transporter_expression",
+      "feature": "epithelial_bile_region::SLC51B",
+      "comparison": "Fibrotic_minus_DiseaseControl",
+      "disease_control_mean": 0.6398124537534357,
+      "comparison_mean": 0.23371802122896645,
+      "difference_vs_disease_control": -0.4060944325244692,
+      "n_disease_control_slides": 2,
+      "n_comparison_slides": 10
+    },
+    {
+      "analysis_layer": "spatial_metabolism_score",
+      "feature": "fatty_acid_metabolism",
+      "comparison": "Fibrotic_minus_DiseaseControl",
+      "disease_control_mean": 0.25093736001135925,
+      "comparison_mean": -0.1358094394308519,
+      "difference_vs_disease_control": -0.38674679944221113,
+      "n_disease_control_slides": 2,
+      "n_comparison_slides": 10
+    },
+    {
+      "analysis_layer": "slide_transporter_expression",
+      "feature": "SLC10A2",
+      "comparison": "Fibrotic_minus_DiseaseControl",
+      "disease_control_mean": 0.3434346314583635,
+      "comparison_mean": 0.008443078065081405,
+      "difference_vs_disease_control": -0.3349915533932821,
+      "n_disease_control_slides": 2,
+      "n_comparison_slides": 10
+    },
+    {
+      "analysis_layer": "spatial_deconvolution",
+      "feature": "B_plasma",
+      "comparison": "Fibrotic_minus_DiseaseControl",
+      "disease_control_mean": 0.0029144489277538503,
+      "comparison_mean": 0.3003934171118572,
+      "difference_vs_disease_control": 0.29747896818410335,
+      "n_disease_control_slides": 2,
+      "n_comparison_slides": 10
+    },
+    {
+      "analysis_layer": "spatial_metabolism_score",
+      "feature": "epithelial_repair",
+      "comparison": "Adjacent_minus_DiseaseControl",
+      "disease_control_mean": -0.00038175333726875316,
+      "comparison_mean": 0.2796209605469974,
+      "difference_vs_disease_control": 0.2800027138842662,
+      "n_disease_control_slides": 2,
+      "n_comparison_slides": 8
+    },
+    {
+      "analysis_layer": "spatial_metabolism_score",
+      "feature": "bile_acid_transport",
+      "comparison": "Adjacent_minus_DiseaseControl",
+      "disease_control_mean": 0.5721486714426919,
+      "comparison_mean": 0.29295099221068954,
+      "difference_vs_disease_control": -0.27919767923200234,
+      "n_disease_control_slides": 2,
+      "n_comparison_slides": 8
+    },
+    {
+      "analysis_layer": "slide_transporter_expression",
+      "feature": "SLC5A1",
+      "comparison": "Adjacent_minus_DiseaseControl",
+      "disease_control_mean": 0.9277090296507319,
+      "comparison_mean": 0.6648362197051304,
+      "difference_vs_disease_control": -0.26287280994560147,
+      "n_disease_control_slides": 2,
+      "n_comparison_slides": 8
+    },
+    {
+      "analysis_layer": "spatial_metabolism_score",
+      "feature": "inflammation",
+      "comparison": "Adjacent_minus_DiseaseControl",
+      "disease_control_mean": -0.3548590372800901,
+      "comparison_mean": -0.11628412183914856,
+      "difference_vs_disease_control": 0.23857491544094156,
+      "n_disease_control_slides": 2,
+      "n_comparison_slides": 8
+    },
+    {
+      "analysis_layer": "region_transporter_expression",
+      "feature": "stromal_fibrotic_region::SLC15A3",
+      "comparison": "Fibrotic_minus_DiseaseControl",
+      "disease_control_mean": 0.15452313545455076,
+      "comparison_mean": 0.3894615992655302,
+      "difference_vs_disease_control": 0.23493846381097944,
+      "n_disease_control_slides": 2,
+      "n_comparison_slides": 10
+    },
+    {
+      "analysis_layer": "slide_transporter_expression",
+      "feature": "ABCB1",
+      "comparison": "Fibrotic_minus_DiseaseControl",
+      "disease_control_mean": 0.2958468651997983,
+      "comparison_mean": 0.07541048711297531,
+      "difference_vs_disease_control": -0.22043637808682298,
+      "n_disease_control_slides": 2,
+      "n_comparison_slides": 10
+    },
+    {
+      "analysis_layer": "slide_transporter_expression",
+      "feature": "SLC15A3",
+      "comparison": "Fibrotic_minus_DiseaseControl",
+      "disease_control_mean": 0.1069064218767765,
+      "comparison_mean": 0.3125993181944645,
+      "difference_vs_disease_control": 0.205692896317688,
+      "n_disease_control_slides": 2,
+      "n_comparison_slides": 10
+    },
+    {
+      "analysis_layer": "spatial_metabolism_score",
+      "feature": "epithelial_repair",
+      "comparison": "Fibrotic_minus_DiseaseControl",
+      "disease_control_mean": -0.00038175333726875316,
+      "comparison_mean": -0.18515655951226995,
+      "difference_vs_disease_control": -0.1847748061750012,
+      "n_disease_control_slides": 2,
+      "n_comparison_slides": 10
+    },
+    {
+      "analysis_layer": "spatial_deconvolution",
+      "feature": "Absorptive",
+      "comparison": "Fibrotic_minus_DiseaseControl",
+      "disease_control_mean": 0.25698731424370885,
+      "comparison_mean": 0.07263020249785741,
+      "difference_vs_disease_control": -0.18435711174585145,
+      "n_disease_control_slides": 2,
+      "n_comparison_slides": 10
+    },
+    {
+      "analysis_layer": "slide_transporter_expression",
+      "feature": "SLC10A2",
+      "comparison": "Adjacent_minus_DiseaseControl",
+      "disease_control_mean": 0.3434346314583635,
+      "comparison_mean": 0.16655749161099764,
+      "difference_vs_disease_control": -0.17687713984736586,
+      "n_disease_control_slides": 2,
+      "n_comparison_slides": 8
+    },
+    {
+      "analysis_layer": "region_transporter_expression",
+      "feature": "stromal_fibrotic_region::SLCO2B1",
+      "comparison": "Fibrotic_minus_DiseaseControl",
+      "disease_control_mean": 0.34339745978657954,
+      "comparison_mean": 0.5075048249753046,
+      "difference_vs_disease_control": 0.16410736518872504,
+      "n_disease_control_slides": 2,
+      "n_comparison_slides": 10
+    },
+    {
+      "analysis_layer": "slide_transporter_expression",
+      "feature": "ABCB1",
+      "comparison": "Adjacent_minus_DiseaseControl",
+      "disease_control_mean": 0.2958468651997983,
+      "comparison_mean": 0.14447338653808428,
+      "difference_vs_disease_control": -0.15137347866171402,
+      "n_disease_control_slides": 2,
+      "n_comparison_slides": 8
+    }
+  ],
+  "interpretation_notes": [
+    "scRNA-seq healthy-control comparisons use H-status donors as the reference.",
+    "Spatial disease-control comparisons are descriptive because only two disease-control adjacent slides are available.",
+    "Spatial disease-control slides show high epithelial bile/urea transporter expression relative to Crohn's adjacent and fibrotic groups."
+  ]
+}

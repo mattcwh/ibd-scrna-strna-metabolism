@@ -1,0 +1,81 @@
+sample,Disease Label,Patient_ID,n_spots,high_region_spots,mean_region_score,median_region_score,region,region_columns
+V10A14-143_A,Adjacent,117351,2958,592,2.0192697337671882e-17,-0.42801880191781366,epithelial_bile_region,Absorptive;Microfold;bile_acid_transport_z;epithelial_repair_z
+V10A14-143_B,Fibrotic,117351,2647,530,-1.1989318155991728e-16,-0.15379523222920682,epithelial_bile_region,Absorptive;Microfold;bile_acid_transport_z;epithelial_repair_z
+V10A14-143_C,Fibrotic,117351,1670,334,-3.378202574630379e-16,-0.07124834507815875,epithelial_bile_region,Absorptive;Microfold;bile_acid_transport_z;epithelial_repair_z
+V10A14-143_D,Fibrotic,117351,4037,808,-4.765956159711162e-17,-0.10046934523013841,epithelial_bile_region,Absorptive;Microfold;bile_acid_transport_z;epithelial_repair_z
+V10S15-054_A,Fibrotic,110201,4019,804,-1.7182351861578685e-17,-0.40023866291797516,epithelial_bile_region,Absorptive;Microfold;bile_acid_transport_z;epithelial_repair_z
+V10S15-054_B,Adjacent,110201,2472,495,-3.610919546110946e-17,-0.43957145222618993,epithelial_bile_region,Absorptive;Microfold;bile_acid_transport_z;epithelial_repair_z
+V10S15-054_C,Adjacent,112584,2633,527,1.8405330431024717e-17,-0.19107969434886846,epithelial_bile_region,Absorptive;Microfold;bile_acid_transport_z;epithelial_repair_z
+V10S15-054_D,Fibrotic,112584,3717,744,-2.428332846435976e-16,-0.24290494663558151,epithelial_bile_region,Absorptive;Microfold;bile_acid_transport_z;epithelial_repair_z
+V10S15-055_A,Adjacent,143371,4303,861,-1.2771563959782768e-18,-0.37377925314686633,epithelial_bile_region,Absorptive;Microfold;bile_acid_transport_z;epithelial_repair_z
+V10S15-055_B,Fibrotic,143371,1111,223,8.7938457396052e-18,-0.2736702519340324,epithelial_bile_region,Absorptive;Microfold;bile_acid_transport_z;epithelial_repair_z
+V10S15-055_C,Adjacent,144119,1801,361,-6.657639459162516e-18,-0.4535231102166545,epithelial_bile_region,Absorptive;Microfold;bile_acid_transport_z;epithelial_repair_z
+V10S15-055_D,Fibrotic,144119,2700,540,-1.500857051808082e-17,-0.044205336107290494,epithelial_bile_region,Absorptive;Microfold;bile_acid_transport_z;epithelial_repair_z
+V11Y24-010_A,Fibrotic,110748,3315,663,2.32033263057594e-16,-0.21395203977526742,epithelial_bile_region,Absorptive;Microfold;bile_acid_transport_z;epithelial_repair_z
+V11Y24-010_B,Adjacent,110748,2541,509,-1.3872326262042e-17,-0.4191184856468677,epithelial_bile_region,Absorptive;Microfold;bile_acid_transport_z;epithelial_repair_z
+V11Y24-010_C,Adjacent,106392,2836,568,-9.845595581566533e-18,-0.27844254610740077,epithelial_bile_region,Absorptive;Microfold;bile_acid_transport_z;epithelial_repair_z
+V11Y24-010_D,Fibrotic,106392,3349,670,6.928534253408711e-18,-0.3672126561389979,epithelial_bile_region,Absorptive;Microfold;bile_acid_transport_z;epithelial_repair_z
+V11Y24-011_A,Adjacent (Disease Control),111891,3739,748,-4.602422273787089e-18,-0.41705190250119073,epithelial_bile_region,Absorptive;Microfold;bile_acid_transport_z;epithelial_repair_z
+V11Y24-011_B,Adjacent (Disease Control),116046,2556,512,-9.12155067180293e-18,-0.47080959268642897,epithelial_bile_region,Absorptive;Microfold;bile_acid_transport_z;epithelial_repair_z
+V11Y24-011_C,Adjacent,120359,2580,516,-6.515029687141422e-17,-0.21856654379133283,epithelial_bile_region,Absorptive;Microfold;bile_acid_transport_z;epithelial_repair_z
+V11Y24-011_D,Fibrotic,120359,3831,767,-7.447854798451193e-18,-0.19508765653624802,epithelial_bile_region,Absorptive;Microfold;bile_acid_transport_z;epithelial_repair_z
+V10A14-143_A,Adjacent,117351,2958,592,-8.088338803472658e-17,0.07428179445788921,stromal_fibrotic_region,Fibroblast;Myofibroblast;Macrophage;ecm_remodeling_z;inflammation_z
+V10A14-143_B,Fibrotic,117351,2647,530,-2.0656775203169232e-17,-0.02626195137770937,stromal_fibrotic_region,Fibroblast;Myofibroblast;Macrophage;ecm_remodeling_z;inflammation_z
+V10A14-143_C,Fibrotic,117351,1670,334,-1.3442548803961594e-17,-0.00965453548336865,stromal_fibrotic_region,Fibroblast;Myofibroblast;Macrophage;ecm_remodeling_z;inflammation_z
+V10A14-143_D,Fibrotic,117351,4037,808,-2.9453774074152654e-17,0.017625754684646732,stromal_fibrotic_region,Fibroblast;Myofibroblast;Macrophage;ecm_remodeling_z;inflammation_z
+V10S15-054_A,Fibrotic,110201,4019,804,-1.1049743962430023e-19,-0.03877394511406501,stromal_fibrotic_region,Fibroblast;Myofibroblast;Macrophage;ecm_remodeling_z;inflammation_z
+V10S15-054_B,Adjacent,110201,2472,495,1.2710077506833305e-17,-0.06477746396173877,stromal_fibrotic_region,Fibroblast;Myofibroblast;Macrophage;ecm_remodeling_z;inflammation_z
+V10S15-054_C,Adjacent,112584,2633,527,-4.494864201482783e-17,-0.02233152442834771,stromal_fibrotic_region,Fibroblast;Myofibroblast;Macrophage;ecm_remodeling_z;inflammation_z
+V10S15-054_D,Fibrotic,112584,3717,744,7.264090384418565e-17,-0.0043146976637166825,stromal_fibrotic_region,Fibroblast;Myofibroblast;Macrophage;ecm_remodeling_z;inflammation_z
+V10S15-055_A,Adjacent,143371,4303,861,-2.0511905753590504e-17,0.04988101323247396,stromal_fibrotic_region,Fibroblast;Myofibroblast;Macrophage;ecm_remodeling_z;inflammation_z
+V10S15-055_B,Fibrotic,143371,1111,223,-1.4989509783417955e-19,-0.003166526686655313,stromal_fibrotic_region,Fibroblast;Myofibroblast;Macrophage;ecm_remodeling_z;inflammation_z
+V10S15-055_C,Adjacent,144119,1801,361,-2.265446760409467e-18,0.044369404999578775,stromal_fibrotic_region,Fibroblast;Myofibroblast;Macrophage;ecm_remodeling_z;inflammation_z
+V10S15-055_D,Fibrotic,144119,2700,540,-4.605369583630279e-17,-0.036731244063896155,stromal_fibrotic_region,Fibroblast;Myofibroblast;Macrophage;ecm_remodeling_z;inflammation_z
+V11Y24-010_A,Fibrotic,110748,3315,663,1.163808449644772e-17,-0.009943044596108485,stromal_fibrotic_region,Fibroblast;Myofibroblast;Macrophage;ecm_remodeling_z;inflammation_z
+V11Y24-010_B,Adjacent,110748,2541,509,-2.160587507584179e-17,0.021000657154636754,stromal_fibrotic_region,Fibroblast;Myofibroblast;Macrophage;ecm_remodeling_z;inflammation_z
+V11Y24-010_C,Adjacent,106392,2836,568,-2.795131310233998e-17,0.044065841055418074,stromal_fibrotic_region,Fibroblast;Myofibroblast;Macrophage;ecm_remodeling_z;inflammation_z
+V11Y24-010_D,Fibrotic,106392,3349,670,-3.285252366089967e-17,-0.009782938588871115,stromal_fibrotic_region,Fibroblast;Myofibroblast;Macrophage;ecm_remodeling_z;inflammation_z
+V11Y24-011_A,Adjacent (Disease Control),111891,3739,748,7.89598431808015e-17,0.019822318352911195,stromal_fibrotic_region,Fibroblast;Myofibroblast;Macrophage;ecm_remodeling_z;inflammation_z
+V11Y24-011_B,Adjacent (Disease Control),116046,2556,512,-2.4834507602872975e-17,0.06855586755560472,stromal_fibrotic_region,Fibroblast;Myofibroblast;Macrophage;ecm_remodeling_z;inflammation_z
+V11Y24-011_C,Adjacent,120359,2580,516,1.0973134545713756e-17,-0.12712372430689903,stromal_fibrotic_region,Fibroblast;Myofibroblast;Macrophage;ecm_remodeling_z;inflammation_z
+V11Y24-011_D,Fibrotic,120359,3831,767,-1.02299328554602e-17,0.02709666456867956,stromal_fibrotic_region,Fibroblast;Myofibroblast;Macrophage;ecm_remodeling_z;inflammation_z
+V10A14-143_A,Adjacent,117351,2958,592,-6.677101963516408e-17,-0.09813366596603901,immune_inflammatory_region,Macrophage;Monocyte;B_plasma;inflammation_z
+V10A14-143_B,Fibrotic,117351,2647,530,1.2027066577682797e-17,-0.012162605537280588,immune_inflammatory_region,Macrophage;Monocyte;B_plasma;inflammation_z
+V10A14-143_C,Fibrotic,117351,1670,334,1.0210561604468037e-16,-0.044499886169493234,immune_inflammatory_region,Macrophage;Monocyte;B_plasma;inflammation_z
+V10A14-143_D,Fibrotic,117351,4037,808,-6.81479478578434e-17,-0.047629718148818126,immune_inflammatory_region,Macrophage;Monocyte;B_plasma;inflammation_z
+V10S15-054_A,Fibrotic,110201,4019,804,5.0034621879878445e-18,-0.11410418915533391,immune_inflammatory_region,Macrophage;Monocyte;B_plasma;inflammation_z
+V10S15-054_B,Adjacent,110201,2472,495,7.051173740540031e-18,-0.15867491600758976,immune_inflammatory_region,Macrophage;Monocyte;B_plasma;inflammation_z
+V10S15-054_C,Adjacent,112584,2633,527,1.9248644540120925e-17,-0.12060237657333836,immune_inflammatory_region,Macrophage;Monocyte;B_plasma;inflammation_z
+V10S15-054_D,Fibrotic,112584,3717,744,6.845927286631312e-17,-0.07525925493254576,immune_inflammatory_region,Macrophage;Monocyte;B_plasma;inflammation_z
+V10S15-055_A,Adjacent,143371,4303,861,-4.8093323678858744e-17,-0.08375347948174289,immune_inflammatory_region,Macrophage;Monocyte;B_plasma;inflammation_z
+V10S15-055_B,Fibrotic,143371,1111,223,7.84451011998873e-18,-0.10308876613760382,immune_inflammatory_region,Macrophage;Monocyte;B_plasma;inflammation_z
+V10S15-055_C,Adjacent,144119,1801,361,-3.159296502611842e-17,-0.1408635607338483,immune_inflammatory_region,Macrophage;Monocyte;B_plasma;inflammation_z
+V10S15-055_D,Fibrotic,144119,2700,540,2.5617368308943427e-17,-0.1013605438671665,immune_inflammatory_region,Macrophage;Monocyte;B_plasma;inflammation_z
+V11Y24-010_A,Fibrotic,110748,3315,663,-2.7429039431915633e-17,-0.006998712352905299,immune_inflammatory_region,Macrophage;Monocyte;B_plasma;inflammation_z
+V11Y24-010_B,Adjacent,110748,2541,509,-3.663604904164478e-17,-0.0890833965636128,immune_inflammatory_region,Macrophage;Monocyte;B_plasma;inflammation_z
+V11Y24-010_C,Adjacent,106392,2836,568,4.93258466511882e-18,-0.09830068372437857,immune_inflammatory_region,Macrophage;Monocyte;B_plasma;inflammation_z
+V11Y24-010_D,Fibrotic,106392,3349,670,1.254760868380477e-17,-0.10151107150677208,immune_inflammatory_region,Macrophage;Monocyte;B_plasma;inflammation_z
+V11Y24-011_A,Adjacent (Disease Control),111891,3739,748,6.767045394813404e-17,-0.11144734859138594,immune_inflammatory_region,Macrophage;Monocyte;B_plasma;inflammation_z
+V11Y24-011_B,Adjacent (Disease Control),116046,2556,512,-2.1348772167576856e-17,-0.1563999627996358,immune_inflammatory_region,Macrophage;Monocyte;B_plasma;inflammation_z
+V11Y24-011_C,Adjacent,120359,2580,516,8.221244529249464e-17,-0.057545022027407494,immune_inflammatory_region,Macrophage;Monocyte;B_plasma;inflammation_z
+V11Y24-011_D,Fibrotic,120359,3831,767,1.3584365512739288e-17,-0.0778925626928363,immune_inflammatory_region,Macrophage;Monocyte;B_plasma;inflammation_z
+V10A14-143_A,Adjacent,117351,2958,592,3.164023021497657e-17,-0.4322683524054083,epithelial_absorptive_region,Absorptive;Microfold;epithelial_repair_z
+V10A14-143_B,Fibrotic,117351,2647,530,-7.089625448854212e-17,-0.13461099285594344,epithelial_absorptive_region,Absorptive;Microfold;epithelial_repair_z
+V10A14-143_C,Fibrotic,117351,1670,334,-4.1842776748447515e-16,-0.16241560546286146,epithelial_absorptive_region,Absorptive;Microfold;epithelial_repair_z
+V10A14-143_D,Fibrotic,117351,4037,808,4.44144212229286e-18,-0.121518027867553,epithelial_absorptive_region,Absorptive;Microfold;epithelial_repair_z
+V10S15-054_A,Fibrotic,110201,4019,804,-7.182333575579514e-18,-0.38146832974290285,epithelial_absorptive_region,Absorptive;Microfold;epithelial_repair_z
+V10S15-054_B,Adjacent,110201,2472,495,-3.3414479381922185e-17,-0.4672114978208509,epithelial_absorptive_region,Absorptive;Microfold;epithelial_repair_z
+V10S15-054_C,Adjacent,112584,2633,527,-2.3718209318330823e-17,-0.2848979321771234,epithelial_absorptive_region,Absorptive;Microfold;epithelial_repair_z
+V10S15-054_D,Fibrotic,112584,3717,744,-2.2013300219228959e-16,-0.18805466468816154,epithelial_absorptive_region,Absorptive;Microfold;epithelial_repair_z
+V10S15-055_A,Adjacent,143371,4303,861,-6.179372865389844e-18,-0.4056621103223234,epithelial_absorptive_region,Absorptive;Microfold;epithelial_repair_z
+V10S15-055_B,Fibrotic,143371,1111,223,1.958629278366613e-17,-0.2498992821171652,epithelial_absorptive_region,Absorptive;Microfold;epithelial_repair_z
+V10S15-055_C,Adjacent,144119,1801,361,1.4178306255623876e-17,-0.4556189698090969,epithelial_absorptive_region,Absorptive;Microfold;epithelial_repair_z
+V10S15-055_D,Fibrotic,144119,2700,540,5.156369158814616e-17,-0.26799586492474814,epithelial_absorptive_region,Absorptive;Microfold;epithelial_repair_z
+V11Y24-010_A,Fibrotic,110748,3315,663,2.036748514104944e-16,-0.18700191155933818,epithelial_absorptive_region,Absorptive;Microfold;epithelial_repair_z
+V11Y24-010_B,Adjacent,110748,2541,509,-5.1604780617507614e-17,-0.42765070608158146,epithelial_absorptive_region,Absorptive;Microfold;epithelial_repair_z
+V11Y24-010_C,Adjacent,106392,2836,568,7.829499468442571e-19,-0.3011163846287176,epithelial_absorptive_region,Absorptive;Microfold;epithelial_repair_z
+V11Y24-010_D,Fibrotic,106392,3349,670,1.356492636275922e-17,-0.395204228801785,epithelial_absorptive_region,Absorptive;Microfold;epithelial_repair_z
+V11Y24-011_A,Adjacent (Disease Control),111891,3739,748,3.4147003966807435e-18,-0.4406054826247879,epithelial_absorptive_region,Absorptive;Microfold;epithelial_repair_z
+V11Y24-011_B,Adjacent (Disease Control),116046,2556,512,-3.474876446401116e-17,-0.4926687345192823,epithelial_absorptive_region,Absorptive;Microfold;epithelial_repair_z
+V11Y24-011_C,Adjacent,120359,2580,516,-7.186327329938029e-17,-0.2239016690320867,epithelial_absorptive_region,Absorptive;Microfold;epithelial_repair_z
+V11Y24-011_D,Fibrotic,120359,3831,767,1.7402477846186543e-17,-0.19913593812887406,epithelial_absorptive_region,Absorptive;Microfold;epithelial_repair_z

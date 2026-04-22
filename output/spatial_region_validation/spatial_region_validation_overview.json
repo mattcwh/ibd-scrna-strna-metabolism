@@ -1,0 +1,589 @@
+{
+  "top_fraction_per_slide_used_for_high_regions": 0.2,
+  "n_spots": 58815,
+  "n_samples": 20,
+  "region_definitions": {
+    "epithelial_bile_region": [
+      "Absorptive",
+      "Microfold",
+      "bile_acid_transport_z",
+      "epithelial_repair_z"
+    ],
+    "stromal_fibrotic_region": [
+      "Fibroblast",
+      "Myofibroblast",
+      "Macrophage",
+      "ecm_remodeling_z",
+      "inflammation_z"
+    ],
+    "immune_inflammatory_region": [
+      "Macrophage",
+      "Monocyte",
+      "B_plasma",
+      "inflammation_z"
+    ],
+    "epithelial_absorptive_region": [
+      "Absorptive",
+      "Microfold",
+      "epithelial_repair_z"
+    ]
+  },
+  "gene_panels": {
+    "epithelial_bile_urea_transport": [
+      "SLC5A1",
+      "SLC10A2",
+      "SLC51A",
+      "SLC51B",
+      "ABCB1",
+      "ABCC3"
+    ],
+    "fibrotic_amino_acid_transport": [
+      "SLC38A2",
+      "SLC15A3",
+      "SLCO2B1",
+      "SLC7A5",
+      "SLC1A5",
+      "SLC1A4"
+    ]
+  },
+  "present_genes": [
+    "ABCB1",
+    "ABCC3",
+    "SLC10A2",
+    "SLC15A3",
+    "SLC1A4",
+    "SLC1A5",
+    "SLC38A2",
+    "SLC51A",
+    "SLC51B",
+    "SLC5A1",
+    "SLC7A5",
+    "SLCO2B1"
+  ],
+  "top_overall_region_enrichments": [
+    {
+      "stratum": "all",
+      "region": "epithelial_absorptive_region",
+      "gene": "SLC5A1",
+      "mean_expression_in_region": 1.3111498352295883,
+      "mean_expression_outside_region": 0.32377257490445444,
+      "in_region_minus_outside": 0.9873772603251338,
+      "in_region_to_outside_ratio": 4.049601284532853,
+      "n_in_region_spots": 11772,
+      "n_outside_region_spots": 47043
+    },
+    {
+      "stratum": "all",
+      "region": "epithelial_bile_region",
+      "gene": "SLC5A1",
+      "mean_expression_in_region": 1.3104534232675664,
+      "mean_expression_outside_region": 0.3239468444369443,
+      "in_region_minus_outside": 0.9865065788306221,
+      "in_region_to_outside_ratio": 4.0452730000975325,
+      "n_in_region_spots": 11772,
+      "n_outside_region_spots": 47043
+    },
+    {
+      "stratum": "all",
+      "region": "epithelial_bile_region",
+      "gene": "SLC51A",
+      "mean_expression_in_region": 0.3993976465671637,
+      "mean_expression_outside_region": 0.044427271748565735,
+      "in_region_minus_outside": 0.35497037481859794,
+      "in_region_to_outside_ratio": 8.98992062415036,
+      "n_in_region_spots": 11772,
+      "n_outside_region_spots": 47043
+    },
+    {
+      "stratum": "all",
+      "region": "stromal_fibrotic_region",
+      "gene": "SLC5A1",
+      "mean_expression_in_region": 0.24371695889377124,
+      "mean_expression_outside_region": 0.5908860629946111,
+      "in_region_minus_outside": -0.3471691041008399,
+      "in_region_to_outside_ratio": 0.4124601579847957,
+      "n_in_region_spots": 11772,
+      "n_outside_region_spots": 47043
+    },
+    {
+      "stratum": "all",
+      "region": "epithelial_bile_region",
+      "gene": "SLC51B",
+      "mean_expression_in_region": 0.35695257865720326,
+      "mean_expression_outside_region": 0.03935146311514714,
+      "in_region_minus_outside": 0.3176011155420561,
+      "in_region_to_outside_ratio": 9.070884546597844,
+      "n_in_region_spots": 11772,
+      "n_outside_region_spots": 47043
+    },
+    {
+      "stratum": "all",
+      "region": "epithelial_absorptive_region",
+      "gene": "SLC51A",
+      "mean_expression_in_region": 0.3690616332217317,
+      "mean_expression_outside_region": 0.05201852972748769,
+      "in_region_minus_outside": 0.317043103494244,
+      "in_region_to_outside_ratio": 7.094810929012316,
+      "n_in_region_spots": 11772,
+      "n_outside_region_spots": 47043
+    },
+    {
+      "stratum": "all",
+      "region": "epithelial_absorptive_region",
+      "gene": "SLC51B",
+      "mean_expression_in_region": 0.33242491755483916,
+      "mean_expression_outside_region": 0.04548924400703393,
+      "in_region_minus_outside": 0.28693567354780525,
+      "in_region_to_outside_ratio": 7.3077696675600246,
+      "n_in_region_spots": 11772,
+      "n_outside_region_spots": 47043
+    },
+    {
+      "stratum": "all",
+      "region": "epithelial_bile_region",
+      "gene": "SLC10A2",
+      "mean_expression_in_region": 0.3265316258879227,
+      "mean_expression_outside_region": 0.04032940392361874,
+      "in_region_minus_outside": 0.286202221964304,
+      "in_region_to_outside_ratio": 8.096614234774021,
+      "n_in_region_spots": 11772,
+      "n_outside_region_spots": 47043
+    },
+    {
+      "stratum": "all",
+      "region": "epithelial_absorptive_region",
+      "gene": "SLC10A2",
+      "mean_expression_in_region": 0.30626839730727845,
+      "mean_expression_outside_region": 0.045400056876265124,
+      "in_region_minus_outside": 0.2608683404310133,
+      "in_region_to_outside_ratio": 6.7459914894378405,
+      "n_in_region_spots": 11772,
+      "n_outside_region_spots": 47043
+    },
+    {
+      "stratum": "all",
+      "region": "epithelial_bile_region",
+      "gene": "ABCB1",
+      "mean_expression_in_region": 0.32697272201100663,
+      "mean_expression_outside_region": 0.0674615219978847,
+      "in_region_minus_outside": 0.25951120001312195,
+      "in_region_to_outside_ratio": 4.846803219489461,
+      "n_in_region_spots": 11772,
+      "n_outside_region_spots": 47043
+    },
+    {
+      "stratum": "all",
+      "region": "epithelial_absorptive_region",
+      "gene": "ABCB1",
+      "mean_expression_in_region": 0.3205227921955791,
+      "mean_expression_outside_region": 0.06907554690673856,
+      "in_region_minus_outside": 0.25144724528884055,
+      "in_region_to_outside_ratio": 4.640177407908601,
+      "n_in_region_spots": 11772,
+      "n_outside_region_spots": 47043
+    },
+    {
+      "stratum": "all",
+      "region": "epithelial_bile_region",
+      "gene": "ABCC3",
+      "mean_expression_in_region": 0.293042772582147,
+      "mean_expression_outside_region": 0.04161165064954282,
+      "in_region_minus_outside": 0.2514311219326042,
+      "in_region_to_outside_ratio": 7.042325118274697,
+      "n_in_region_spots": 11772,
+      "n_outside_region_spots": 47043
+    },
+    {
+      "stratum": "all",
+      "region": "immune_inflammatory_region",
+      "gene": "SLC5A1",
+      "mean_expression_in_region": 0.3671309152036409,
+      "mean_expression_outside_region": 0.5600030603442745,
+      "in_region_minus_outside": -0.1928721451406336,
+      "in_region_to_outside_ratio": 0.6555873372869407,
+      "n_in_region_spots": 11772,
+      "n_outside_region_spots": 47043
+    },
+    {
+      "stratum": "all",
+      "region": "epithelial_absorptive_region",
+      "gene": "ABCC3",
+      "mean_expression_in_region": 0.24410012632423606,
+      "mean_expression_outside_region": 0.05385901650095808,
+      "in_region_minus_outside": 0.19024110982327797,
+      "in_region_to_outside_ratio": 4.532205416708525,
+      "n_in_region_spots": 11772,
+      "n_outside_region_spots": 47043
+    },
+    {
+      "stratum": "all",
+      "region": "stromal_fibrotic_region",
+      "gene": "SLC38A2",
+      "mean_expression_in_region": 0.8413709533159379,
+      "mean_expression_outside_region": 0.6772938442079321,
+      "in_region_minus_outside": 0.16407710910800577,
+      "in_region_to_outside_ratio": 1.2422539500560312,
+      "n_in_region_spots": 11772,
+      "n_outside_region_spots": 47043
+    },
+    {
+      "stratum": "all",
+      "region": "immune_inflammatory_region",
+      "gene": "SLCO2B1",
+      "mean_expression_in_region": 0.4749343429739241,
+      "mean_expression_outside_region": 0.348233155416337,
+      "in_region_minus_outside": 0.12670118755758714,
+      "in_region_to_outside_ratio": 1.3638401042143935,
+      "n_in_region_spots": 11772,
+      "n_outside_region_spots": 47043
+    },
+    {
+      "stratum": "all",
+      "region": "epithelial_bile_region",
+      "gene": "SLC38A2",
+      "mean_expression_in_region": 0.622535083112549,
+      "mean_expression_outside_region": 0.7320551448059871,
+      "in_region_minus_outside": -0.10952006169343809,
+      "in_region_to_outside_ratio": 0.8503936998865521,
+      "n_in_region_spots": 11772,
+      "n_outside_region_spots": 47043
+    },
+    {
+      "stratum": "all",
+      "region": "epithelial_absorptive_region",
+      "gene": "SLC38A2",
+      "mean_expression_in_region": 0.62672033626871,
+      "mean_expression_outside_region": 0.7310078306433204,
+      "in_region_minus_outside": -0.10428749437461038,
+      "in_region_to_outside_ratio": 0.8573373772441909,
+      "n_in_region_spots": 11772,
+      "n_outside_region_spots": 47043
+    },
+    {
+      "stratum": "all",
+      "region": "stromal_fibrotic_region",
+      "gene": "SLC51A",
+      "mean_expression_in_region": 0.0321983267071192,
+      "mean_expression_outside_region": 0.13631491482814068,
+      "in_region_minus_outside": -0.10411658812102148,
+      "in_region_to_outside_ratio": 0.23620545666417583,
+      "n_in_region_spots": 11772,
+      "n_outside_region_spots": 47043
+    },
+    {
+      "stratum": "all",
+      "region": "stromal_fibrotic_region",
+      "gene": "SLCO2B1",
+      "mean_expression_in_region": 0.45465011834197006,
+      "mean_expression_outside_region": 0.35330906240286764,
+      "in_region_minus_outside": 0.10134105593910242,
+      "in_region_to_outside_ratio": 1.2868340122664226,
+      "n_in_region_spots": 11772,
+      "n_outside_region_spots": 47043
+    }
+  ],
+  "top_paired_region_differences": [
+    {
+      "region": "epithelial_bile_region",
+      "gene": "SLC5A1",
+      "mean_fibrotic_minus_adjacent_region_expression": -0.6336003657322984,
+      "median_fibrotic_minus_adjacent_region_expression": -0.3002013816172924,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.375
+    },
+    {
+      "region": "epithelial_absorptive_region",
+      "gene": "SLC5A1",
+      "mean_fibrotic_minus_adjacent_region_expression": -0.6235317678628994,
+      "median_fibrotic_minus_adjacent_region_expression": -0.28617230110750647,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.375
+    },
+    {
+      "region": "epithelial_bile_region",
+      "gene": "SLC10A2",
+      "mean_fibrotic_minus_adjacent_region_expression": -0.5071455091774775,
+      "median_fibrotic_minus_adjacent_region_expression": -0.16467865165009204,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.25
+    },
+    {
+      "region": "epithelial_absorptive_region",
+      "gene": "SLC10A2",
+      "mean_fibrotic_minus_adjacent_region_expression": -0.49086276197347245,
+      "median_fibrotic_minus_adjacent_region_expression": -0.1484118203211896,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.25
+    },
+    {
+      "region": "epithelial_absorptive_region",
+      "gene": "SLC51A",
+      "mean_fibrotic_minus_adjacent_region_expression": -0.24056509946269178,
+      "median_fibrotic_minus_adjacent_region_expression": -0.39553936348742236,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.25
+    },
+    {
+      "region": "epithelial_bile_region",
+      "gene": "SLC51A",
+      "mean_fibrotic_minus_adjacent_region_expression": -0.2404867066708279,
+      "median_fibrotic_minus_adjacent_region_expression": -0.4405322880029021,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.25
+    },
+    {
+      "region": "epithelial_bile_region",
+      "gene": "SLC51B",
+      "mean_fibrotic_minus_adjacent_region_expression": -0.23641773202483016,
+      "median_fibrotic_minus_adjacent_region_expression": -0.31531472547274864,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.25
+    },
+    {
+      "region": "epithelial_absorptive_region",
+      "gene": "SLC51B",
+      "mean_fibrotic_minus_adjacent_region_expression": -0.23203761167715192,
+      "median_fibrotic_minus_adjacent_region_expression": -0.29632351388156314,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.375
+    },
+    {
+      "region": "epithelial_bile_region",
+      "gene": "ABCB1",
+      "mean_fibrotic_minus_adjacent_region_expression": -0.21080202267902357,
+      "median_fibrotic_minus_adjacent_region_expression": -0.018836628668527217,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.5
+    },
+    {
+      "region": "epithelial_absorptive_region",
+      "gene": "ABCB1",
+      "mean_fibrotic_minus_adjacent_region_expression": -0.2100810106224444,
+      "median_fibrotic_minus_adjacent_region_expression": -0.017662851870986714,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.5
+    },
+    {
+      "region": "immune_inflammatory_region",
+      "gene": "SLC5A1",
+      "mean_fibrotic_minus_adjacent_region_expression": -0.14555155102205466,
+      "median_fibrotic_minus_adjacent_region_expression": -0.27998842697294907,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.375
+    },
+    {
+      "region": "epithelial_bile_region",
+      "gene": "SLC15A3",
+      "mean_fibrotic_minus_adjacent_region_expression": 0.12676462443740677,
+      "median_fibrotic_minus_adjacent_region_expression": 0.08132811964847134,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.875
+    },
+    {
+      "region": "epithelial_absorptive_region",
+      "gene": "SLC15A3",
+      "mean_fibrotic_minus_adjacent_region_expression": 0.11700251603751274,
+      "median_fibrotic_minus_adjacent_region_expression": 0.08495606460229649,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.875
+    },
+    {
+      "region": "epithelial_absorptive_region",
+      "gene": "SLC38A2",
+      "mean_fibrotic_minus_adjacent_region_expression": 0.11501733598450009,
+      "median_fibrotic_minus_adjacent_region_expression": 0.08793023992510546,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.625
+    },
+    {
+      "region": "immune_inflammatory_region",
+      "gene": "SLC10A2",
+      "mean_fibrotic_minus_adjacent_region_expression": -0.1138157866975466,
+      "median_fibrotic_minus_adjacent_region_expression": -0.040300184477474,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.25
+    },
+    {
+      "region": "stromal_fibrotic_region",
+      "gene": "SLC38A2",
+      "mean_fibrotic_minus_adjacent_region_expression": 0.10629339323431092,
+      "median_fibrotic_minus_adjacent_region_expression": 0.0957550339478907,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.875
+    },
+    {
+      "region": "epithelial_bile_region",
+      "gene": "SLC38A2",
+      "mean_fibrotic_minus_adjacent_region_expression": 0.09620950013367802,
+      "median_fibrotic_minus_adjacent_region_expression": 0.0697463648687911,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.625
+    },
+    {
+      "region": "immune_inflammatory_region",
+      "gene": "SLC38A2",
+      "mean_fibrotic_minus_adjacent_region_expression": 0.08152128148996982,
+      "median_fibrotic_minus_adjacent_region_expression": 0.06886894881932365,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.75
+    },
+    {
+      "region": "epithelial_absorptive_region",
+      "gene": "ABCC3",
+      "mean_fibrotic_minus_adjacent_region_expression": -0.07271006470744677,
+      "median_fibrotic_minus_adjacent_region_expression": -0.05272398887958611,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.5
+    },
+    {
+      "region": "stromal_fibrotic_region",
+      "gene": "SLC10A2",
+      "mean_fibrotic_minus_adjacent_region_expression": -0.06620668886037583,
+      "median_fibrotic_minus_adjacent_region_expression": -0.011024326959337475,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.25
+    }
+  ],
+  "strongest_region_gene_correlations": [
+    {
+      "region": "epithelial_bile_region",
+      "gene": "SLC51A",
+      "spearman_r": 0.36712408997045964,
+      "p_value": 0.0,
+      "n_spots": 58815
+    },
+    {
+      "region": "epithelial_absorptive_region",
+      "gene": "SLC5A1",
+      "spearman_r": 0.345884640664067,
+      "p_value": 0.0,
+      "n_spots": 58815
+    },
+    {
+      "region": "epithelial_bile_region",
+      "gene": "SLC5A1",
+      "spearman_r": 0.34518216820506825,
+      "p_value": 0.0,
+      "n_spots": 58815
+    },
+    {
+      "region": "epithelial_bile_region",
+      "gene": "SLC51B",
+      "spearman_r": 0.3425205571520817,
+      "p_value": 0.0,
+      "n_spots": 58815
+    },
+    {
+      "region": "epithelial_bile_region",
+      "gene": "ABCC3",
+      "spearman_r": 0.34015446674299493,
+      "p_value": 0.0,
+      "n_spots": 58815
+    },
+    {
+      "region": "epithelial_absorptive_region",
+      "gene": "SLC51A",
+      "spearman_r": 0.3364350030024789,
+      "p_value": 0.0,
+      "n_spots": 58815
+    },
+    {
+      "region": "epithelial_absorptive_region",
+      "gene": "SLC51B",
+      "spearman_r": 0.31641782765251775,
+      "p_value": 0.0,
+      "n_spots": 58815
+    },
+    {
+      "region": "stromal_fibrotic_region",
+      "gene": "SLC5A1",
+      "spearman_r": -0.29174788410877145,
+      "p_value": 0.0,
+      "n_spots": 58815
+    },
+    {
+      "region": "epithelial_absorptive_region",
+      "gene": "ABCC3",
+      "spearman_r": 0.2805724501659299,
+      "p_value": 0.0,
+      "n_spots": 58815
+    },
+    {
+      "region": "stromal_fibrotic_region",
+      "gene": "SLC51A",
+      "spearman_r": -0.27246417307736914,
+      "p_value": 0.0,
+      "n_spots": 58815
+    },
+    {
+      "region": "epithelial_bile_region",
+      "gene": "SLC10A2",
+      "spearman_r": 0.25990498631767733,
+      "p_value": 0.0,
+      "n_spots": 58815
+    },
+    {
+      "region": "stromal_fibrotic_region",
+      "gene": "SLC51B",
+      "spearman_r": -0.25585362214018786,
+      "p_value": 0.0,
+      "n_spots": 58815
+    },
+    {
+      "region": "epithelial_bile_region",
+      "gene": "ABCB1",
+      "spearman_r": 0.2543134650365907,
+      "p_value": 0.0,
+      "n_spots": 58815
+    },
+    {
+      "region": "epithelial_absorptive_region",
+      "gene": "ABCB1",
+      "spearman_r": 0.2509392256011712,
+      "p_value": 0.0,
+      "n_spots": 58815
+    },
+    {
+      "region": "epithelial_absorptive_region",
+      "gene": "SLC10A2",
+      "spearman_r": 0.23770233701762103,
+      "p_value": 0.0,
+      "n_spots": 58815
+    },
+    {
+      "region": "stromal_fibrotic_region",
+      "gene": "ABCC3",
+      "spearman_r": -0.21029713073315115,
+      "p_value": 0.0,
+      "n_spots": 58815
+    },
+    {
+      "region": "stromal_fibrotic_region",
+      "gene": "ABCB1",
+      "spearman_r": -0.20046523854123968,
+      "p_value": 0.0,
+      "n_spots": 58815
+    },
+    {
+      "region": "stromal_fibrotic_region",
+      "gene": "SLC10A2",
+      "spearman_r": -0.19883640667409316,
+      "p_value": 0.0,
+      "n_spots": 58815
+    },
+    {
+      "region": "stromal_fibrotic_region",
+      "gene": "SLC38A2",
+      "spearman_r": 0.14518980690519107,
+      "p_value": 1.8258323312986003e-274,
+      "n_spots": 58815
+    },
+    {
+      "region": "immune_inflammatory_region",
+      "gene": "SLC51A",
+      "spearman_r": -0.11547495292223604,
+      "p_value": 1.0305017030624873e-173,
+      "n_spots": 58815
+    }
+  ]
+}

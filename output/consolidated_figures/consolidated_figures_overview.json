@@ -1,0 +1,23 @@
+{
+  "figures": [
+    "integrated_evidence_summary_panel.png",
+    "integrated_interpretation_schematic.png",
+    "healthy_control_summary_panel.png"
+  ],
+  "n_priority_metabolites": 7,
+  "priority_metabolites": [
+    "Urea",
+    "Bile acid",
+    "Cholic acid",
+    "Citric acid",
+    "L-Histidine",
+    "L-Serine",
+    "L-Cysteine"
+  ],
+  "interpretation_notes": [
+    "Adjacent-shifted bile-acid, cholic-acid, and urea signals have the strongest cross-layer epithelial support.",
+    "Fibrotic-shifted amino-acid and organic-anion transporter signals are plausible but should remain hypothesis-generating.",
+    "Patient-paired models did not identify FDR-supported features at 0.10.",
+    "Region-threshold sensitivity supports the region-level transporter directions."
+  ]
+}

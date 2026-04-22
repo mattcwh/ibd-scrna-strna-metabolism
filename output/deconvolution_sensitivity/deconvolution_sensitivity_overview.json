@@ -1,0 +1,190 @@
+{
+  "expected_marker_to_deconvolution_pairs": {
+    "B_plasma": "B_plasma",
+    "B_cells": "Mature_B",
+    "Absorptive": "Absorptive",
+    "Secretory": "Secretory",
+    "Fibroblast": "Fibroblast",
+    "Myofibroblast": "Myofibroblast",
+    "Macrophage": "Macrophage",
+    "Endothelial": "Vascular_endothelia",
+    "Pericyte": "Pericyte"
+  },
+  "n_expected_pairs": 9,
+  "n_same_mean_direction": 6,
+  "paired_sensitivity": [
+    {
+      "marker_set": "B_plasma",
+      "deconvolved_cell_type": "B_plasma",
+      "n_patients": 8,
+      "marker_mean_fibrotic_minus_adjacent": 0.8159148170833334,
+      "deconv_mean_fibrotic_minus_adjacent": 0.16367407334736794,
+      "same_mean_direction": true,
+      "marker_positive_patient_fraction": 0.625,
+      "deconv_positive_patient_fraction": 0.75,
+      "paired_difference_spearman_r": 0.9761904761904763,
+      "paired_difference_spearman_p": 3.314396026200098e-05
+    },
+    {
+      "marker_set": "B_cells",
+      "deconvolved_cell_type": "Mature_B",
+      "n_patients": 8,
+      "marker_mean_fibrotic_minus_adjacent": 0.18897527916666662,
+      "deconv_mean_fibrotic_minus_adjacent": 0.002332860788559816,
+      "same_mean_direction": true,
+      "marker_positive_patient_fraction": 0.5,
+      "deconv_positive_patient_fraction": 0.625,
+      "paired_difference_spearman_r": 0.9523809523809524,
+      "paired_difference_spearman_p": 0.000260400024387251
+    },
+    {
+      "marker_set": "Absorptive",
+      "deconvolved_cell_type": "Absorptive",
+      "n_patients": 8,
+      "marker_mean_fibrotic_minus_adjacent": -0.20425263297499996,
+      "deconv_mean_fibrotic_minus_adjacent": -0.04600327620257474,
+      "same_mean_direction": true,
+      "marker_positive_patient_fraction": 0.375,
+      "deconv_positive_patient_fraction": 0.25,
+      "paired_difference_spearman_r": 0.8571428571428572,
+      "paired_difference_spearman_p": 0.0065300172547152905
+    },
+    {
+      "marker_set": "Secretory",
+      "deconvolved_cell_type": "Secretory",
+      "n_patients": 8,
+      "marker_mean_fibrotic_minus_adjacent": -0.21506242779166668,
+      "deconv_mean_fibrotic_minus_adjacent": -0.027674880115028673,
+      "same_mean_direction": true,
+      "marker_positive_patient_fraction": 0.25,
+      "deconv_positive_patient_fraction": 0.25,
+      "paired_difference_spearman_r": 0.9523809523809524,
+      "paired_difference_spearman_p": 0.000260400024387251
+    },
+    {
+      "marker_set": "Fibroblast",
+      "deconvolved_cell_type": "Fibroblast",
+      "n_patients": 8,
+      "marker_mean_fibrotic_minus_adjacent": 0.13784500916666667,
+      "deconv_mean_fibrotic_minus_adjacent": -0.009984881661037937,
+      "same_mean_direction": false,
+      "marker_positive_patient_fraction": 0.625,
+      "deconv_positive_patient_fraction": 0.5,
+      "paired_difference_spearman_r": 0.8095238095238096,
+      "paired_difference_spearman_p": 0.014902667686230072
+    },
+    {
+      "marker_set": "Myofibroblast",
+      "deconvolved_cell_type": "Myofibroblast",
+      "n_patients": 8,
+      "marker_mean_fibrotic_minus_adjacent": 0.0819044758333333,
+      "deconv_mean_fibrotic_minus_adjacent": -0.03298576423399522,
+      "same_mean_direction": false,
+      "marker_positive_patient_fraction": 0.375,
+      "deconv_positive_patient_fraction": 0.25,
+      "paired_difference_spearman_r": 0.8095238095238096,
+      "paired_difference_spearman_p": 0.014902667686230072
+    },
+    {
+      "marker_set": "Macrophage",
+      "deconvolved_cell_type": "Macrophage",
+      "n_patients": 8,
+      "marker_mean_fibrotic_minus_adjacent": 0.14661536541666667,
+      "deconv_mean_fibrotic_minus_adjacent": 0.0028368764837806504,
+      "same_mean_direction": true,
+      "marker_positive_patient_fraction": 0.625,
+      "deconv_positive_patient_fraction": 0.5,
+      "paired_difference_spearman_r": 0.880952380952381,
+      "paired_difference_spearman_p": 0.0038503204637324005
+    },
+    {
+      "marker_set": "Endothelial",
+      "deconvolved_cell_type": "Vascular_endothelia",
+      "n_patients": 8,
+      "marker_mean_fibrotic_minus_adjacent": 0.07048062875,
+      "deconv_mean_fibrotic_minus_adjacent": -0.007092897832941638,
+      "same_mean_direction": false,
+      "marker_positive_patient_fraction": 0.75,
+      "deconv_positive_patient_fraction": 0.375,
+      "paired_difference_spearman_r": 0.8571428571428572,
+      "paired_difference_spearman_p": 0.0065300172547152905
+    },
+    {
+      "marker_set": "Pericyte",
+      "deconvolved_cell_type": "Pericyte",
+      "n_patients": 8,
+      "marker_mean_fibrotic_minus_adjacent": -0.007169616666666656,
+      "deconv_mean_fibrotic_minus_adjacent": -0.004180933959918493,
+      "same_mean_direction": true,
+      "marker_positive_patient_fraction": 0.375,
+      "deconv_positive_patient_fraction": 0.375,
+      "paired_difference_spearman_r": 0.30952380952380953,
+      "paired_difference_spearman_p": 0.4556448907375822
+    }
+  ],
+  "expected_slide_level_correlations": [
+    {
+      "marker_set": "B_plasma",
+      "cell_type": "B_plasma",
+      "spearman_r": 0.9804511278195488,
+      "p_value": 3.689359244296584e-14,
+      "n_slides": 20
+    },
+    {
+      "marker_set": "Absorptive",
+      "cell_type": "Absorptive",
+      "spearman_r": 0.9293233082706768,
+      "p_value": 3.22752175438258e-09,
+      "n_slides": 20
+    },
+    {
+      "marker_set": "Secretory",
+      "cell_type": "Secretory",
+      "spearman_r": 0.8932330827067668,
+      "p_value": 1.1553772694134449e-07,
+      "n_slides": 20
+    },
+    {
+      "marker_set": "B_cells",
+      "cell_type": "Mature_B",
+      "spearman_r": 0.8691729323308269,
+      "p_value": 6.569039927296348e-07,
+      "n_slides": 20
+    },
+    {
+      "marker_set": "Macrophage",
+      "cell_type": "Macrophage",
+      "spearman_r": 0.7804511278195487,
+      "p_value": 4.913952964223649e-05,
+      "n_slides": 20
+    },
+    {
+      "marker_set": "Fibroblast",
+      "cell_type": "Fibroblast",
+      "spearman_r": 0.7609022556390977,
+      "p_value": 9.796553338830222e-05,
+      "n_slides": 20
+    },
+    {
+      "marker_set": "Myofibroblast",
+      "cell_type": "Myofibroblast",
+      "spearman_r": 0.5142857142857143,
+      "p_value": 0.0203461282869806,
+      "n_slides": 20
+    },
+    {
+      "marker_set": "Pericyte",
+      "cell_type": "Pericyte",
+      "spearman_r": 0.5067669172932331,
+      "p_value": 0.0225881723805918,
+      "n_slides": 20
+    },
+    {
+      "marker_set": "Endothelial",
+      "cell_type": "Vascular_endothelia",
+      "spearman_r": 0.4045112781954886,
+      "p_value": 0.0768844254480797,
+      "n_slides": 20
+    }
+  ]
+}

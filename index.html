@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Matthew Chung">
-<meta name="dcterms.date" content="2026-04-21">
+<meta name="dcterms.date" content="2026-04-22">
 
 <title>IBD scRNA-seq and Spatial Transcriptomics Metabolism Analysis</title>
 <style>
@@ -121,6 +121,16 @@ div.csl-indent {
   <li><a href="#harreman-paired-slide-scale-up" id="toc-harreman-paired-slide-scale-up" class="nav-link" data-scroll-target="#harreman-paired-slide-scale-up"><span class="header-section-number">4.7</span> Harreman Paired-Slide Scale-Up</a></li>
   <li><a href="#spatial-deconvolution" id="toc-spatial-deconvolution" class="nav-link" data-scroll-target="#spatial-deconvolution"><span class="header-section-number">4.8</span> Spatial Deconvolution</a></li>
   <li><a href="#harreman-and-cell-type-interpretation" id="toc-harreman-and-cell-type-interpretation" class="nav-link" data-scroll-target="#harreman-and-cell-type-interpretation"><span class="header-section-number">4.9</span> Harreman And Cell-Type Interpretation</a></li>
+  <li><a href="#transporter-gene-spatial-validation" id="toc-transporter-gene-spatial-validation" class="nav-link" data-scroll-target="#transporter-gene-spatial-validation"><span class="header-section-number">4.10</span> Transporter-Gene Spatial Validation</a></li>
+  <li><a href="#spatial-region-level-validation" id="toc-spatial-region-level-validation" class="nav-link" data-scroll-target="#spatial-region-level-validation"><span class="header-section-number">4.11</span> Spatial Region-Level Validation</a></li>
+  <li><a href="#scrna-seq-cell-type-metabolism-and-transporters" id="toc-scrna-seq-cell-type-metabolism-and-transporters" class="nav-link" data-scroll-target="#scrna-seq-cell-type-metabolism-and-transporters"><span class="header-section-number">4.12</span> scRNA-seq Cell-Type Metabolism And Transporters</a></li>
+  <li><a href="#integrated-evidence-table" id="toc-integrated-evidence-table" class="nav-link" data-scroll-target="#integrated-evidence-table"><span class="header-section-number">4.13</span> Integrated Evidence Table</a></li>
+  <li><a href="#patient-paired-modeling" id="toc-patient-paired-modeling" class="nav-link" data-scroll-target="#patient-paired-modeling"><span class="header-section-number">4.14</span> Patient-Paired Modeling</a></li>
+  <li><a href="#region-threshold-sensitivity" id="toc-region-threshold-sensitivity" class="nav-link" data-scroll-target="#region-threshold-sensitivity"><span class="header-section-number">4.15</span> Region-Threshold Sensitivity</a></li>
+  <li><a href="#deconvolution-sensitivity" id="toc-deconvolution-sensitivity" class="nav-link" data-scroll-target="#deconvolution-sensitivity"><span class="header-section-number">4.16</span> Deconvolution Sensitivity</a></li>
+  <li><a href="#healthy-control-comparisons" id="toc-healthy-control-comparisons" class="nav-link" data-scroll-target="#healthy-control-comparisons"><span class="header-section-number">4.17</span> Healthy-Control Comparisons</a></li>
+  <li><a href="#consolidated-figures" id="toc-consolidated-figures" class="nav-link" data-scroll-target="#consolidated-figures"><span class="header-section-number">4.18</span> Consolidated Figures</a></li>
+  <li><a href="#manuscript-style-results-draft" id="toc-manuscript-style-results-draft" class="nav-link" data-scroll-target="#manuscript-style-results-draft"><span class="header-section-number">4.19</span> Manuscript-Style Results Draft</a></li>
   </ul></li>
   <li><a href="#next-analyses" id="toc-next-analyses" class="nav-link" data-scroll-target="#next-analyses"><span class="header-section-number">5</span> Next Analyses</a></li>
   <li><a href="#limitations" id="toc-limitations" class="nav-link" data-scroll-target="#limitations"><span class="header-section-number">6</span> Limitations</a></li>
@@ -151,7 +161,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 21, 2026</p>
+      <p class="date">April 22, 2026</p>
     </div>
   </div>
   
@@ -258,6 +268,15 @@ div.csl-indent {
 <p><code>scripts/05_harreman_all_slides.py</code> scales the same Harreman workflow to all paired adjacent and fibrotic slides. It writes per-sample cached outputs, so interrupted or repeated runs can resume without recomputing completed slides.</p>
 <p><code>scripts/06_spatial_deconvolution.py</code> performs first-pass spatial deconvolution using the provided CIBERSORTx Gut Atlas IBD signature matrix. It fits non-negative least-squares coefficients for each Visium spot using 2,000 shared high-variance signature genes, then normalizes coefficients into cell-type proportions.</p>
 <p><code>scripts/07_harreman_deconv_interpretation.py</code> connects Harreman metabolite shifts to deconvolved cell-type proportions and marker-gene validation. It computes slide-level and paired-difference correlations, exports top evidence tables, and checks expected marker-set correlations for major deconvolved cell types.</p>
+<p><code>scripts/08_transporter_spatial_validation.py</code> validates focused Harreman metabolites by tracing them back to their transporter genes in the Harreman database. It summarizes transporter expression by slide, performs paired fibrotic-minus-adjacent expression comparisons, correlates transporter expression with Harreman metabolite z-scores, and exports all-slide spatial expression maps for representative transporter genes.</p>
+<p><code>scripts/09_spatial_region_validation.py</code> moves from slide-level validation to spot-level spatial-region validation. It defines high-signal regions within each slide from deconvolution and pathway scores, extracts focused transporter-gene expression from the spatial AnnData object, and tests whether transporter genes are enriched in epithelial, bile-acid, stromal-fibrotic, and inflammatory regions.</p>
+<p><code>scripts/10_scrna_metabolism_transporters.py</code> summarizes metabolism gene-set scores and Harreman-relevant transporter genes in the annotated scRNA-seq object. Because the single-cell object is large, the script reads the H5AD CSR matrix directly in row chunks and computes only selected pathway and transporter features. It then summarizes those features by cell type, disease status, fraction, and donor.</p>
+<p><code>scripts/11_integrated_evidence_table.py</code> joins the major output layers into a compact evidence table for priority metabolites. The table links Harreman direction, transporter-gene support, spatial-region enrichment, deconvolved cell-type associations, and scRNA-seq supporting cell types.</p>
+<p><code>scripts/12_patient_paired_models.py</code> runs patient-paired statistical models on the integrated outputs. For each feature, the script treats the patient-level fibrotic-minus-adjacent difference as the unit of analysis, then computes mean difference, bootstrap confidence interval, paired effect size, paired t-test, Wilcoxon signed-rank test, direction consistency, and Benjamini-Hochberg FDR within each analysis layer.</p>
+<p><code>scripts/13_region_sensitivity.py</code> evaluates whether priority spatial-region transporter results depend on the chosen high-region threshold. It reuses the continuous region scores and transporter expression table, then repeats region-level summaries using the top 10%, 20%, and 30% of spots per slide as high-signal regions.</p>
+<p><code>scripts/14_deconvolution_sensitivity.py</code> compares CIBERSORTx NNLS deconvolution with independent marker-gene score summaries. It evaluates expected marker-to-cell-type pairs at slide level and patient-paired difference level.</p>
+<p><code>scripts/15_consolidated_figures.py</code> creates report-ready summary figures from existing outputs. It does not rerun heavy analyses; it consolidates the strongest Harreman, transporter, region-sensitivity, deconvolution-sensitivity, and scRNA-seq evidence into a compact panel and interpretation schematic.</p>
+<p><code>scripts/16_healthy_control_comparisons.py</code> adds explicit healthy-control comparisons before manuscript-style interpretation. In scRNA-seq, <code>status == "H"</code> is used as the healthy reference. In spatial transcriptomics, the two <code>Adjacent (Disease Control)</code> slides are used as a descriptive disease-control reference.</p>
 <p>The current workflow avoids loading the full expression matrices into memory during inventory and metadata summarization.</p>
 </section>
 </section>
@@ -331,6 +350,51 @@ div.csl-indent {
 <td>Harreman and deconvolution interpretation</td>
 <td>Complete</td>
 <td><code>output/harreman_deconv_interpretation/</code></td>
+</tr>
+<tr class="even">
+<td>Transporter-gene spatial validation</td>
+<td>Complete</td>
+<td><code>output/transporter_spatial_validation/</code></td>
+</tr>
+<tr class="odd">
+<td>Spatial region-level transporter validation</td>
+<td>Complete</td>
+<td><code>output/spatial_region_validation/</code></td>
+</tr>
+<tr class="even">
+<td>scRNA-seq cell-type metabolism and transporter analysis</td>
+<td>Complete</td>
+<td><code>output/scrna_metabolism_transporters/</code></td>
+</tr>
+<tr class="odd">
+<td>Integrated metabolite evidence table</td>
+<td>Complete</td>
+<td><code>output/integrated_evidence/</code></td>
+</tr>
+<tr class="even">
+<td>Patient-paired statistical modeling</td>
+<td>Complete</td>
+<td><code>output/patient_paired_models/</code></td>
+</tr>
+<tr class="odd">
+<td>Region-threshold sensitivity analysis</td>
+<td>Complete</td>
+<td><code>output/region_sensitivity/</code></td>
+</tr>
+<tr class="even">
+<td>Deconvolution marker sensitivity analysis</td>
+<td>Complete</td>
+<td><code>output/deconvolution_sensitivity/</code></td>
+</tr>
+<tr class="odd">
+<td>Consolidated summary figures</td>
+<td>Complete</td>
+<td><code>output/consolidated_figures/</code></td>
+</tr>
+<tr class="even">
+<td>Healthy-control comparisons</td>
+<td>Complete</td>
+<td><code>output/healthy_control_comparisons/</code></td>
 </tr>
 </tbody>
 </table>
@@ -888,27 +952,1457 @@ div.csl-indent {
 <li><code>output/harreman_deconv_interpretation/paired_difference_top_correlation_heatmap.png</code></li>
 </ul>
 </section>
+<section id="transporter-gene-spatial-validation" class="level3" data-number="4.10">
+<h3 data-number="4.10" class="anchored" data-anchor-id="transporter-gene-spatial-validation"><span class="header-section-number">4.10</span> Transporter-Gene Spatial Validation</h3>
+<p>Focused transporter validation was run for seven Harreman-prioritized metabolites: bile acid, cholic acid, urea, L-histidine, L-serine, citric acid, and L-cysteine. The validation used Harreman’s transporter database to identify relevant transporter genes, then checked whether those genes were present in the spatial data and whether their spatial expression patterns supported the Harreman metabolite scores.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Metric</th>
+<th style="text-align: right;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Focus metabolites</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr class="even">
+<td>Focus transporter genes</td>
+<td style="text-align: right;">41</td>
+</tr>
+<tr class="odd">
+<td>Focus transporter genes present in spatial data</td>
+<td style="text-align: right;">41</td>
+</tr>
+<tr class="even">
+<td>Paired patients for expression differences</td>
+<td style="text-align: right;">8</td>
+</tr>
+</tbody>
+</table>
+<p>The strongest adjacent-shifted transporter-expression differences were epithelial and bile-acid related. <code>SLC5A1</code>, linked here to urea, had the largest mean fibrotic-minus-adjacent expression decrease. <code>SLC10A2</code>, <code>SLC51B</code>, and <code>SLC51A</code> were also lower in fibrotic slides on average, matching the adjacent-shifted Harreman bile-acid and cholic-acid signals.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Gene</th>
+<th>Focus metabolite</th>
+<th style="text-align: right;">Mean fibrotic-minus-adjacent expression</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>SLC5A1</code></td>
+<td>Urea</td>
+<td style="text-align: right;">-0.161</td>
+</tr>
+<tr class="even">
+<td><code>SLC10A2</code></td>
+<td>Cholic acid</td>
+<td style="text-align: right;">-0.156</td>
+</tr>
+<tr class="odd">
+<td><code>SLC51B</code></td>
+<td>Bile acid</td>
+<td style="text-align: right;">-0.065</td>
+</tr>
+<tr class="even">
+<td><code>SLC51A</code></td>
+<td>Bile acid</td>
+<td style="text-align: right;">-0.062</td>
+</tr>
+<tr class="odd">
+<td><code>ABCB1</code></td>
+<td>Cholic acid</td>
+<td style="text-align: right;">-0.056</td>
+</tr>
+</tbody>
+</table>
+<p>The strongest fibrotic-shifted transporter-expression differences were dominated by amino-acid and organic-anion transporters. These genes support the fibrotic-shifted Harreman signals for L-histidine, L-serine, L-cysteine, and citric acid, although transporter expression alone does not establish metabolite abundance or flux.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Gene</th>
+<th>Focus metabolite</th>
+<th style="text-align: right;">Mean fibrotic-minus-adjacent expression</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>SLC38A2</code></td>
+<td>L-cysteine; L-histidine; L-serine</td>
+<td style="text-align: right;">0.091</td>
+</tr>
+<tr class="even">
+<td><code>SLC15A3</code></td>
+<td>L-histidine</td>
+<td style="text-align: right;">0.054</td>
+</tr>
+<tr class="odd">
+<td><code>SLCO2B1</code></td>
+<td>Citric acid</td>
+<td style="text-align: right;">0.048</td>
+</tr>
+<tr class="even">
+<td><code>SLC7A5</code></td>
+<td>L-histidine</td>
+<td style="text-align: right;">0.034</td>
+</tr>
+<tr class="odd">
+<td><code>SLC1A5</code></td>
+<td>L-cysteine; L-serine</td>
+<td style="text-align: right;">0.026</td>
+</tr>
+</tbody>
+</table>
+<p>Transporter expression was strongly correlated with slide-level Harreman metabolite z-scores for several metabolite-gene pairs. The highest correlations linked bile acid with <code>SLC51B</code> and <code>SLC51A</code>, urea with <code>SLC5A1</code>, citric acid with <code>SLCO2B1</code>, L-serine with <code>SLC1A5</code>, and L-histidine with <code>SLC15A3</code>.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Metabolite</th>
+<th>Gene</th>
+<th style="text-align: right;">Spearman rho</th>
+<th style="text-align: right;">Slides</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Bile acid</td>
+<td><code>SLC51B</code></td>
+<td style="text-align: right;">0.996</td>
+<td style="text-align: right;">14</td>
+</tr>
+<tr class="even">
+<td>Urea</td>
+<td><code>SLC5A1</code></td>
+<td style="text-align: right;">0.947</td>
+<td style="text-align: right;">16</td>
+</tr>
+<tr class="odd">
+<td>Bile acid</td>
+<td><code>SLC51A</code></td>
+<td style="text-align: right;">0.938</td>
+<td style="text-align: right;">14</td>
+</tr>
+<tr class="even">
+<td>Citric acid</td>
+<td><code>SLCO2B1</code></td>
+<td style="text-align: right;">0.932</td>
+<td style="text-align: right;">18</td>
+</tr>
+<tr class="odd">
+<td>L-serine</td>
+<td><code>SLC1A5</code></td>
+<td style="text-align: right;">0.886</td>
+<td style="text-align: right;">18</td>
+</tr>
+<tr class="even">
+<td>L-histidine</td>
+<td><code>SLC15A3</code></td>
+<td style="text-align: right;">0.874</td>
+<td style="text-align: right;">18</td>
+</tr>
+<tr class="odd">
+<td>Cholic acid</td>
+<td><code>ABCB1</code></td>
+<td style="text-align: right;">0.851</td>
+<td style="text-align: right;">18</td>
+</tr>
+<tr class="even">
+<td>Cholic acid</td>
+<td><code>SLC10A2</code></td>
+<td style="text-align: right;">0.826</td>
+<td style="text-align: right;">18</td>
+</tr>
+</tbody>
+</table>
+<p><img src="output/transporter_spatial_validation/transporter_gene_difference_summary.png" class="img-fluid"></p>
+<p><img src="output/transporter_spatial_validation/transporter_expression_harreman_correlations.png" class="img-fluid"></p>
+<p>Representative all-slide transporter expression maps:</p>
+<p><img src="output/transporter_spatial_validation/maps/SLC51B_all_slides.png" class="img-fluid"></p>
+<p><img src="output/transporter_spatial_validation/maps/SLC10A2_all_slides.png" class="img-fluid"></p>
+<p><img src="output/transporter_spatial_validation/maps/SLC38A2_all_slides.png" class="img-fluid"></p>
+<p>Detailed transporter validation outputs:</p>
+<ul>
+<li><code>output/transporter_spatial_validation/transporter_spatial_validation_overview.json</code></li>
+<li><code>output/transporter_spatial_validation/focus_metabolite_transporter_gene_map.csv</code></li>
+<li><code>output/transporter_spatial_validation/transporter_gene_expression_by_sample.csv</code></li>
+<li><code>output/transporter_spatial_validation/paired_transporter_gene_expression_differences.csv</code></li>
+<li><code>output/transporter_spatial_validation/transporter_gene_difference_summary.csv</code></li>
+<li><code>output/transporter_spatial_validation/transporter_expression_harreman_correlations.csv</code></li>
+<li><code>output/transporter_spatial_validation/transporter_gene_difference_summary.png</code></li>
+<li><code>output/transporter_spatial_validation/transporter_expression_harreman_correlations.png</code></li>
+<li><code>output/transporter_spatial_validation/maps/</code></li>
+</ul>
+</section>
+<section id="spatial-region-level-validation" class="level3" data-number="4.11">
+<h3 data-number="4.11" class="anchored" data-anchor-id="spatial-region-level-validation"><span class="header-section-number">4.11</span> Spatial Region-Level Validation</h3>
+<p>The next validation step tested whether the transporter signals localize to plausible spatial regions within slides. High-signal regions were defined separately within each slide using the top 20% of a composite region score. This avoids allowing larger slides or globally higher-expression slides to dominate the region calls.</p>
+<table class="table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Region</th>
+<th>Composite inputs</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Epithelial bile region</td>
+<td><code>Absorptive</code>, <code>Microfold</code>, bile-acid transport score, epithelial-repair score</td>
+</tr>
+<tr class="even">
+<td>Epithelial absorptive region</td>
+<td><code>Absorptive</code>, <code>Microfold</code>, epithelial-repair score</td>
+</tr>
+<tr class="odd">
+<td>Stromal fibrotic region</td>
+<td><code>Fibroblast</code>, <code>Myofibroblast</code>, <code>Macrophage</code>, ECM-remodeling score, inflammation score</td>
+</tr>
+<tr class="even">
+<td>Immune inflammatory region</td>
+<td><code>Macrophage</code>, <code>Monocyte</code>, <code>B_plasma</code>, inflammation score</td>
+</tr>
+</tbody>
+</table>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Metric</th>
+<th style="text-align: right;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Spots analyzed</td>
+<td style="text-align: right;">58,815</td>
+</tr>
+<tr class="even">
+<td>Slides analyzed</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="odd">
+<td>High-region fraction per slide</td>
+<td style="text-align: right;">20%</td>
+</tr>
+<tr class="even">
+<td>Focus transporter genes present</td>
+<td style="text-align: right;">12</td>
+</tr>
+</tbody>
+</table>
+<p>Epithelial bile and absorptive regions were strongly enriched for the adjacent-shifted bile-acid and urea transporter genes. The largest enrichment was <code>SLC5A1</code>, followed by <code>SLC51A</code>, <code>SLC51B</code>, <code>SLC10A2</code>, <code>ABCB1</code>, and <code>ABCC3</code>.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Region</th>
+<th>Gene</th>
+<th style="text-align: right;">Mean in region</th>
+<th style="text-align: right;">Mean outside region</th>
+<th style="text-align: right;">Difference</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Epithelial bile</td>
+<td><code>SLC5A1</code></td>
+<td style="text-align: right;">1.310</td>
+<td style="text-align: right;">0.324</td>
+<td style="text-align: right;">0.987</td>
+</tr>
+<tr class="even">
+<td>Epithelial bile</td>
+<td><code>SLC51A</code></td>
+<td style="text-align: right;">0.399</td>
+<td style="text-align: right;">0.044</td>
+<td style="text-align: right;">0.355</td>
+</tr>
+<tr class="odd">
+<td>Epithelial bile</td>
+<td><code>SLC51B</code></td>
+<td style="text-align: right;">0.357</td>
+<td style="text-align: right;">0.039</td>
+<td style="text-align: right;">0.318</td>
+</tr>
+<tr class="even">
+<td>Epithelial bile</td>
+<td><code>SLC10A2</code></td>
+<td style="text-align: right;">0.327</td>
+<td style="text-align: right;">0.040</td>
+<td style="text-align: right;">0.286</td>
+</tr>
+<tr class="odd">
+<td>Epithelial bile</td>
+<td><code>ABCB1</code></td>
+<td style="text-align: right;">0.327</td>
+<td style="text-align: right;">0.067</td>
+<td style="text-align: right;">0.260</td>
+</tr>
+<tr class="even">
+<td>Epithelial bile</td>
+<td><code>ABCC3</code></td>
+<td style="text-align: right;">0.293</td>
+<td style="text-align: right;">0.042</td>
+<td style="text-align: right;">0.251</td>
+</tr>
+</tbody>
+</table>
+<p>Stromal-fibrotic regions showed the opposite pattern for epithelial transporters and were enriched for the fibrotic amino-acid transporter signal. <code>SLC38A2</code> was higher in stromal-fibrotic regions than outside those regions, while <code>SLC5A1</code>, <code>SLC51A</code>, <code>SLC51B</code>, and <code>SLC10A2</code> were depleted.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Region</th>
+<th>Gene</th>
+<th style="text-align: right;">Mean in region</th>
+<th style="text-align: right;">Mean outside region</th>
+<th style="text-align: right;">Difference</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Stromal fibrotic</td>
+<td><code>SLC38A2</code></td>
+<td style="text-align: right;">0.841</td>
+<td style="text-align: right;">0.677</td>
+<td style="text-align: right;">0.164</td>
+</tr>
+<tr class="even">
+<td>Stromal fibrotic</td>
+<td><code>SLCO2B1</code></td>
+<td style="text-align: right;">0.455</td>
+<td style="text-align: right;">0.353</td>
+<td style="text-align: right;">0.101</td>
+</tr>
+<tr class="odd">
+<td>Stromal fibrotic</td>
+<td><code>SLC15A3</code></td>
+<td style="text-align: right;">0.317</td>
+<td style="text-align: right;">0.234</td>
+<td style="text-align: right;">0.082</td>
+</tr>
+<tr class="even">
+<td>Stromal fibrotic</td>
+<td><code>SLC1A5</code></td>
+<td style="text-align: right;">0.219</td>
+<td style="text-align: right;">0.160</td>
+<td style="text-align: right;">0.059</td>
+</tr>
+<tr class="odd">
+<td>Stromal fibrotic</td>
+<td><code>SLC5A1</code></td>
+<td style="text-align: right;">0.244</td>
+<td style="text-align: right;">0.591</td>
+<td style="text-align: right;">-0.347</td>
+</tr>
+<tr class="even">
+<td>Stromal fibrotic</td>
+<td><code>SLC51A</code></td>
+<td style="text-align: right;">0.032</td>
+<td style="text-align: right;">0.136</td>
+<td style="text-align: right;">-0.104</td>
+</tr>
+</tbody>
+</table>
+<p>Paired patient comparisons within high-signal regions sharpened the disease contrast. In epithelial bile regions, fibrotic slides had lower <code>SLC5A1</code>, <code>SLC10A2</code>, <code>SLC51A</code>, and <code>SLC51B</code> expression than adjacent slides. In stromal-fibrotic regions, fibrotic slides had higher <code>SLC38A2</code>, <code>SLCO2B1</code>, and <code>SLC15A3</code> expression.</p>
+<table class="table">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 21%">
+<col style="width: 28%">
+<col style="width: 28%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Region</th>
+<th>Gene</th>
+<th style="text-align: right;">Mean fibrotic-minus-adjacent expression</th>
+<th style="text-align: right;">Positive patient fraction</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Epithelial bile</td>
+<td><code>SLC5A1</code></td>
+<td style="text-align: right;">-0.634</td>
+<td style="text-align: right;">0.375</td>
+</tr>
+<tr class="even">
+<td>Epithelial bile</td>
+<td><code>SLC10A2</code></td>
+<td style="text-align: right;">-0.507</td>
+<td style="text-align: right;">0.250</td>
+</tr>
+<tr class="odd">
+<td>Epithelial bile</td>
+<td><code>SLC51A</code></td>
+<td style="text-align: right;">-0.240</td>
+<td style="text-align: right;">0.250</td>
+</tr>
+<tr class="even">
+<td>Epithelial bile</td>
+<td><code>SLC51B</code></td>
+<td style="text-align: right;">-0.236</td>
+<td style="text-align: right;">0.250</td>
+</tr>
+<tr class="odd">
+<td>Stromal fibrotic</td>
+<td><code>SLC38A2</code></td>
+<td style="text-align: right;">0.106</td>
+<td style="text-align: right;">0.875</td>
+</tr>
+<tr class="even">
+<td>Stromal fibrotic</td>
+<td><code>SLCO2B1</code></td>
+<td style="text-align: right;">0.063</td>
+<td style="text-align: right;">0.750</td>
+</tr>
+<tr class="odd">
+<td>Stromal fibrotic</td>
+<td><code>SLC15A3</code></td>
+<td style="text-align: right;">0.063</td>
+<td style="text-align: right;">0.625</td>
+</tr>
+</tbody>
+</table>
+<p><img src="output/spatial_region_validation/region_transporter_enrichment_heatmap.png" class="img-fluid"></p>
+<p><img src="output/spatial_region_validation/paired_region_transporter_differences.png" class="img-fluid"></p>
+<p>Representative all-slide spatial region maps:</p>
+<p><img src="output/spatial_region_validation/maps/epithelial_bile_region_all_slides.png" class="img-fluid"></p>
+<p><img src="output/spatial_region_validation/maps/stromal_fibrotic_region_all_slides.png" class="img-fluid"></p>
+<p><img src="output/spatial_region_validation/maps/immune_inflammatory_region_all_slides.png" class="img-fluid"></p>
+<p>Detailed spatial region validation outputs:</p>
+<ul>
+<li><code>output/spatial_region_validation/spatial_region_validation_overview.json</code></li>
+<li><code>output/spatial_region_validation/spot_region_scores_selected.csv</code></li>
+<li><code>output/spatial_region_validation/region_score_summary_by_sample.csv</code></li>
+<li><code>output/spatial_region_validation/region_transporter_enrichment.csv</code></li>
+<li><code>output/spatial_region_validation/region_transporter_correlations.csv</code></li>
+<li><code>output/spatial_region_validation/region_transporter_expression_by_sample.csv</code></li>
+<li><code>output/spatial_region_validation/paired_region_transporter_differences.csv</code></li>
+<li><code>output/spatial_region_validation/paired_region_transporter_difference_summary.csv</code></li>
+<li><code>output/spatial_region_validation/region_transporter_enrichment_heatmap.png</code></li>
+<li><code>output/spatial_region_validation/paired_region_transporter_differences.png</code></li>
+<li><code>output/spatial_region_validation/maps/</code></li>
+</ul>
+</section>
+<section id="scrna-seq-cell-type-metabolism-and-transporters" class="level3" data-number="4.12">
+<h3 data-number="4.12" class="anchored" data-anchor-id="scrna-seq-cell-type-metabolism-and-transporters"><span class="header-section-number">4.12</span> scRNA-seq Cell-Type Metabolism And Transporters</h3>
+<p>The annotated scRNA-seq object was used directly to ask whether the spatial Harreman and deconvolution findings are consistent with cell-type-level expression patterns. The analysis computed the same nine curated metabolism gene-set scores used in spatial transcriptomics, plus Harreman-relevant transporter-gene expression and two focused transporter panels.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Metric</th>
+<th style="text-align: right;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>scRNA-seq cells analyzed</td>
+<td style="text-align: right;">347,017</td>
+</tr>
+<tr class="even">
+<td>scRNA-seq genes</td>
+<td style="text-align: right;">33,551</td>
+</tr>
+<tr class="odd">
+<td>Metabolism gene sets scored</td>
+<td style="text-align: right;">9</td>
+</tr>
+<tr class="even">
+<td>Harreman-relevant transporter genes summarized</td>
+<td style="text-align: right;">41</td>
+</tr>
+</tbody>
+</table>
+<p>The scRNA-seq reference supports the interpretation that adjacent-shifted bile-acid and urea transporter signals are epithelial and enterocyte-associated. Bile-acid transport and the epithelial bile/urea transporter panel were highest in enterocyte states.</p>
+<table class="table">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 23%">
+<col style="width: 23%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Feature</th>
+<th>Top cell type</th>
+<th>Fraction</th>
+<th style="text-align: right;">Cells</th>
+<th style="text-align: right;">Mean score</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Bile-acid transport</td>
+<td>Enterocytes-MT-hi</td>
+<td>epi</td>
+<td style="text-align: right;">887</td>
+<td style="text-align: right;">0.444</td>
+</tr>
+<tr class="even">
+<td>Bile-acid transport</td>
+<td>Enterocyte-FABP-hi</td>
+<td>imu</td>
+<td style="text-align: right;">12,031</td>
+<td style="text-align: right;">0.428</td>
+</tr>
+<tr class="odd">
+<td>Bile-acid transport</td>
+<td>Enterocyte-FABP-hi</td>
+<td>epi</td>
+<td style="text-align: right;">9,937</td>
+<td style="text-align: right;">0.390</td>
+</tr>
+<tr class="even">
+<td>Epithelial bile/urea transport</td>
+<td>Enterocytes-MT-hi</td>
+<td>epi</td>
+<td style="text-align: right;">887</td>
+<td style="text-align: right;">0.422</td>
+</tr>
+<tr class="odd">
+<td>Epithelial bile/urea transport</td>
+<td>Enterocyte-ANPEP-hi</td>
+<td>imu</td>
+<td style="text-align: right;">22,210</td>
+<td style="text-align: right;">0.317</td>
+</tr>
+<tr class="even">
+<td>Epithelial bile/urea transport</td>
+<td>Enterocyte-ANPEP-hi</td>
+<td>epi</td>
+<td style="text-align: right;">26,837</td>
+<td style="text-align: right;">0.313</td>
+</tr>
+</tbody>
+</table>
+<p>The fibrotic amino-acid transporter panel was strongest in macrophage-like and inflammatory populations, with inflammatory fibroblasts also ranking in the top cell types. This is consistent with the spatial-region result that <code>SLC38A2</code>, <code>SLC15A3</code>, <code>SLCO2B1</code>, and related genes are enriched outside epithelial bile regions and increase in fibrotic or stromal-fibrotic contexts.</p>
+<table class="table">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 23%">
+<col style="width: 23%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Feature</th>
+<th>Top cell type</th>
+<th>Fraction</th>
+<th style="text-align: right;">Cells</th>
+<th style="text-align: right;">Mean score</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Fibrotic amino-acid transport</td>
+<td>M2-like macrophage-A2M-hi</td>
+<td>imu</td>
+<td style="text-align: right;">550</td>
+<td style="text-align: right;">0.271</td>
+</tr>
+<tr class="even">
+<td>Fibrotic amino-acid transport</td>
+<td>M2-like macrophage</td>
+<td>imu</td>
+<td style="text-align: right;">1,716</td>
+<td style="text-align: right;">0.211</td>
+</tr>
+<tr class="odd">
+<td>Fibrotic amino-acid transport</td>
+<td>CD63+CD81+ macrophage</td>
+<td>imu</td>
+<td style="text-align: right;">1,419</td>
+<td style="text-align: right;">0.171</td>
+</tr>
+<tr class="even">
+<td>Fibrotic amino-acid transport</td>
+<td>Monocyte-HSP-hi</td>
+<td>imu</td>
+<td style="text-align: right;">391</td>
+<td style="text-align: right;">0.171</td>
+</tr>
+<tr class="odd">
+<td>Fibrotic amino-acid transport</td>
+<td>Inflammatory fibroblasts</td>
+<td>imu</td>
+<td style="text-align: right;">1,347</td>
+<td style="text-align: right;">0.134</td>
+</tr>
+</tbody>
+</table>
+<p>The scRNA-seq metabolism scores also recover expected stromal and inflammatory biology. ECM remodeling was highest in trophocyte, telocyte, myofibroblast, pericyte, and fibroblast populations. Inflammation was highest in neutrophils, monocytes, and macrophage-like states.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Feature</th>
+<th>Top cell type</th>
+<th>Fraction</th>
+<th style="text-align: right;">Cells</th>
+<th style="text-align: right;">Mean score</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ECM remodeling</td>
+<td>Trophocyte-TGFBI hi</td>
+<td>imu</td>
+<td style="text-align: right;">854</td>
+<td style="text-align: right;">1.033</td>
+</tr>
+<tr class="even">
+<td>ECM remodeling</td>
+<td>Telocyte</td>
+<td>imu</td>
+<td style="text-align: right;">1,117</td>
+<td style="text-align: right;">0.988</td>
+</tr>
+<tr class="odd">
+<td>ECM remodeling</td>
+<td>Myofibroblasts</td>
+<td>imu</td>
+<td style="text-align: right;">643</td>
+<td style="text-align: right;">0.960</td>
+</tr>
+<tr class="even">
+<td>ECM remodeling</td>
+<td>Pericytes</td>
+<td>imu</td>
+<td style="text-align: right;">481</td>
+<td style="text-align: right;">0.815</td>
+</tr>
+<tr class="odd">
+<td>Inflammation</td>
+<td>Neutrophils</td>
+<td>epi</td>
+<td style="text-align: right;">666</td>
+<td style="text-align: right;">1.419</td>
+</tr>
+<tr class="even">
+<td>Inflammation</td>
+<td>Neutrophils</td>
+<td>imu</td>
+<td style="text-align: right;">3,259</td>
+<td style="text-align: right;">1.383</td>
+</tr>
+<tr class="odd">
+<td>Inflammation</td>
+<td>Monocyte-HSP-hi</td>
+<td>imu</td>
+<td style="text-align: right;">391</td>
+<td style="text-align: right;">0.926</td>
+</tr>
+<tr class="even">
+<td>Inflammation</td>
+<td>Monocyte</td>
+<td>imu</td>
+<td style="text-align: right;">2,119</td>
+<td style="text-align: right;">0.826</td>
+</tr>
+</tbody>
+</table>
+<p>Status contrasts in the scRNA-seq object are not a substitute for a patient-paired spatial model, but they add useful support. Inflammatory fibroblasts had a strong fibrotic-minus-normal increase in ECM remodeling, and macrophage-like states showed fibrotic increases in the amino-acid transporter panel.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Cell type</th>
+<th>Feature</th>
+<th style="text-align: right;">Fibrotic-minus-normal</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Inflammatory fibroblasts</td>
+<td>ECM remodeling</td>
+<td style="text-align: right;">0.656</td>
+</tr>
+<tr class="even">
+<td>Myofibroblasts</td>
+<td>ECM remodeling</td>
+<td style="text-align: right;">0.145</td>
+</tr>
+<tr class="odd">
+<td>M2-like macrophage</td>
+<td>Fibrotic amino-acid transport</td>
+<td style="text-align: right;">0.107</td>
+</tr>
+<tr class="even">
+<td>Tissue macrophage</td>
+<td>Inflammation</td>
+<td style="text-align: right;">0.079</td>
+</tr>
+<tr class="odd">
+<td>Inflammatory fibroblasts</td>
+<td>Inflammation</td>
+<td style="text-align: right;">0.073</td>
+</tr>
+</tbody>
+</table>
+<p>Together, the scRNA-seq results support a two-part interpretation of the spatial metabolism results. First, adjacent-shifted bile-acid, cholic-acid, and urea-associated signals are likely driven by enterocyte-rich epithelial regions. Second, fibrotic-shifted amino-acid transporter signals are more consistent with macrophage, inflammatory fibroblast, and stromal-fibrotic regions than with absorptive epithelium alone.</p>
+<p><img src="output/scrna_metabolism_transporters/scrna_metabolism_by_cell_type_heatmap.png" class="img-fluid"></p>
+<p><img src="output/scrna_metabolism_transporters/scrna_transporter_panels_by_cell_type_heatmap.png" class="img-fluid"></p>
+<p><img src="output/scrna_metabolism_transporters/scrna_status_feature_differences.png" class="img-fluid"></p>
+<p>Detailed scRNA-seq metabolism and transporter outputs:</p>
+<ul>
+<li><code>output/scrna_metabolism_transporters/scrna_metabolism_transporters_overview.json</code></li>
+<li><code>output/scrna_metabolism_transporters/scrna_cell_type_feature_summary.csv</code></li>
+<li><code>output/scrna_metabolism_transporters/scrna_cell_type_status_feature_summary.csv</code></li>
+<li><code>output/scrna_metabolism_transporters/scrna_donor_cell_type_feature_summary.csv</code></li>
+<li><code>output/scrna_metabolism_transporters/scrna_transporter_expression_by_cell_type_status.csv</code></li>
+<li><code>output/scrna_metabolism_transporters/scrna_status_feature_differences.csv</code></li>
+<li><code>output/scrna_metabolism_transporters/scrna_top_cell_types_by_feature.csv</code></li>
+<li><code>output/scrna_metabolism_transporters/scrna_feature_gene_membership.csv</code></li>
+<li><code>output/scrna_metabolism_transporters/scrna_metabolism_by_cell_type_heatmap.png</code></li>
+<li><code>output/scrna_metabolism_transporters/scrna_transporter_panels_by_cell_type_heatmap.png</code></li>
+<li><code>output/scrna_metabolism_transporters/scrna_status_feature_differences.png</code></li>
+</ul>
+</section>
+<section id="integrated-evidence-table" class="level3" data-number="4.13">
+<h3 data-number="4.13" class="anchored" data-anchor-id="integrated-evidence-table"><span class="header-section-number">4.13</span> Integrated Evidence Table</h3>
+<p>The current analysis layers were integrated into a metabolite-level evidence table. This table is intended as a prioritization artifact for manuscript-style interpretation and for deciding which signals merit heavier statistical modeling.</p>
+<table class="table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Metabolite</th>
+<th>Harreman direction</th>
+<th>Main supporting evidence</th>
+<th>Working interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Bile acid</td>
+<td>Adjacent-shifted</td>
+<td><code>SLC51B</code> and <code>SLC51A</code> correlate strongly with Harreman scores; epithelial bile regions are enriched for both genes and lower in fibrotic paired regions; Harreman scores correlate with microfold and absorptive deconvolution</td>
+<td>Enterocyte and epithelial bile-acid transport signal reduced in fibrotic slides</td>
+</tr>
+<tr class="even">
+<td>Cholic acid</td>
+<td>Adjacent-shifted</td>
+<td><code>SLC10A2</code>, <code>ABCB1</code>, <code>ABCC3</code>, and <code>ABCC2</code> correlate with Harreman scores; <code>SLC10A2</code> is strongly enriched in epithelial bile regions and lower in fibrotic paired regions</td>
+<td>Ileal/epithelial bile-acid transporter program reduced in fibrotic slides</td>
+</tr>
+<tr class="odd">
+<td>Urea</td>
+<td>Adjacent-shifted</td>
+<td><code>SLC5A1</code> correlates with Harreman score, is strongly enriched in epithelial bile and absorptive regions, and is lower in fibrotic paired regions</td>
+<td>Epithelial absorptive transporter signal reduced in fibrotic slides</td>
+</tr>
+<tr class="even">
+<td>L-histidine</td>
+<td>Fibrotic-shifted</td>
+<td><code>SLC15A3</code>, <code>SLC7A5</code>, and <code>SLC38A2</code> support Harreman scores; scRNA-seq amino-acid transporter panel is highest in macrophage-like states</td>
+<td>Fibrotic amino-acid transporter signal associated with macrophage and stromal/inflammatory regions</td>
+</tr>
+<tr class="odd">
+<td>L-serine</td>
+<td>Fibrotic-shifted</td>
+<td><code>SLC1A5</code>, <code>SLC38A6</code>, <code>SLC1A4</code>, and <code>SLC38A2</code> correlate with Harreman scores; <code>SLC38A2</code> is enriched in stromal-fibrotic regions and higher in paired fibrotic regions</td>
+<td>Fibrotic amino-acid transporter signal linked to stromal-fibrotic and macrophage-associated regions</td>
+</tr>
+<tr class="even">
+<td>Citric acid</td>
+<td>Fibrotic-shifted</td>
+<td><code>SLCO2B1</code> strongly correlates with Harreman score; <code>SLCO2B1</code> is enriched in immune-inflammatory and stromal-fibrotic regions and higher in paired fibrotic regions</td>
+<td>Organic-anion transporter signal associated with fibrotic inflammatory regions</td>
+</tr>
+<tr class="odd">
+<td>L-cysteine</td>
+<td>Fibrotic-shifted</td>
+<td><code>SLC1A5</code>, <code>SLC38A2</code>, and <code>SLC7A11</code> support Harreman scores; scRNA-seq amino-acid transporter panel is highest in macrophage-like states</td>
+<td>Fibrotic amino-acid transporter signal associated with macrophage and stromal-fibrotic biology</td>
+</tr>
+</tbody>
+</table>
+<p>Full integrated evidence outputs:</p>
+<ul>
+<li><code>output/integrated_evidence/integrated_evidence_overview.json</code></li>
+<li><code>output/integrated_evidence/integrated_metabolite_evidence.csv</code></li>
+<li><code>output/integrated_evidence/integrated_metabolite_evidence.md</code></li>
+</ul>
+</section>
+<section id="patient-paired-modeling" class="level3" data-number="4.14">
+<h3 data-number="4.14" class="anchored" data-anchor-id="patient-paired-modeling"><span class="header-section-number">4.14</span> Patient-Paired Modeling</h3>
+<p>Patient-paired modeling was run across Harreman metabolites, slide-level transporter expression, region-level transporter expression, spatial metabolism scores, and deconvolved cell-type proportions. Each test used the patient-level fibrotic-minus-adjacent difference as the observation. This keeps the patient as the statistical unit and avoids treating spots as independent samples.</p>
+<table class="table">
+<colgroup>
+<col style="width: 42%">
+<col style="width: 57%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Metric</th>
+<th style="text-align: right;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Patient-feature paired rows</td>
+<td style="text-align: right;">2,720</td>
+</tr>
+<tr class="even">
+<td>Modeled features</td>
+<td style="text-align: right;">355</td>
+</tr>
+<tr class="odd">
+<td>Priority features</td>
+<td style="text-align: right;">45</td>
+</tr>
+<tr class="even">
+<td>Features passing paired t-test FDR &lt; 0.10 and Wilcoxon FDR &lt; 0.10</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+<p>No tested feature survived layer-wise FDR correction at 0.10 by both paired t-test and Wilcoxon test. With only 5 to 8 paired patients per feature, this means the paired models should be read as effect-size and consistency summaries rather than confirmatory statistical evidence.</p>
+<p>Among priority features, the largest paired effect sizes supported the integrated interpretation. <code>SLC38A2</code> was higher in fibrotic stromal-fibrotic regions, <code>SLC10A2</code> was lower in fibrotic epithelial regions, <code>SLC15A3</code> was higher in fibrotic stromal-fibrotic regions, and <code>B_plasma</code> deconvolution was higher in fibrotic slides. Several bootstrap confidence intervals for the mean difference did not cross zero, but the corresponding FDR values remained above 0.10.</p>
+<table class="table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Layer</th>
+<th>Feature</th>
+<th style="text-align: right;">Mean fibrotic-minus-adjacent</th>
+<th style="text-align: right;">Cohen dz</th>
+<th style="text-align: right;">Paired t p</th>
+<th style="text-align: right;">Paired t FDR</th>
+<th>Direction</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Region transporter</td>
+<td>Stromal fibrotic <code>SLC38A2</code></td>
+<td style="text-align: right;">0.106</td>
+<td style="text-align: right;">0.912</td>
+<td style="text-align: right;">0.037</td>
+<td style="text-align: right;">0.421</td>
+<td>Fibrotic higher</td>
+</tr>
+<tr class="even">
+<td>Deconvolution</td>
+<td><code>B_plasma</code></td>
+<td style="text-align: right;">0.164</td>
+<td style="text-align: right;">0.813</td>
+<td style="text-align: right;">0.055</td>
+<td style="text-align: right;">0.318</td>
+<td>Fibrotic higher</td>
+</tr>
+<tr class="odd">
+<td>Region transporter</td>
+<td>Epithelial bile <code>SLC10A2</code></td>
+<td style="text-align: right;">-0.507</td>
+<td style="text-align: right;">-0.777</td>
+<td style="text-align: right;">0.064</td>
+<td style="text-align: right;">0.421</td>
+<td>Adjacent higher</td>
+</tr>
+<tr class="even">
+<td>Region transporter</td>
+<td>Stromal fibrotic <code>SLC15A3</code></td>
+<td style="text-align: right;">0.063</td>
+<td style="text-align: right;">0.776</td>
+<td style="text-align: right;">0.064</td>
+<td style="text-align: right;">0.421</td>
+<td>Fibrotic higher</td>
+</tr>
+<tr class="odd">
+<td>Region transporter</td>
+<td>Epithelial absorptive <code>SLC10A2</code></td>
+<td style="text-align: right;">-0.491</td>
+<td style="text-align: right;">-0.772</td>
+<td style="text-align: right;">0.065</td>
+<td style="text-align: right;">0.421</td>
+<td>Adjacent higher</td>
+</tr>
+<tr class="even">
+<td>Slide transporter</td>
+<td><code>SLC10A2</code></td>
+<td style="text-align: right;">-0.156</td>
+<td style="text-align: right;">-0.763</td>
+<td style="text-align: right;">0.068</td>
+<td style="text-align: right;">0.611</td>
+<td>Adjacent higher</td>
+</tr>
+<tr class="odd">
+<td>Slide transporter</td>
+<td><code>SLCO2B1</code></td>
+<td style="text-align: right;">0.048</td>
+<td style="text-align: right;">0.757</td>
+<td style="text-align: right;">0.070</td>
+<td style="text-align: right;">0.611</td>
+<td>Fibrotic higher</td>
+</tr>
+<tr class="even">
+<td>Slide transporter</td>
+<td><code>SLC15A3</code></td>
+<td style="text-align: right;">0.054</td>
+<td style="text-align: right;">0.740</td>
+<td style="text-align: right;">0.075</td>
+<td style="text-align: right;">0.611</td>
+<td>Fibrotic higher</td>
+</tr>
+<tr class="odd">
+<td>Harreman</td>
+<td>Citric acid</td>
+<td style="text-align: right;">4.939</td>
+<td style="text-align: right;">0.731</td>
+<td style="text-align: right;">0.078</td>
+<td style="text-align: right;">0.597</td>
+<td>Fibrotic higher</td>
+</tr>
+<tr class="even">
+<td>Spatial metabolism score</td>
+<td>Bile-acid transport</td>
+<td style="text-align: right;">-0.530</td>
+<td style="text-align: right;">-0.669</td>
+<td style="text-align: right;">0.100</td>
+<td style="text-align: right;">0.581</td>
+<td>Adjacent higher</td>
+</tr>
+</tbody>
+</table>
+<p><img src="output/patient_paired_models/priority_patient_paired_effect_sizes.png" class="img-fluid"></p>
+<p><img src="output/patient_paired_models/patient_paired_model_volcano.png" class="img-fluid"></p>
+<p>Detailed patient-paired modeling outputs:</p>
+<ul>
+<li><code>output/patient_paired_models/patient_paired_models_overview.json</code></li>
+<li><code>output/patient_paired_models/paired_model_input_long.csv</code></li>
+<li><code>output/patient_paired_models/patient_paired_model_results.csv</code></li>
+<li><code>output/patient_paired_models/priority_patient_paired_model_results.csv</code></li>
+<li><code>output/patient_paired_models/fdr_supported_patient_paired_model_results.csv</code></li>
+<li><code>output/patient_paired_models/priority_patient_paired_effect_sizes.png</code></li>
+<li><code>output/patient_paired_models/patient_paired_model_volcano.png</code></li>
+</ul>
+</section>
+<section id="region-threshold-sensitivity" class="level3" data-number="4.15">
+<h3 data-number="4.15" class="anchored" data-anchor-id="region-threshold-sensitivity"><span class="header-section-number">4.15</span> Region-Threshold Sensitivity</h3>
+<p>The region-level transporter results were tested against alternative high-region thresholds. The primary region analysis used the top 20% of spots per slide. Sensitivity analysis repeated the paired region-level transporter summaries using the top 10%, 20%, and 30% of spots per slide.</p>
+<p>All 14 priority region-gene pairs preserved the same mean disease-direction sign across the three thresholds. This does not solve the small-patient-count limitation, but it reduces concern that the region-level conclusions are an artifact of the top-20% threshold.</p>
+<table class="table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 19%">
+<col style="width: 19%">
+<col style="width: 19%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Region</th>
+<th>Gene</th>
+<th style="text-align: right;">Mean difference across thresholds</th>
+<th style="text-align: right;">Min difference</th>
+<th style="text-align: right;">Max difference</th>
+<th>Stable sign</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Epithelial bile</td>
+<td><code>SLC5A1</code></td>
+<td style="text-align: right;">-0.655</td>
+<td style="text-align: right;">-0.863</td>
+<td style="text-align: right;">-0.470</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>Epithelial absorptive</td>
+<td><code>SLC5A1</code></td>
+<td style="text-align: right;">-0.655</td>
+<td style="text-align: right;">-0.874</td>
+<td style="text-align: right;">-0.466</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>Epithelial bile</td>
+<td><code>SLC10A2</code></td>
+<td style="text-align: right;">-0.526</td>
+<td style="text-align: right;">-0.672</td>
+<td style="text-align: right;">-0.400</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>Epithelial absorptive</td>
+<td><code>SLC10A2</code></td>
+<td style="text-align: right;">-0.508</td>
+<td style="text-align: right;">-0.647</td>
+<td style="text-align: right;">-0.388</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>Epithelial bile</td>
+<td><code>SLC51A</code></td>
+<td style="text-align: right;">-0.267</td>
+<td style="text-align: right;">-0.377</td>
+<td style="text-align: right;">-0.182</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>Epithelial bile</td>
+<td><code>SLC51B</code></td>
+<td style="text-align: right;">-0.252</td>
+<td style="text-align: right;">-0.342</td>
+<td style="text-align: right;">-0.177</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>Stromal fibrotic</td>
+<td><code>SLC38A2</code></td>
+<td style="text-align: right;">0.086</td>
+<td style="text-align: right;">0.041</td>
+<td style="text-align: right;">0.112</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>Stromal fibrotic</td>
+<td><code>SLCO2B1</code></td>
+<td style="text-align: right;">0.067</td>
+<td style="text-align: right;">0.063</td>
+<td style="text-align: right;">0.070</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>Stromal fibrotic</td>
+<td><code>SLC15A3</code></td>
+<td style="text-align: right;">0.058</td>
+<td style="text-align: right;">0.050</td>
+<td style="text-align: right;">0.063</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>Immune inflammatory</td>
+<td><code>SLCO2B1</code></td>
+<td style="text-align: right;">0.045</td>
+<td style="text-align: right;">0.031</td>
+<td style="text-align: right;">0.069</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<p><img src="output/region_sensitivity/priority_region_threshold_sensitivity.png" class="img-fluid"></p>
+<p><img src="output/region_sensitivity/priority_region_signal_stability.png" class="img-fluid"></p>
+<p>Detailed region-threshold sensitivity outputs:</p>
+<ul>
+<li><code>output/region_sensitivity/region_sensitivity_overview.json</code></li>
+<li><code>output/region_sensitivity/region_threshold_enrichment_sensitivity.csv</code></li>
+<li><code>output/region_sensitivity/region_threshold_expression_by_sample.csv</code></li>
+<li><code>output/region_sensitivity/region_threshold_paired_differences.csv</code></li>
+<li><code>output/region_sensitivity/region_threshold_paired_difference_summary.csv</code></li>
+<li><code>output/region_sensitivity/priority_region_signal_stability.csv</code></li>
+<li><code>output/region_sensitivity/priority_region_threshold_sensitivity.png</code></li>
+<li><code>output/region_sensitivity/priority_region_signal_stability.png</code></li>
+</ul>
+</section>
+<section id="deconvolution-sensitivity" class="level3" data-number="4.16">
+<h3 data-number="4.16" class="anchored" data-anchor-id="deconvolution-sensitivity"><span class="header-section-number">4.16</span> Deconvolution Sensitivity</h3>
+<p>The CIBERSORTx NNLS deconvolution was compared with independent marker-gene scores for expected cell-type pairs. At slide level, marker scores correlated strongly with the corresponding deconvolved proportions for several major cell types. This supports using the deconvolution for broad epithelial, B/plasma, macrophage, fibroblast, and myofibroblast interpretation, while keeping the high NNLS residual in mind.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Marker set</th>
+<th>Deconvolved cell type</th>
+<th style="text-align: right;">Slide-level Spearman rho</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>B/plasma</td>
+<td><code>B_plasma</code></td>
+<td style="text-align: right;">0.980</td>
+</tr>
+<tr class="even">
+<td>Absorptive</td>
+<td><code>Absorptive</code></td>
+<td style="text-align: right;">0.929</td>
+</tr>
+<tr class="odd">
+<td>Secretory</td>
+<td><code>Secretory</code></td>
+<td style="text-align: right;">0.893</td>
+</tr>
+<tr class="even">
+<td>B cells</td>
+<td><code>Mature_B</code></td>
+<td style="text-align: right;">0.869</td>
+</tr>
+<tr class="odd">
+<td>Macrophage</td>
+<td><code>Macrophage</code></td>
+<td style="text-align: right;">0.780</td>
+</tr>
+<tr class="even">
+<td>Fibroblast</td>
+<td><code>Fibroblast</code></td>
+<td style="text-align: right;">0.761</td>
+</tr>
+<tr class="odd">
+<td>Myofibroblast</td>
+<td><code>Myofibroblast</code></td>
+<td style="text-align: right;">0.514</td>
+</tr>
+<tr class="even">
+<td>Pericyte</td>
+<td><code>Pericyte</code></td>
+<td style="text-align: right;">0.507</td>
+</tr>
+<tr class="odd">
+<td>Endothelial</td>
+<td><code>Vascular_endothelia</code></td>
+<td style="text-align: right;">0.405</td>
+</tr>
+</tbody>
+</table>
+<p>At the paired disease-difference level, 6 of 9 expected marker-to-deconvolution pairs had the same mean fibrotic-minus-adjacent direction. The strongest agreement was for B/plasma, B cells, absorptive, secretory, macrophage, and pericyte signals. Fibroblast, myofibroblast, and vascular endothelial marker scores had positive mean fibrotic-minus-adjacent differences, while their NNLS proportions had slightly negative mean differences. This suggests that stromal disease-direction interpretation should lean more on marker scores, region scores, and transporter evidence than on NNLS proportions alone.</p>
+<table class="table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 19%">
+<col style="width: 19%">
+<col style="width: 14%">
+<col style="width: 19%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Marker set</th>
+<th>Deconvolved cell type</th>
+<th style="text-align: right;">Marker mean F-A</th>
+<th style="text-align: right;">NNLS mean F-A</th>
+<th>Same direction</th>
+<th style="text-align: right;">Paired-difference rho</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>B/plasma</td>
+<td><code>B_plasma</code></td>
+<td style="text-align: right;">0.816</td>
+<td style="text-align: right;">0.164</td>
+<td>Yes</td>
+<td style="text-align: right;">0.976</td>
+</tr>
+<tr class="even">
+<td>B cells</td>
+<td><code>Mature_B</code></td>
+<td style="text-align: right;">0.189</td>
+<td style="text-align: right;">0.002</td>
+<td>Yes</td>
+<td style="text-align: right;">0.952</td>
+</tr>
+<tr class="odd">
+<td>Absorptive</td>
+<td><code>Absorptive</code></td>
+<td style="text-align: right;">-0.204</td>
+<td style="text-align: right;">-0.046</td>
+<td>Yes</td>
+<td style="text-align: right;">0.857</td>
+</tr>
+<tr class="even">
+<td>Secretory</td>
+<td><code>Secretory</code></td>
+<td style="text-align: right;">-0.215</td>
+<td style="text-align: right;">-0.028</td>
+<td>Yes</td>
+<td style="text-align: right;">0.952</td>
+</tr>
+<tr class="odd">
+<td>Fibroblast</td>
+<td><code>Fibroblast</code></td>
+<td style="text-align: right;">0.138</td>
+<td style="text-align: right;">-0.010</td>
+<td>No</td>
+<td style="text-align: right;">0.810</td>
+</tr>
+<tr class="even">
+<td>Myofibroblast</td>
+<td><code>Myofibroblast</code></td>
+<td style="text-align: right;">0.082</td>
+<td style="text-align: right;">-0.033</td>
+<td>No</td>
+<td style="text-align: right;">0.810</td>
+</tr>
+<tr class="odd">
+<td>Macrophage</td>
+<td><code>Macrophage</code></td>
+<td style="text-align: right;">0.147</td>
+<td style="text-align: right;">0.003</td>
+<td>Yes</td>
+<td style="text-align: right;">0.881</td>
+</tr>
+<tr class="even">
+<td>Endothelial</td>
+<td><code>Vascular_endothelia</code></td>
+<td style="text-align: right;">0.070</td>
+<td style="text-align: right;">-0.007</td>
+<td>No</td>
+<td style="text-align: right;">0.857</td>
+</tr>
+<tr class="odd">
+<td>Pericyte</td>
+<td><code>Pericyte</code></td>
+<td style="text-align: right;">-0.007</td>
+<td style="text-align: right;">-0.004</td>
+<td>Yes</td>
+<td style="text-align: right;">0.310</td>
+</tr>
+</tbody>
+</table>
+<p><img src="output/deconvolution_sensitivity/marker_deconvolution_paired_direction.png" class="img-fluid"></p>
+<p><img src="output/deconvolution_sensitivity/marker_deconvolution_patient_scatter.png" class="img-fluid"></p>
+<p>Detailed deconvolution sensitivity outputs:</p>
+<ul>
+<li><code>output/deconvolution_sensitivity/deconvolution_sensitivity_overview.json</code></li>
+<li><code>output/deconvolution_sensitivity/paired_marker_score_differences.csv</code></li>
+<li><code>output/deconvolution_sensitivity/marker_deconvolution_paired_sensitivity.csv</code></li>
+<li><code>output/deconvolution_sensitivity/marker_deconvolution_patient_long.csv</code></li>
+<li><code>output/deconvolution_sensitivity/expected_marker_deconvolution_slide_correlations.csv</code></li>
+<li><code>output/deconvolution_sensitivity/marker_deconvolution_paired_direction.png</code></li>
+<li><code>output/deconvolution_sensitivity/marker_deconvolution_patient_scatter.png</code></li>
+</ul>
+</section>
+<section id="healthy-control-comparisons" class="level3" data-number="4.17">
+<h3 data-number="4.17" class="anchored" data-anchor-id="healthy-control-comparisons"><span class="header-section-number">4.17</span> Healthy-Control Comparisons</h3>
+<p>Healthy-control comparisons were added before manuscript-style interpretation. In the scRNA-seq object, healthy controls are represented by <code>status == "H"</code> across 10 donors. In spatial transcriptomics, the available disease-control reference is limited to two <code>Adjacent (Disease Control)</code> slides, so spatial results are descriptive and should not be treated as a formal differential test.</p>
+<table class="table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Data layer</th>
+<th>Healthy or control reference</th>
+<th>Comparator groups</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>scRNA-seq</td>
+<td><code>H</code> status donors</td>
+<td><code>N</code>, <code>F</code>, and <code>I</code> status donors</td>
+</tr>
+<tr class="even">
+<td>Spatial transcriptomics</td>
+<td><code>Adjacent (Disease Control)</code> slides, n = 2</td>
+<td>Crohn’s adjacent slides, n = 8; fibrotic slides, n = 10</td>
+</tr>
+</tbody>
+</table>
+<p>In scRNA-seq, the largest healthy-control contrasts among priority cell types were stromal and epithelial. Fibrotic inflammatory fibroblasts and myofibroblasts had higher ECM remodeling scores than healthy controls. Enterocyte-FABP-hi and Enterocyte-ANPEP-hi cells had lower bile-acid transport scores in fibrotic samples than healthy controls, consistent with the spatial epithelial bile-acid transporter axis. Some fibroblast comparisons include only two healthy-control donors and should be interpreted cautiously.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Cell type</th>
+<th>Feature</th>
+<th>Comparison</th>
+<th style="text-align: right;">Difference versus healthy</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Inflammatory fibroblasts</td>
+<td>ECM remodeling</td>
+<td>F minus H</td>
+<td style="text-align: right;">0.714</td>
+</tr>
+<tr class="even">
+<td>Myofibroblasts</td>
+<td>ECM remodeling</td>
+<td>F minus H</td>
+<td style="text-align: right;">0.381</td>
+</tr>
+<tr class="odd">
+<td>Enterocyte-FABP-hi</td>
+<td>Bile-acid transport</td>
+<td>F minus H</td>
+<td style="text-align: right;">-0.213</td>
+</tr>
+<tr class="even">
+<td>Enterocyte-ANPEP-hi</td>
+<td>Bile-acid transport</td>
+<td>F minus H</td>
+<td style="text-align: right;">-0.105</td>
+</tr>
+<tr class="odd">
+<td>Inflammatory fibroblasts</td>
+<td>Inflammation</td>
+<td>F minus H</td>
+<td style="text-align: right;">0.141</td>
+</tr>
+</tbody>
+</table>
+<p>In spatial transcriptomics, disease-control adjacent slides had the highest epithelial bile/urea transporter signal. Fibrotic slides were lower than disease-control slides for epithelial-bile-region <code>SLC5A1</code>, epithelial-bile-region <code>SLC10A2</code>, bile-acid transport score, slide-level <code>SLC5A1</code>, epithelial-bile-region <code>SLC51A</code>, and epithelial-bile-region <code>SLC51B</code>. Fibrotic slides were higher than disease-control slides for inflammation, ECM remodeling, B/plasma deconvolution, stromal-fibrotic-region <code>SLC15A3</code>, and stromal-fibrotic-region <code>SLCO2B1</code>.</p>
+<table class="table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 23%">
+<col style="width: 23%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Layer</th>
+<th>Feature</th>
+<th>Comparison</th>
+<th style="text-align: right;">Difference versus disease control</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Region transporter</td>
+<td>Epithelial bile <code>SLC5A1</code></td>
+<td>Fibrotic minus disease control</td>
+<td style="text-align: right;">-1.400</td>
+</tr>
+<tr class="even">
+<td>Region transporter</td>
+<td>Epithelial bile <code>SLC10A2</code></td>
+<td>Fibrotic minus disease control</td>
+<td style="text-align: right;">-1.129</td>
+</tr>
+<tr class="odd">
+<td>Spatial metabolism</td>
+<td>Bile-acid transport</td>
+<td>Fibrotic minus disease control</td>
+<td style="text-align: right;">-0.834</td>
+</tr>
+<tr class="even">
+<td>Spatial metabolism</td>
+<td>Inflammation</td>
+<td>Fibrotic minus disease control</td>
+<td style="text-align: right;">0.568</td>
+</tr>
+<tr class="odd">
+<td>Slide transporter</td>
+<td><code>SLC5A1</code></td>
+<td>Fibrotic minus disease control</td>
+<td style="text-align: right;">-0.522</td>
+</tr>
+<tr class="even">
+<td>Region transporter</td>
+<td>Epithelial bile <code>SLC51A</code></td>
+<td>Fibrotic minus disease control</td>
+<td style="text-align: right;">-0.447</td>
+</tr>
+<tr class="odd">
+<td>Spatial metabolism</td>
+<td>ECM remodeling</td>
+<td>Fibrotic minus disease control</td>
+<td style="text-align: right;">0.414</td>
+</tr>
+<tr class="even">
+<td>Spatial deconvolution</td>
+<td><code>B_plasma</code></td>
+<td>Fibrotic minus disease control</td>
+<td style="text-align: right;">0.297</td>
+</tr>
+<tr class="odd">
+<td>Region transporter</td>
+<td>Stromal fibrotic <code>SLC15A3</code></td>
+<td>Fibrotic minus disease control</td>
+<td style="text-align: right;">0.235</td>
+</tr>
+</tbody>
+</table>
+<p><img src="output/healthy_control_comparisons/scrna_healthy_status_comparison_heatmap.png" class="img-fluid"></p>
+<p><img src="output/healthy_control_comparisons/spatial_disease_control_difference_bars.png" class="img-fluid"></p>
+<p><img src="output/healthy_control_comparisons/spatial_fibrotic_vs_disease_control_heatmap.png" class="img-fluid"></p>
+<p>Detailed healthy-control comparison outputs:</p>
+<ul>
+<li><code>output/healthy_control_comparisons/healthy_control_comparisons_overview.json</code></li>
+<li><code>output/healthy_control_comparisons/scrna_healthy_status_comparisons.csv</code></li>
+<li><code>output/healthy_control_comparisons/spatial_disease_control_comparisons.csv</code></li>
+<li><code>output/healthy_control_comparisons/spatial_disease_control_sample_counts.csv</code></li>
+<li><code>output/healthy_control_comparisons/scrna_healthy_status_comparison_heatmap.png</code></li>
+<li><code>output/healthy_control_comparisons/spatial_disease_control_difference_bars.png</code></li>
+<li><code>output/healthy_control_comparisons/spatial_fibrotic_vs_disease_control_heatmap.png</code></li>
+</ul>
+</section>
+<section id="consolidated-figures" class="level3" data-number="4.18">
+<h3 data-number="4.18" class="anchored" data-anchor-id="consolidated-figures"><span class="header-section-number">4.18</span> Consolidated Figures</h3>
+<p>The strongest evidence layers were consolidated into report-ready figures. The main panel separates four pieces of evidence: Harreman metabolite direction, region-threshold-stable transporter signals, scRNA-seq cell-type support, and marker-versus-deconvolution sensitivity. A separate healthy-control panel integrates scRNA-seq healthy donor comparisons and spatial disease-control slide comparisons. The schematic summarizes the current interpretation and caveats.</p>
+<p><img src="output/consolidated_figures/integrated_evidence_summary_panel.png" class="img-fluid"></p>
+<p><strong>Figure 1. Integrated evidence summary for spatial metabolism programs in stricturing Crohn’s disease.</strong> Panel A shows mean paired fibrotic-minus-adjacent Harreman z-score differences for priority metabolites. Negative values indicate adjacent-shifted metabolites, while positive values indicate fibrotic-shifted metabolites. Panel B shows region-threshold-stable transporter-gene differences across high-signal region definitions using the top 10%, 20%, and 30% of spots per slide. Panel C summarizes scRNA-seq cell-type support for epithelial bile/urea, fibrotic amino-acid, ECM, and inflammatory programs. Panel D compares marker-score and NNLS deconvolution paired disease-direction estimates for expected cell-type pairs. The figure highlights a robust adjacent-shifted epithelial bile-acid and urea transporter axis, and a more cautious fibrotic amino-acid and organic-anion transporter axis.</p>
+<p><img src="output/consolidated_figures/integrated_interpretation_schematic.png" class="img-fluid"></p>
+<p><strong>Figure 2. Working interpretation of metabolism-associated spatial programs.</strong> The schematic separates the evidence into an adjacent-shifted epithelial transporter axis, a fibrotic-shifted transporter axis, and sensitivity/statistical constraints. The epithelial axis is supported by Harreman direction, transporter expression, epithelial spatial regions, scRNA-seq enterocyte expression, and marker/deconvolution concordance. The fibrotic transporter axis is supported by transporter expression, stromal or inflammatory regions, and scRNA-seq macrophage/stromal expression, but remains hypothesis-generating because paired statistical tests did not survive FDR correction and stromal deconvolution direction is marker-sensitive.</p>
+<p><img src="output/consolidated_figures/healthy_control_summary_panel.png" class="img-fluid"></p>
+<p><strong>Figure 3. Healthy-control and disease-control comparisons.</strong> Panel A summarizes spatial descriptive contrasts using the two <code>Adjacent (Disease Control)</code> slides as a disease-control reference. Fibrotic slides show lower epithelial bile/urea transporter signals and higher inflammatory or stromal-associated signals relative to disease-control slides. Panel B summarizes scRNA-seq disease-minus-healthy contrasts using <code>H</code> status donors as the healthy reference. Fibrotic inflammatory fibroblasts and myofibroblasts show higher ECM remodeling than healthy controls, while fibrotic enterocyte states show lower bile-acid transport. Spatial disease-control comparisons are descriptive because only two disease-control slides are available.</p>
+<p>The consolidated summary reinforces two working axes:</p>
+<ul>
+<li>adjacent-shifted epithelial axis: urea, bile acid, and cholic acid, supported by <code>SLC5A1</code>, <code>SLC10A2</code>, <code>SLC51A</code>, <code>SLC51B</code>, enterocyte scRNA-seq expression, and epithelial/absorptive spatial regions;</li>
+<li>fibrotic-shifted transporter axis: citric acid, L-histidine, L-serine, and L-cysteine, supported by <code>SLC38A2</code>, <code>SLC15A3</code>, <code>SLCO2B1</code>, macrophage or stromal scRNA-seq expression, and stromal-fibrotic or immune-inflammatory spatial regions.</li>
+</ul>
+<p>The first axis is currently more robust because epithelial deconvolution, marker scores, region sensitivity, transporter expression, and scRNA-seq support point in the same direction. The second axis is plausible but should remain more cautious because stromal NNLS deconvolution direction is less stable against marker-score sensitivity.</p>
+<p>Detailed consolidated figure outputs:</p>
+<ul>
+<li><code>output/consolidated_figures/consolidated_figures_overview.json</code></li>
+<li><code>output/consolidated_figures/consolidated_priority_signal_summary.csv</code></li>
+<li><code>output/consolidated_figures/integrated_evidence_summary_panel.png</code></li>
+<li><code>output/consolidated_figures/integrated_interpretation_schematic.png</code></li>
+<li><code>output/consolidated_figures/healthy_control_summary_panel.png</code></li>
+</ul>
+</section>
+<section id="manuscript-style-results-draft" class="level3" data-number="4.19">
+<h3 data-number="4.19" class="anchored" data-anchor-id="manuscript-style-results-draft"><span class="header-section-number">4.19</span> Manuscript-Style Results Draft</h3>
+<section id="spatial-metabolism-inference-identifies-loss-of-epithelial-bile-acid-and-urea-transporter-programs-in-fibrotic-tissue" class="level4" data-number="4.19.1">
+<h4 data-number="4.19.1" class="anchored" data-anchor-id="spatial-metabolism-inference-identifies-loss-of-epithelial-bile-acid-and-urea-transporter-programs-in-fibrotic-tissue"><span class="header-section-number">4.19.1</span> Spatial metabolism inference identifies loss of epithelial bile-acid and urea transporter programs in fibrotic tissue</h4>
+<p>Across paired adjacent and fibrotic spatial transcriptomics slides, Harreman prioritized a set of epithelial-associated metabolites that were lower in fibrotic tissue. Urea, bile acid, and cholic acid showed negative mean fibrotic-minus-adjacent Harreman z-score differences. These signals were supported by transporter-level evidence. <code>SLC5A1</code>, which was linked to the urea signal in the Harreman transporter database, correlated strongly with slide-level Harreman urea scores and was enriched in epithelial bile and absorptive regions. <code>SLC10A2</code>, <code>SLC51A</code>, and <code>SLC51B</code> supported the cholic-acid and bile-acid signals and were likewise enriched in epithelial regions.</p>
+<p>The epithelial interpretation was consistent across analysis layers. Harreman bile-acid, cholic-acid, and urea scores correlated with absorptive and microfold deconvolution estimates. Independent marker-gene sensitivity supported the absorptive epithelial direction: absorptive marker scores and NNLS absorptive deconvolution both decreased in fibrotic-minus-adjacent comparisons. The scRNA-seq reference also supported this assignment, with bile-acid transport and epithelial bile/urea transporter scores highest in enterocyte states.</p>
+<p>Healthy-control comparisons strengthened this epithelial axis. In scRNA-seq, fibrotic Enterocyte-FABP-hi and Enterocyte-ANPEP-hi states had lower bile-acid transport scores than healthy-control cells. In spatial transcriptomics, the two disease-control adjacent slides had higher epithelial bile/urea transporter signals than Crohn’s adjacent and fibrotic slides. Fibrotic slides showed lower epithelial-bile-region <code>SLC5A1</code>, epithelial-bile-region <code>SLC10A2</code>, bile-acid transport score, slide-level <code>SLC5A1</code>, epithelial-bile-region <code>SLC51A</code>, and epithelial-bile-region <code>SLC51B</code> than disease-control slides. Because the spatial disease-control group contains only two slides, these comparisons should be interpreted as descriptive rather than confirmatory.</p>
+</section>
+<section id="fibrotic-tissue-shows-a-candidate-amino-acid-and-organic-anion-transporter-program-associated-with-inflammatory-and-stromal-regions" class="level4" data-number="4.19.2">
+<h4 data-number="4.19.2" class="anchored" data-anchor-id="fibrotic-tissue-shows-a-candidate-amino-acid-and-organic-anion-transporter-program-associated-with-inflammatory-and-stromal-regions"><span class="header-section-number">4.19.2</span> Fibrotic tissue shows a candidate amino-acid and organic-anion transporter program associated with inflammatory and stromal regions</h4>
+<p>Harreman also identified fibrotic-shifted metabolites, including L-histidine, L-serine, L-cysteine, and citric acid. These signals were supported by transporter genes including <code>SLC38A2</code>, <code>SLC15A3</code>, <code>SLC1A5</code>, <code>SLC7A5</code>, and <code>SLCO2B1</code>. Region-level analysis showed that <code>SLC38A2</code>, <code>SLC15A3</code>, and <code>SLCO2B1</code> were higher in stromal-fibrotic or immune-inflammatory regions than in epithelial bile regions. The direction of these region-level transporter signals was stable across high-region definitions using the top 10%, 20%, and 30% of spots per slide.</p>
+<p>The scRNA-seq reference assigned this transporter program primarily to macrophage-like and stromal-associated populations. The fibrotic amino-acid transporter panel was highest in M2-like macrophage, CD63+CD81+ macrophage, monocyte, and inflammatory fibroblast populations. ECM remodeling scores were highest in trophocyte, telocyte, myofibroblast, pericyte, tissue fibroblast, and inflammatory fibroblast populations. Compared with healthy-control cells, fibrotic inflammatory fibroblasts and myofibroblasts showed higher ECM remodeling scores.</p>
+<p>This fibrotic transporter axis should be interpreted more cautiously than the epithelial axis. Patient-paired models did not identify FDR-supported features at 0.10 across the tested analysis layers. In addition, paired marker-score and NNLS deconvolution directions disagreed for fibroblast, myofibroblast, and vascular endothelial signals. For this reason, stromal and fibrotic interpretations should rely on convergent transporter, region-score, marker-score, and scRNA-seq evidence rather than NNLS deconvolution alone.</p>
+</section>
+<section id="patient-level-modeling-supports-effect-size-prioritization-but-not-confirmatory-differential-claims" class="level4" data-number="4.19.3">
+<h4 data-number="4.19.3" class="anchored" data-anchor-id="patient-level-modeling-supports-effect-size-prioritization-but-not-confirmatory-differential-claims"><span class="header-section-number">4.19.3</span> Patient-level modeling supports effect-size prioritization but not confirmatory differential claims</h4>
+<p>Patient-paired statistical modeling treated each fibrotic-minus-adjacent difference as one observation. Across 355 modeled features and 45 priority features, no feature passed both paired t-test FDR &lt; 0.10 and Wilcoxon FDR &lt; 0.10. The strongest priority effect-size summaries nevertheless matched the cross-layer interpretation: stromal-fibrotic-region <code>SLC38A2</code> was higher in fibrotic tissue, epithelial-region <code>SLC10A2</code> was lower in fibrotic tissue, stromal-fibrotic-region <code>SLC15A3</code> was higher in fibrotic tissue, slide-level <code>SLC10A2</code> was lower in fibrotic tissue, slide-level <code>SLCO2B1</code> and <code>SLC15A3</code> were higher in fibrotic tissue, Harreman citric acid was higher in fibrotic tissue, and spatial bile-acid transport was lower in fibrotic tissue.</p>
+<p>Together, the current results support two metabolism-associated spatial programs. The strongest is an epithelial bile-acid and urea transporter program that is reduced in fibrotic Crohn’s tissue and lower than the limited disease-control spatial reference. The second is a candidate fibrotic amino-acid and organic-anion transporter program associated with macrophage-like, inflammatory, and stromal-fibrotic contexts. The latter remains hypothesis-generating and requires stronger validation before being interpreted as a confirmed disease-associated metabolic program.</p>
+</section>
+</section>
 </section>
 <section id="next-analyses" class="level2" data-number="5">
 <h2 data-number="5" class="anchored" data-anchor-id="next-analyses"><span class="header-section-number">5</span> Next Analyses</h2>
 <p>The next step is interpretation and refinement rather than another broad method run. Priority analyses are:</p>
 <ul>
-<li>inspect whether high-ranking Harreman metabolites are driven by broad expression, tissue area, or a small set of transporter genes;</li>
-<li>connect metabolite differences back to transporter gene pairs and spatial regions;</li>
 <li>compare Harreman results with the simpler gene-set scores;</li>
 <li>compare Harreman results with the CIBERSORTx signature-matrix deconvolution;</li>
 <li>refine deconvolution using marker-gene diagnostics, alternative gene selection, or a heavier method if needed;</li>
-<li>run focused visualizations for the most plausible fibrosis, epithelial, stromal, and bile-acid-related signals.</li>
+<li>convert the consolidated figures and evidence tables into manuscript-style results text.</li>
 </ul>
-<p>The immediate next refinement should focus on transporter gene-pair inspection for the strongest epithelial-associated and fibrotic-associated metabolites. In particular, bile acid, cholic acid, urea, L-histidine, L-serine, citric acid, and L-cysteine should be traced back to the transporter genes and spatial expression maps that drive the Harreman scores.</p>
+<p>The immediate next refinement should be manuscript-style results text and figure captions. The analyses now identify a robust epithelial bile-acid and urea transporter axis that is also lower relative to spatial disease-control slides, plus a more cautious fibrotic amino-acid and organic-anion transporter axis that needs stronger validation before being treated as confirmatory.</p>
 </section>
 <section id="limitations" class="level2" data-number="6">
 <h2 data-number="6" class="anchored" data-anchor-id="limitations"><span class="header-section-number">6</span> Limitations</h2>
-<p>Current results include inventory, metadata-level summaries, spatial coordinate/image QC, exploratory metabolism/fibrosis gene-set scores, one Harreman pilot, an all-paired-slide Harreman transporter communication run, first-pass CIBERSORTx signature-matrix deconvolution, and an initial Harreman-cell-type interpretation layer. No cell-type-aware Harreman model or formal statistical model of patient-paired differences has been generated yet. The current Harreman and deconvolution results should be treated as prioritization and hypothesis-generation output rather than final biological conclusions.</p>
+<p>Current results include inventory, metadata-level summaries, spatial coordinate/image QC, exploratory metabolism/fibrosis gene-set scores, one Harreman pilot, an all-paired-slide Harreman transporter communication run, first-pass CIBERSORTx signature-matrix deconvolution, an initial Harreman-cell-type interpretation layer, focused transporter-gene spatial validation, region-level validation, direct scRNA-seq cell-type metabolism and transporter summaries, an integrated metabolite evidence table, patient-paired statistical modeling, region-threshold sensitivity analysis, deconvolution marker sensitivity analysis, healthy-control comparisons, and consolidated summary figures. No cell-type-aware Harreman model has been generated yet. The patient-paired models did not identify FDR-supported features at 0.10, so the current effect-size results remain hypothesis-generating. Transporter expression supports several Harreman signals, but expression is not a direct measure of metabolite abundance, metabolite exchange, or flux. Spot-level correlation p-values should also be interpreted cautiously because Visium spots are spatially autocorrelated. Spatial healthy-control comparisons are descriptive because only two disease-control adjacent slides are available. Stromal cell-type direction should be interpreted cautiously because paired marker-score and NNLS deconvolution directions disagree for fibroblast, myofibroblast, and vascular endothelial signals. The current Harreman and deconvolution results should be treated as prioritization output rather than final biological conclusions.</p>
 </section>
 <section id="conclusion" class="level2" data-number="7">
 <h2 data-number="7" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">7</span> Conclusion</h2>
-<p>The project now has a reproducible Python environment, data inventory scripts, baseline scRNA-seq and spatial metadata summaries, spatial QC overlays, exploratory metabolism/fibrosis gene-set scores, a Harreman pilot, an all-paired-slide Harreman run, first-pass CIBERSORTx signature-matrix deconvolution, an initial cell-type interpretation layer, and a Quarto report that records methods, progress, output-backed results, and references. The next analysis step is focused transporter-gene and spatial-region validation for the strongest Harreman signals.</p>
+<p>The project now has a reproducible Python environment, data inventory scripts, baseline scRNA-seq and spatial metadata summaries, spatial QC overlays, exploratory metabolism/fibrosis gene-set scores, a Harreman pilot, an all-paired-slide Harreman run, first-pass CIBERSORTx signature-matrix deconvolution, an initial cell-type interpretation layer, focused transporter-gene validation, spatial region-level validation, direct scRNA-seq cell-type metabolism and transporter summaries, an integrated metabolite evidence table, patient-paired statistical models, region-threshold sensitivity analysis, deconvolution marker sensitivity analysis, healthy-control comparisons, consolidated summary figures, and a Quarto report that records methods, progress, output-backed results, and references. The next analysis step is manuscript-style results text and figure captions.</p>
 </section>
 <section id="references" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="references">References</h2>

@@ -1,0 +1,152 @@
+{
+  "top_fractions": [
+    0.1,
+    0.2,
+    0.3
+  ],
+  "n_priority_pairs": 14,
+  "n_stable_same_sign_priority_pairs": 14,
+  "stable_priority_pairs": [
+    {
+      "region": "epithelial_bile_region",
+      "gene": "SLC5A1",
+      "n_fractions": 3,
+      "mean_difference_across_fractions": -0.6553557349590404,
+      "min_difference": -0.8626656108879142,
+      "max_difference": -0.46980122825690884,
+      "same_sign_all_fractions": true,
+      "mean_positive_patient_fraction": 0.375
+    },
+    {
+      "region": "epithelial_absorptive_region",
+      "gene": "SLC5A1",
+      "n_fractions": 3,
+      "mean_difference_across_fractions": -0.6545343548248505,
+      "min_difference": -0.8737864956402033,
+      "max_difference": -0.4662848009714486,
+      "same_sign_all_fractions": true,
+      "mean_positive_patient_fraction": 0.375
+    },
+    {
+      "region": "epithelial_bile_region",
+      "gene": "SLC10A2",
+      "n_fractions": 3,
+      "mean_difference_across_fractions": -0.526379448963158,
+      "min_difference": -0.6720773081347873,
+      "max_difference": -0.39991552957720944,
+      "same_sign_all_fractions": true,
+      "mean_positive_patient_fraction": 0.25
+    },
+    {
+      "region": "epithelial_absorptive_region",
+      "gene": "SLC10A2",
+      "n_fractions": 3,
+      "mean_difference_across_fractions": -0.508443589865447,
+      "min_difference": -0.6465509988367305,
+      "max_difference": -0.3879170087861381,
+      "same_sign_all_fractions": true,
+      "mean_positive_patient_fraction": 0.25
+    },
+    {
+      "region": "epithelial_bile_region",
+      "gene": "SLC51A",
+      "n_fractions": 3,
+      "mean_difference_across_fractions": -0.2665683126362241,
+      "min_difference": -0.37707132125318416,
+      "max_difference": -0.18214690998466032,
+      "same_sign_all_fractions": true,
+      "mean_positive_patient_fraction": 0.25
+    },
+    {
+      "region": "epithelial_absorptive_region",
+      "gene": "SLC51A",
+      "n_fractions": 3,
+      "mean_difference_across_fractions": -0.261266254433641,
+      "min_difference": -0.3644552185199733,
+      "max_difference": -0.17877844531825787,
+      "same_sign_all_fractions": true,
+      "mean_positive_patient_fraction": 0.20833333333333334
+    },
+    {
+      "region": "epithelial_bile_region",
+      "gene": "SLC51B",
+      "n_fractions": 3,
+      "mean_difference_across_fractions": -0.2519385711886124,
+      "min_difference": -0.34214454515894205,
+      "max_difference": -0.1772534363820651,
+      "same_sign_all_fractions": true,
+      "mean_positive_patient_fraction": 0.2916666666666667
+    },
+    {
+      "region": "epithelial_absorptive_region",
+      "gene": "SLC51B",
+      "n_fractions": 3,
+      "mean_difference_across_fractions": -0.24417865726888874,
+      "min_difference": -0.3297106669236413,
+      "max_difference": -0.1707876932058729,
+      "same_sign_all_fractions": true,
+      "mean_positive_patient_fraction": 0.3333333333333333
+    },
+    {
+      "region": "epithelial_bile_region",
+      "gene": "ABCB1",
+      "n_fractions": 3,
+      "mean_difference_across_fractions": -0.22629378221729954,
+      "min_difference": -0.3159800210761149,
+      "max_difference": -0.15209930289676013,
+      "same_sign_all_fractions": true,
+      "mean_positive_patient_fraction": 0.5
+    },
+    {
+      "region": "epithelial_bile_region",
+      "gene": "ABCC3",
+      "n_fractions": 3,
+      "mean_difference_across_fractions": -0.05710537076734168,
+      "min_difference": -0.10543865320768375,
+      "max_difference": -0.016011021667279038,
+      "same_sign_all_fractions": true,
+      "mean_positive_patient_fraction": 0.5416666666666666
+    },
+    {
+      "region": "immune_inflammatory_region",
+      "gene": "SLCO2B1",
+      "n_fractions": 3,
+      "mean_difference_across_fractions": 0.0446720762908833,
+      "min_difference": 0.030944905512124053,
+      "max_difference": 0.06929219874995995,
+      "same_sign_all_fractions": true,
+      "mean_positive_patient_fraction": 0.7083333333333334
+    },
+    {
+      "region": "stromal_fibrotic_region",
+      "gene": "SLC15A3",
+      "n_fractions": 3,
+      "mean_difference_across_fractions": 0.05752550660662483,
+      "min_difference": 0.05004796144182702,
+      "max_difference": 0.06305128873613915,
+      "same_sign_all_fractions": true,
+      "mean_positive_patient_fraction": 0.7083333333333334
+    },
+    {
+      "region": "stromal_fibrotic_region",
+      "gene": "SLCO2B1",
+      "n_fractions": 3,
+      "mean_difference_across_fractions": 0.06715654175229761,
+      "min_difference": 0.06343478273188943,
+      "max_difference": 0.069646483508188,
+      "same_sign_all_fractions": true,
+      "mean_positive_patient_fraction": 0.75
+    },
+    {
+      "region": "stromal_fibrotic_region",
+      "gene": "SLC38A2",
+      "n_fractions": 3,
+      "mean_difference_across_fractions": 0.08641301044362322,
+      "min_difference": 0.04143460801451693,
+      "max_difference": 0.11151103008204181,
+      "same_sign_all_fractions": true,
+      "mean_positive_patient_fraction": 0.7083333333333334
+    }
+  ],
+  "least_stable_priority_pairs": []
+}

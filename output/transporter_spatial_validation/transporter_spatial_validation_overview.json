@@ -1,0 +1,419 @@
+{
+  "focus_metabolites": [
+    "Bile acid",
+    "Cholic acid",
+    "Urea",
+    "L-Histidine",
+    "L-Serine",
+    "Citric acid",
+    "L-Cysteine"
+  ],
+  "n_focus_transporters": 41,
+  "n_focus_transporters_present_in_spatial": 41,
+  "top_fibrotic_shifted_transporters": [
+    {
+      "gene": "SLC38A2",
+      "mean_fibrotic_minus_adjacent_expression": 0.09096963230984541,
+      "median_fibrotic_minus_adjacent_expression": 0.08592856521040731,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.625,
+      "focus_metabolite": "L-Cysteine;L-Histidine;L-Serine"
+    },
+    {
+      "gene": "SLC15A3",
+      "mean_fibrotic_minus_adjacent_expression": 0.05423213882509488,
+      "median_fibrotic_minus_adjacent_expression": 0.04725802722492166,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.875,
+      "focus_metabolite": "L-Histidine"
+    },
+    {
+      "gene": "SLCO2B1",
+      "mean_fibrotic_minus_adjacent_expression": 0.0478037756970879,
+      "median_fibrotic_minus_adjacent_expression": 0.06466760086764503,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.625,
+      "focus_metabolite": "Citric acid"
+    },
+    {
+      "gene": "SLC7A5",
+      "mean_fibrotic_minus_adjacent_expression": 0.03352290120287954,
+      "median_fibrotic_minus_adjacent_expression": 0.014996373772041187,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.625,
+      "focus_metabolite": "L-Histidine"
+    },
+    {
+      "gene": "SLC1A5",
+      "mean_fibrotic_minus_adjacent_expression": 0.026085402415330243,
+      "median_fibrotic_minus_adjacent_expression": 0.008078532415580264,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.625,
+      "focus_metabolite": "L-Cysteine;L-Serine"
+    },
+    {
+      "gene": "SLC1A4",
+      "mean_fibrotic_minus_adjacent_expression": 0.018779877217030328,
+      "median_fibrotic_minus_adjacent_expression": 0.02815516715317555,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.625,
+      "focus_metabolite": "L-Serine"
+    },
+    {
+      "gene": "SLC3A2",
+      "mean_fibrotic_minus_adjacent_expression": 0.012863838810785101,
+      "median_fibrotic_minus_adjacent_expression": -0.002240240899751819,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.5,
+      "focus_metabolite": "L-Serine"
+    },
+    {
+      "gene": "SLC43A2",
+      "mean_fibrotic_minus_adjacent_expression": 0.011703418852720075,
+      "median_fibrotic_minus_adjacent_expression": 0.017610495312128716,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.625,
+      "focus_metabolite": "L-Cysteine"
+    },
+    {
+      "gene": "SLC38A1",
+      "mean_fibrotic_minus_adjacent_expression": 0.010416907598883415,
+      "median_fibrotic_minus_adjacent_expression": 0.015366572874248197,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.625,
+      "focus_metabolite": "L-Cysteine;L-Histidine;L-Serine"
+    },
+    {
+      "gene": "ABCC1",
+      "mean_fibrotic_minus_adjacent_expression": 0.00821177578476964,
+      "median_fibrotic_minus_adjacent_expression": 0.0014011283549262982,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.5,
+      "focus_metabolite": "Cholic acid"
+    },
+    {
+      "gene": "SLC15A4",
+      "mean_fibrotic_minus_adjacent_expression": 0.00804671291581599,
+      "median_fibrotic_minus_adjacent_expression": -0.0037525976910269265,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.375,
+      "focus_metabolite": "L-Histidine"
+    },
+    {
+      "gene": "SLC5A5",
+      "mean_fibrotic_minus_adjacent_expression": 0.005224477796216293,
+      "median_fibrotic_minus_adjacent_expression": 0.0011244472559789663,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.875,
+      "focus_metabolite": "Urea"
+    },
+    {
+      "gene": "SLC6A16",
+      "mean_fibrotic_minus_adjacent_expression": 0.004487609292539248,
+      "median_fibrotic_minus_adjacent_expression": 0.004794410891746265,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.875,
+      "focus_metabolite": "L-Serine"
+    },
+    {
+      "gene": "SLC16A10",
+      "mean_fibrotic_minus_adjacent_expression": 0.002802702308155049,
+      "median_fibrotic_minus_adjacent_expression": 0.0018911109627524495,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.625,
+      "focus_metabolite": "L-Cysteine;L-Histidine;L-Serine"
+    },
+    {
+      "gene": "SLC38A6",
+      "mean_fibrotic_minus_adjacent_expression": 0.00279140433366562,
+      "median_fibrotic_minus_adjacent_expression": 0.0017797240367384316,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.75,
+      "focus_metabolite": "L-Serine"
+    }
+  ],
+  "top_adjacent_shifted_transporters": [
+    {
+      "gene": "SLC5A1",
+      "mean_fibrotic_minus_adjacent_expression": -0.16128206833617287,
+      "median_fibrotic_minus_adjacent_expression": -0.15627479761138238,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.375,
+      "focus_metabolite": "Urea"
+    },
+    {
+      "gene": "SLC10A2",
+      "mean_fibrotic_minus_adjacent_expression": -0.1564285517787637,
+      "median_fibrotic_minus_adjacent_expression": -0.04569199258807445,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.25,
+      "focus_metabolite": "Cholic acid"
+    },
+    {
+      "gene": "SLC51B",
+      "mean_fibrotic_minus_adjacent_expression": -0.0652432440415841,
+      "median_fibrotic_minus_adjacent_expression": -0.08177397349649149,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.25,
+      "focus_metabolite": "Bile acid"
+    },
+    {
+      "gene": "SLC51A",
+      "mean_fibrotic_minus_adjacent_expression": -0.061505010939056914,
+      "median_fibrotic_minus_adjacent_expression": -0.12651364710755625,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.25,
+      "focus_metabolite": "Bile acid"
+    },
+    {
+      "gene": "ABCB1",
+      "mean_fibrotic_minus_adjacent_expression": -0.05648562222578758,
+      "median_fibrotic_minus_adjacent_expression": -0.0034361522538225477,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.5,
+      "focus_metabolite": "Cholic acid"
+    },
+    {
+      "gene": "SLC43A1",
+      "mean_fibrotic_minus_adjacent_expression": -0.009730049654840672,
+      "median_fibrotic_minus_adjacent_expression": -0.016474108809088,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.375,
+      "focus_metabolite": "L-Serine"
+    },
+    {
+      "gene": "ABCC3",
+      "mean_fibrotic_minus_adjacent_expression": -0.008777309562522963,
+      "median_fibrotic_minus_adjacent_expression": 0.007867546875403829,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.625,
+      "focus_metabolite": "Cholic acid"
+    },
+    {
+      "gene": "ABCC4",
+      "mean_fibrotic_minus_adjacent_expression": -0.0055928338513211336,
+      "median_fibrotic_minus_adjacent_expression": -0.0051246007058098515,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.375,
+      "focus_metabolite": "Cholic acid"
+    },
+    {
+      "gene": "SLC7A11",
+      "mean_fibrotic_minus_adjacent_expression": -0.003664735401297397,
+      "median_fibrotic_minus_adjacent_expression": 0.0013182057007378489,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.625,
+      "focus_metabolite": "L-Cysteine"
+    },
+    {
+      "gene": "SLC6A15",
+      "mean_fibrotic_minus_adjacent_expression": -0.0034012415742780827,
+      "median_fibrotic_minus_adjacent_expression": -0.0037769191655426227,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.25,
+      "focus_metabolite": "L-Serine"
+    },
+    {
+      "gene": "SLC7A10",
+      "mean_fibrotic_minus_adjacent_expression": -0.002715334822003051,
+      "median_fibrotic_minus_adjacent_expression": -0.0020378818345835725,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.125,
+      "focus_metabolite": "L-Serine"
+    },
+    {
+      "gene": "SLC7A8",
+      "mean_fibrotic_minus_adjacent_expression": -0.002445003866763388,
+      "median_fibrotic_minus_adjacent_expression": -0.016809127321590643,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.375,
+      "focus_metabolite": "L-Cysteine"
+    },
+    {
+      "gene": "SLC38A4",
+      "mean_fibrotic_minus_adjacent_expression": -0.0010053667164662636,
+      "median_fibrotic_minus_adjacent_expression": -0.0014906551137914203,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.25,
+      "focus_metabolite": "L-Histidine"
+    },
+    {
+      "gene": "SLC14A1",
+      "mean_fibrotic_minus_adjacent_expression": -0.0005387619982631012,
+      "median_fibrotic_minus_adjacent_expression": -0.0008436755528748387,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.5,
+      "focus_metabolite": "Urea"
+    },
+    {
+      "gene": "SLC38A3",
+      "mean_fibrotic_minus_adjacent_expression": -0.0004595728526742274,
+      "median_fibrotic_minus_adjacent_expression": -0.00012839547049211218,
+      "n_patients": 8,
+      "positive_patient_fraction": 0.5,
+      "focus_metabolite": "L-Histidine"
+    }
+  ],
+  "strongest_transporter_harreman_correlations": [
+    {
+      "focus_metabolite": "Bile acid",
+      "database_metabolite": "Bile acid",
+      "gene": "SLC51B",
+      "spearman_r": 0.9956043956043955,
+      "p_value": 1.0315953358848784e-13,
+      "n_slides": 14
+    },
+    {
+      "focus_metabolite": "Urea",
+      "database_metabolite": "Urea",
+      "gene": "SLC5A1",
+      "spearman_r": 0.9470588235294116,
+      "p_value": 2.715731165956676e-08,
+      "n_slides": 16
+    },
+    {
+      "focus_metabolite": "Bile acid",
+      "database_metabolite": "Bile acid",
+      "gene": "SLC51A",
+      "spearman_r": 0.9384615384615385,
+      "p_value": 6.861201481766676e-07,
+      "n_slides": 14
+    },
+    {
+      "focus_metabolite": "Citric acid",
+      "database_metabolite": "Citric acid",
+      "gene": "SLCO2B1",
+      "spearman_r": 0.9318885448916409,
+      "p_value": 1.8782879349938005e-08,
+      "n_slides": 18
+    },
+    {
+      "focus_metabolite": "L-Serine",
+      "database_metabolite": "L-Serine",
+      "gene": "SLC1A5",
+      "spearman_r": 0.8864809081527348,
+      "p_value": 9.656765744511256e-07,
+      "n_slides": 18
+    },
+    {
+      "focus_metabolite": "L-Histidine",
+      "database_metabolite": "L-Histidine",
+      "gene": "SLC15A3",
+      "spearman_r": 0.8740970072239421,
+      "p_value": 2.1231300937836743e-06,
+      "n_slides": 18
+    },
+    {
+      "focus_metabolite": "Cholic acid",
+      "database_metabolite": "Cholic acid",
+      "gene": "ABCB1",
+      "spearman_r": 0.8513931888544891,
+      "p_value": 7.421687625621961e-06,
+      "n_slides": 18
+    },
+    {
+      "focus_metabolite": "Cholic acid",
+      "database_metabolite": "Cholic acid",
+      "gene": "SLC10A2",
+      "spearman_r": 0.8260197280440994,
+      "p_value": 2.4071305599952767e-05,
+      "n_slides": 18
+    },
+    {
+      "focus_metabolite": "L-Serine",
+      "database_metabolite": "L-Serine",
+      "gene": "SLC38A6",
+      "spearman_r": 0.7874097007223942,
+      "p_value": 0.00010501039271078109,
+      "n_slides": 18
+    },
+    {
+      "focus_metabolite": "Cholic acid",
+      "database_metabolite": "Cholic acid",
+      "gene": "ABCC3",
+      "spearman_r": 0.762641898864809,
+      "p_value": 0.00023296654976518366,
+      "n_slides": 18
+    },
+    {
+      "focus_metabolite": "Cholic acid",
+      "database_metabolite": "Cholic acid",
+      "gene": "ABCC2",
+      "spearman_r": 0.717234262125903,
+      "p_value": 0.000807070648534508,
+      "n_slides": 18
+    },
+    {
+      "focus_metabolite": "L-Cysteine",
+      "database_metabolite": "L-Cysteine",
+      "gene": "SLC1A5",
+      "spearman_r": 0.7131062951496387,
+      "p_value": 0.0008932304748108607,
+      "n_slides": 18
+    },
+    {
+      "focus_metabolite": "L-Histidine",
+      "database_metabolite": "L-Histidine",
+      "gene": "SLC15A4",
+      "spearman_r": 0.7048503611971104,
+      "p_value": 0.0010886663167765575,
+      "n_slides": 18
+    },
+    {
+      "focus_metabolite": "L-Serine",
+      "database_metabolite": "L-Serine",
+      "gene": "SLC1A4",
+      "spearman_r": 0.6697626418988648,
+      "p_value": 0.0023600851881755394,
+      "n_slides": 18
+    },
+    {
+      "focus_metabolite": "L-Histidine",
+      "database_metabolite": "L-Histidine",
+      "gene": "SLC7A5",
+      "spearman_r": 0.6160990712074303,
+      "p_value": 0.00647796835824065,
+      "n_slides": 18
+    },
+    {
+      "focus_metabolite": "L-Cysteine",
+      "database_metabolite": "L-Cysteine",
+      "gene": "SLC38A2",
+      "spearman_r": 0.6016511867905057,
+      "p_value": 0.008253780479294344,
+      "n_slides": 18
+    },
+    {
+      "focus_metabolite": "L-Histidine",
+      "database_metabolite": "L-Histidine",
+      "gene": "SLC38A2",
+      "spearman_r": 0.5727554179566564,
+      "p_value": 0.012978178834505884,
+      "n_slides": 18
+    },
+    {
+      "focus_metabolite": "L-Serine",
+      "database_metabolite": "L-Serine",
+      "gene": "SLC38A2",
+      "spearman_r": 0.543859649122807,
+      "p_value": 0.019643563727791594,
+      "n_slides": 18
+    },
+    {
+      "focus_metabolite": "Urea",
+      "database_metabolite": "Urea",
+      "gene": "SLC5A5",
+      "spearman_r": -0.5360361007641085,
+      "p_value": 0.03232982978173073,
+      "n_slides": 16
+    },
+    {
+      "focus_metabolite": "L-Serine",
+      "database_metabolite": "L-Serine",
+      "gene": "SLC43A1",
+      "spearman_r": 0.5314757481940144,
+      "p_value": 0.02321633430784389,
+      "n_slides": 18
+    }
+  ]
+}

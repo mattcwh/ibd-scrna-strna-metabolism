@@ -1,0 +1,166 @@
+feature,rank,annotation2v2,fraction,n_cells,mean_value
+bile_acid_transport_mean,1,Enterocytes-MT-hi,epi,887,0.4442492127418518
+bile_acid_transport_mean,2,Enterocyte-FABP-hi,imu,12031,0.42783814668655396
+bile_acid_transport_mean,3,Enterocyte-FABP-hi,epi,9937,0.38958433270454407
+bile_acid_transport_mean,4,Enterocyte-ANPEP-hi,imu,22210,0.36132028698921204
+bile_acid_transport_mean,5,Enterocyte-ANPEP-hi,epi,26837,0.33448725938796997
+bile_acid_transport_mean,6,Ribo-hi subset,epi,4315,0.1353696882724762
+bile_acid_transport_mean,7,Enteroendocrine cells,epi,317,0.1169939711689949
+bile_acid_transport_mean,8,Enterocyte-mito-hi,epi,12803,0.11386930197477341
+bile_acid_transport_mean,9,Stem-like cells-OLFM4-hi,epi,5385,0.1120859906077385
+bile_acid_transport_mean,10,Paneth cells,epi,1189,0.1027633473277092
+bile_acid_transport_mean,11,Enteroendocrine cells,imu,790,0.09623931348323822
+bile_acid_transport_mean,12,Stem-like cells-OLFM4-hi,imu,15995,0.08445018529891968
+bile_acid_transport_mean,13,Enterocyte-mito-hi,imu,16855,0.07684677094221115
+bile_acid_transport_mean,14,Goblet cells,epi,6381,0.06618349999189377
+bile_acid_transport_mean,15,Colonocytes-LGALS4-hi,imu,6114,0.06524808704853058
+ecm_remodeling_mean,1,Trophocyte-TGFBI hi,imu,854,1.0334417819976807
+ecm_remodeling_mean,2,Telocyte,imu,1117,0.9877971410751343
+ecm_remodeling_mean,3,Myofibroblasts,imu,643,0.9601224064826965
+ecm_remodeling_mean,4,Pericytes,imu,481,0.8149912357330322
+ecm_remodeling_mean,5,Trophocyte,imu,2882,0.7744920253753662
+ecm_remodeling_mean,6,Tissue fibroblast,imu,1830,0.6919249892234802
+ecm_remodeling_mean,7,Inflammatory fibroblasts,imu,1347,0.6807264685630798
+ecm_remodeling_mean,8,Arterial endothelium,imu,2204,0.16822315752506256
+ecm_remodeling_mean,9,Monocyte,imu,2119,0.13313131034374237
+ecm_remodeling_mean,10,Lymphatic endothelium,imu,826,0.11760688573122025
+ecm_remodeling_mean,11,NAMPThi-Neutrophils,imu,1632,0.10986768454313278
+ecm_remodeling_mean,12,Monocyte-FPR1-hi,imu,1198,0.10830216109752655
+ecm_remodeling_mean,13,Venous endothelium,imu,1341,0.10738743096590042
+ecm_remodeling_mean,14,Mito-hi endothelium,imu,976,0.10234743356704712
+ecm_remodeling_mean,15,Monocyte-HSP-hi,imu,391,0.10155099630355835
+epithelial_repair_mean,1,Goblet cells,imu,10497,1.0876928567886353
+epithelial_repair_mean,2,Paneth cells,epi,1189,1.053883671760559
+epithelial_repair_mean,3,Goblet cells,epi,6381,1.0400395393371582
+epithelial_repair_mean,4,Paneth cells,imu,2332,0.9578081369400024
+epithelial_repair_mean,5,Enterocytes-MT-hi,epi,887,0.9299333691596985
+epithelial_repair_mean,6,Colonocytes-LGALS4-hi,epi,13343,0.874851644039154
+epithelial_repair_mean,7,Stem-like cells-OLFM4-hi,epi,5385,0.8374889492988586
+epithelial_repair_mean,8,Stem-like cells-OLFM4-hi,imu,15995,0.8296603560447693
+epithelial_repair_mean,9,Colonocytes-LGALS4-hi,imu,6114,0.6800820231437683
+epithelial_repair_mean,10,Enterocyte-mito-hi,imu,16855,0.5274783968925476
+epithelial_repair_mean,11,Enterocyte-mito-hi,epi,12803,0.5045338869094849
+epithelial_repair_mean,12,Enterocyte-FABP-hi,imu,12031,0.47653815150260925
+epithelial_repair_mean,13,Tuft cells,epi,497,0.45670071244239807
+epithelial_repair_mean,14,Enterocyte-FABP-hi,epi,9937,0.4504741132259369
+epithelial_repair_mean,15,Tuft cells,imu,986,0.4223571717739105
+fatty_acid_metabolism_mean,1,Enterocyte-FABP-hi,imu,12031,0.6206232905387878
+fatty_acid_metabolism_mean,2,Enterocyte-ANPEP-hi,imu,22210,0.5959649085998535
+fatty_acid_metabolism_mean,3,Enterocytes-MT-hi,epi,887,0.5782726407051086
+fatty_acid_metabolism_mean,4,Enterocyte-FABP-hi,epi,9937,0.5542663931846619
+fatty_acid_metabolism_mean,5,Enterocyte-ANPEP-hi,epi,26837,0.531089186668396
+fatty_acid_metabolism_mean,6,Colonocytes-CAECAM-hi,imu,3778,0.420610249042511
+fatty_acid_metabolism_mean,7,Colonocytes-CAECAM-hi,epi,10537,0.35378366708755493
+fatty_acid_metabolism_mean,8,Paneth cells,epi,1189,0.3347885012626648
+fatty_acid_metabolism_mean,9,Stem-like cells-OLFM4-hi,epi,5385,0.3107392489910126
+fatty_acid_metabolism_mean,10,Colonocytes-LGALS4-hi,epi,13343,0.2767062783241272
+fatty_acid_metabolism_mean,11,Stem-like cells-OLFM4-hi,imu,15995,0.27652356028556824
+fatty_acid_metabolism_mean,12,Enterocyte-mito-hi,epi,12803,0.2713622748851776
+fatty_acid_metabolism_mean,13,Colonocytes-LGALS4-hi,imu,6114,0.22129040956497192
+fatty_acid_metabolism_mean,14,Enterocyte-mito-hi,imu,16855,0.21137385070323944
+fatty_acid_metabolism_mean,15,Enteroendocrine cells,imu,790,0.2059348225593567
+glycolysis_mean,1,Cycling T cells,imu,628,0.4107741415500641
+glycolysis_mean,2,Monocyte,imu,2119,0.34904196858406067
+glycolysis_mean,3,Colonocytes-LGALS4-hi,epi,13343,0.3116360902786255
+glycolysis_mean,4,Monocyte-FPR1-hi,imu,1198,0.30339500308036804
+glycolysis_mean,5,Monocyte-HSP-hi,imu,391,0.2993740141391754
+glycolysis_mean,6,Cycling B cells,imu,4423,0.29751116037368774
+glycolysis_mean,7,Stem-like cells-OLFM4-hi,imu,15995,0.2850319743156433
+glycolysis_mean,8,CD63+CD81+ macrophage,imu,1419,0.2831398844718933
+glycolysis_mean,9,Cycling B cells,epi,1037,0.2749050259590149
+glycolysis_mean,10,Stem-like cells-OLFM4-hi,epi,5385,0.2659018039703369
+glycolysis_mean,11,Enterocytes-MT-hi,epi,887,0.2587226629257202
+glycolysis_mean,12,Colonocytes-CAECAM-hi,imu,3778,0.25177431106567383
+glycolysis_mean,13,Dendritic cell - CCR7-hi,imu,405,0.25166085362434387
+glycolysis_mean,14,Colonocytes-LGALS4-hi,imu,6114,0.2481202930212021
+glycolysis_mean,15,Dendritic cell - cDC1,imu,464,0.24753084778785706
+hypoxia_mean,1,Monocyte,imu,2119,0.38108333945274353
+hypoxia_mean,2,Monocyte-HSP-hi,imu,391,0.32821542024612427
+hypoxia_mean,3,Cycling T cells,imu,628,0.2426999807357788
+hypoxia_mean,4,Monocyte-FPR1-hi,imu,1198,0.23612377047538757
+hypoxia_mean,5,NAMPThi-Neutrophils,imu,1632,0.22289516031742096
+hypoxia_mean,6,CD63+CD81+ macrophage,imu,1419,0.21888861060142517
+hypoxia_mean,7,Neutrophils,imu,3259,0.21420064568519592
+hypoxia_mean,8,Arterial endothelium,imu,2204,0.20198692381381989
+hypoxia_mean,9,Neutrophils,epi,666,0.19646964967250824
+hypoxia_mean,10,Enterocytes-MT-hi,epi,887,0.19122394919395447
+hypoxia_mean,11,Inflammatory fibroblasts,imu,1347,0.18866845965385437
+hypoxia_mean,12,Mito-hi endothelium,imu,976,0.18363448977470398
+hypoxia_mean,13,Dendritic cell - cDC2,imu,1171,0.18030595779418945
+hypoxia_mean,14,Stem-like cells-OLFM4-hi,imu,15995,0.17563393712043762
+hypoxia_mean,15,Venous endothelium,imu,1341,0.17559084296226501
+inflammation_mean,1,Neutrophils,epi,666,1.419433832168579
+inflammation_mean,2,Neutrophils,imu,3259,1.3829222917556763
+inflammation_mean,3,Monocyte-HSP-hi,imu,391,0.9258996248245239
+inflammation_mean,4,Monocyte,imu,2119,0.8262997269630432
+inflammation_mean,5,NAMPThi-Neutrophils,imu,1632,0.7662138342857361
+inflammation_mean,6,M2-like macrophage-A2M-hi,imu,550,0.5766112804412842
+inflammation_mean,7,Monocyte-IL1B-hi,imu,798,0.46143537759780884
+inflammation_mean,8,CD63+CD81+ macrophage,imu,1419,0.4140850305557251
+inflammation_mean,9,Monocyte-FPR1-hi,imu,1198,0.38453805446624756
+inflammation_mean,10,M2-like macrophage,imu,1716,0.35963088274002075
+inflammation_mean,11,Dendritic cell - cDC2,imu,1171,0.1946706920862198
+inflammation_mean,12,Arterial endothelium,imu,2204,0.1922965794801712
+inflammation_mean,13,Mast cells,imu,3600,0.18888521194458008
+inflammation_mean,14,Tissue macrophage,imu,1813,0.18488596379756927
+inflammation_mean,15,Dendritic cell - CCR7-hi,imu,405,0.17383606731891632
+oxidative_phosphorylation_mean,1,Ribo-hi subset,imu,1698,0.5832905769348145
+oxidative_phosphorylation_mean,2,Ribo-hi subset,epi,4315,0.5474697947502136
+oxidative_phosphorylation_mean,3,Colonocytes-LGALS4-hi,epi,13343,0.5248664617538452
+oxidative_phosphorylation_mean,4,Stem-like cells-OLFM4-hi,epi,5385,0.4933174252510071
+oxidative_phosphorylation_mean,5,Stem-like cells-OLFM4-hi,imu,15995,0.45610272884368896
+oxidative_phosphorylation_mean,6,Colonocytes-LGALS4-hi,imu,6114,0.4474237859249115
+oxidative_phosphorylation_mean,7,Enterocyte-FABP-hi,imu,12031,0.3905872702598572
+oxidative_phosphorylation_mean,8,Enterocytes-MT-hi,epi,887,0.37652137875556946
+oxidative_phosphorylation_mean,9,Colonocytes-CAECAM-hi,imu,3778,0.3580033481121063
+oxidative_phosphorylation_mean,10,Enterocyte-FABP-hi,epi,9937,0.3434508740901947
+oxidative_phosphorylation_mean,11,Enterocyte-ANPEP-hi,imu,22210,0.3291094899177551
+oxidative_phosphorylation_mean,12,Cycling T cells,imu,628,0.32423800230026245
+oxidative_phosphorylation_mean,13,Paneth cells,epi,1189,0.3154846727848053
+oxidative_phosphorylation_mean,14,Enterocyte-mito-hi,imu,16855,0.3110332190990448
+oxidative_phosphorylation_mean,15,Cycling B cells,imu,4423,0.29691335558891296
+retinoid_vitamin_a_mean,1,Trophocyte,imu,2882,0.11521068960428238
+retinoid_vitamin_a_mean,2,Lymphatic endothelium,imu,826,0.09697999805212021
+retinoid_vitamin_a_mean,3,Trophocyte-TGFBI hi,imu,854,0.07863126695156097
+retinoid_vitamin_a_mean,4,Telocyte,imu,1117,0.06706896424293518
+retinoid_vitamin_a_mean,5,Tissue fibroblast,imu,1830,0.055458907037973404
+retinoid_vitamin_a_mean,6,Inflammatory fibroblasts,imu,1347,0.04770513251423836
+retinoid_vitamin_a_mean,7,Enterocytes-MT-hi,epi,887,0.046426866203546524
+retinoid_vitamin_a_mean,8,Stem-like cells-OLFM4-hi,epi,5385,0.04490545019507408
+retinoid_vitamin_a_mean,9,Tuft cells,epi,497,0.04427563026547432
+retinoid_vitamin_a_mean,10,Stem-like cells-OLFM4-hi,imu,15995,0.04416210949420929
+retinoid_vitamin_a_mean,11,Enteroendocrine cells,imu,790,0.042559653520584106
+retinoid_vitamin_a_mean,12,M2-like macrophage-A2M-hi,imu,550,0.0424569770693779
+retinoid_vitamin_a_mean,13,Myofibroblasts,imu,643,0.04207702353596687
+retinoid_vitamin_a_mean,14,Enteroendocrine cells,epi,317,0.040245648473501205
+retinoid_vitamin_a_mean,15,Enterocyte-ANPEP-hi,imu,22210,0.03795430809259415
+epithelial_bile_urea_transport_mean,1,Enterocytes-MT-hi,epi,887,0.42232847213745117
+epithelial_bile_urea_transport_mean,2,Enterocyte-ANPEP-hi,imu,22210,0.3165224492549896
+epithelial_bile_urea_transport_mean,3,Enterocyte-ANPEP-hi,epi,26837,0.3130878806114197
+epithelial_bile_urea_transport_mean,4,Enterocyte-FABP-hi,epi,9937,0.23053957521915436
+epithelial_bile_urea_transport_mean,5,Enterocyte-FABP-hi,imu,12031,0.19836558401584625
+epithelial_bile_urea_transport_mean,6,Colonocytes-CAECAM-hi,imu,3778,0.12082445621490479
+epithelial_bile_urea_transport_mean,7,Enterocyte-mito-hi,epi,12803,0.1176530122756958
+epithelial_bile_urea_transport_mean,8,Paneth cells,epi,1189,0.10488541424274445
+epithelial_bile_urea_transport_mean,9,Stem-like cells-OLFM4-hi,epi,5385,0.09856949746608734
+epithelial_bile_urea_transport_mean,10,Stem-like cells-OLFM4-hi,imu,15995,0.09300849586725235
+epithelial_bile_urea_transport_mean,11,Colonocytes-CAECAM-hi,epi,10537,0.09046367555856705
+epithelial_bile_urea_transport_mean,12,Enteroendocrine cells,epi,317,0.08297240734100342
+epithelial_bile_urea_transport_mean,13,Enteroendocrine cells,imu,790,0.07688476145267487
+epithelial_bile_urea_transport_mean,14,Enterocyte-mito-hi,imu,16855,0.07337658852338791
+epithelial_bile_urea_transport_mean,15,Goblet cells,epi,6381,0.05892578884959221
+fibrotic_amino_acid_transport_mean,1,M2-like macrophage-A2M-hi,imu,550,0.2711119055747986
+fibrotic_amino_acid_transport_mean,2,M2-like macrophage,imu,1716,0.21071963012218475
+fibrotic_amino_acid_transport_mean,3,CD63+CD81+ macrophage,imu,1419,0.1713128536939621
+fibrotic_amino_acid_transport_mean,4,Monocyte-HSP-hi,imu,391,0.17111143469810486
+fibrotic_amino_acid_transport_mean,5,GZMB-hi B cell,imu,304,0.1548725664615631
+fibrotic_amino_acid_transport_mean,6,Monocyte,imu,2119,0.14799223840236664
+fibrotic_amino_acid_transport_mean,7,Inflammatory fibroblasts,imu,1347,0.13409629464149475
+fibrotic_amino_acid_transport_mean,8,Lymphatic endothelium,imu,826,0.13143298029899597
+fibrotic_amino_acid_transport_mean,9,Monocyte-IL1B-hi,imu,798,0.11615114659070969
+fibrotic_amino_acid_transport_mean,10,Trophocyte,imu,2882,0.10700739175081253
+fibrotic_amino_acid_transport_mean,11,Mito-hi endothelium,imu,976,0.10330655425786972
+fibrotic_amino_acid_transport_mean,12,Dendritic cell - cDC2,imu,1171,0.10321460664272308
+fibrotic_amino_acid_transport_mean,13,NAMPThi-Neutrophils,imu,1632,0.10143911838531494
+fibrotic_amino_acid_transport_mean,14,Pericytes,imu,481,0.10138825327157974
+fibrotic_amino_acid_transport_mean,15,Monocyte-FPR1-hi,imu,1198,0.09442600607872009

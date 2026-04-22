@@ -1,0 +1,1 @@
+analysis_layer,feature_class,feature,region,gene,n_patients,mean_difference,median_difference,std_difference,bootstrap_ci_low,bootstrap_ci_high,cohens_dz,positive_patient_fraction,paired_t_p_value,wilcoxon_p_value,paired_t_fdr,wilcoxon_fdr,direction,priority

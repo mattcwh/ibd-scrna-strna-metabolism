@@ -1,0 +1,8 @@
+metabolite,direction,mean_fibrotic_minus_adjacent_harreman_z,n_patients,interpretation,evidence_summary
+Urea,adjacent-shifted,-56.8719262307685,6,"Enterocytes-MT-hi (epithelial_bile_urea_transport_mean, 0.422)",epithelial/absorptive transporter support; transporter-Harreman correlation
+Bile acid,adjacent-shifted,-6.989169946064557,5,"Enterocytes-MT-hi (bile_acid_transport_mean, 0.444)",epithelial/absorptive transporter support; transporter-Harreman correlation
+Cholic acid,adjacent-shifted,-6.558298089141241,8,"Enterocytes-MT-hi (bile_acid_transport_mean, 0.444)",epithelial/absorptive transporter support; transporter-Harreman correlation
+Citric acid,fibrotic-shifted,4.938813914188508,8,"M2-like macrophage-A2M-hi (fibrotic_amino_acid_transport_mean, 0.271)",macrophage/stromal transporter support; transporter-Harreman correlation
+L-Histidine,fibrotic-shifted,6.852926850952151,8,"M2-like macrophage-A2M-hi (fibrotic_amino_acid_transport_mean, 0.271)",macrophage/stromal transporter support; transporter-Harreman correlation
+L-Serine,fibrotic-shifted,5.42932123358258,8,"M2-like macrophage-A2M-hi (fibrotic_amino_acid_transport_mean, 0.271)",macrophage/stromal transporter support; transporter-Harreman correlation
+L-Cysteine,fibrotic-shifted,4.508941783421307,8,"M2-like macrophage-A2M-hi (fibrotic_amino_acid_transport_mean, 0.271)",macrophage/stromal transporter support; transporter-Harreman correlation

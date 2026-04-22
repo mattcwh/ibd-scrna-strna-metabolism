@@ -1,0 +1,819 @@
+{
+  "scrna_shape": [
+    347017,
+    33551
+  ],
+  "n_cells": 347017,
+  "n_genes": 33551,
+  "n_gene_sets": 9,
+  "gene_sets": {
+    "bile_acid_transport": [
+      "SLC10A2",
+      "SLC51A",
+      "SLC51B",
+      "FABP6",
+      "NR1H4",
+      "CYP7A1",
+      "CYP27A1",
+      "ABCB11",
+      "ABCC3",
+      "ABCG5",
+      "ABCG8"
+    ],
+    "ecm_remodeling": [
+      "COL1A1",
+      "COL1A2",
+      "COL3A1",
+      "COL5A1",
+      "COL6A1",
+      "FN1",
+      "POSTN",
+      "THY1",
+      "ACTA2",
+      "TAGLN",
+      "MMP2",
+      "TIMP1"
+    ],
+    "epithelial_repair": [
+      "OLFM4",
+      "LGR5",
+      "MKI67",
+      "REG1A",
+      "REG3A",
+      "REG3G",
+      "SPINK4",
+      "TFF3",
+      "MUC2",
+      "KRT8",
+      "KRT18"
+    ],
+    "fatty_acid_metabolism": [
+      "CPT1A",
+      "ACADM",
+      "ACADVL",
+      "HADHA",
+      "HADHB",
+      "ACOX1",
+      "PPARA",
+      "CD36",
+      "FABP1",
+      "FABP2",
+      "SLC27A4"
+    ],
+    "glycolysis": [
+      "HK1",
+      "HK2",
+      "GPI",
+      "PFKP",
+      "PFKL",
+      "ALDOA",
+      "GAPDH",
+      "PGK1",
+      "PGAM1",
+      "ENO1",
+      "PKM",
+      "LDHA",
+      "SLC2A1",
+      "SLC16A3"
+    ],
+    "hypoxia": [
+      "HIF1A",
+      "VEGFA",
+      "CA9",
+      "ENO1",
+      "LDHA",
+      "SLC2A1",
+      "PGK1",
+      "BNIP3",
+      "NDRG1",
+      "P4HA1"
+    ],
+    "inflammation": [
+      "IL1B",
+      "TNF",
+      "IL6",
+      "CXCL8",
+      "CCL2",
+      "CXCL10",
+      "NFKBIA",
+      "PTGS2",
+      "S100A8",
+      "S100A9"
+    ],
+    "oxidative_phosphorylation": [
+      "NDUFA1",
+      "NDUFA2",
+      "NDUFB1",
+      "NDUFB8",
+      "SDHA",
+      "SDHB",
+      "UQCRC1",
+      "UQCRC2",
+      "COX4I1",
+      "COX5A",
+      "ATP5F1A",
+      "ATP5F1B",
+      "ATP5MC1"
+    ],
+    "retinoid_vitamin_a": [
+      "ALDH1A1",
+      "ALDH1A2",
+      "ALDH1A3",
+      "RBP1",
+      "RBP4",
+      "STRA6",
+      "CRABP2",
+      "CYP26A1",
+      "CYP26B1",
+      "RXRA",
+      "RARA"
+    ]
+  },
+  "transporter_genes": [
+    "ABCB1",
+    "ABCB11",
+    "ABCC1",
+    "ABCC2",
+    "ABCC3",
+    "ABCC4",
+    "SLC10A1",
+    "SLC10A2",
+    "SLC13A5",
+    "SLC14A1",
+    "SLC14A2",
+    "SLC15A3",
+    "SLC15A4",
+    "SLC16A10",
+    "SLC1A4",
+    "SLC1A5",
+    "SLC22A7",
+    "SLC36A2",
+    "SLC38A1",
+    "SLC38A2",
+    "SLC38A3",
+    "SLC38A4",
+    "SLC38A6",
+    "SLC3A2",
+    "SLC43A1",
+    "SLC43A2",
+    "SLC51A",
+    "SLC51B",
+    "SLC5A1",
+    "SLC5A5",
+    "SLC6A15",
+    "SLC6A16",
+    "SLC7A10",
+    "SLC7A11",
+    "SLC7A5",
+    "SLC7A8",
+    "SLCO1A2",
+    "SLCO1B1",
+    "SLCO1B3",
+    "SLCO2B1",
+    "SLCO4A1"
+  ],
+  "top_cell_types_by_feature": [
+    {
+      "feature": "bile_acid_transport_mean",
+      "rank": 1,
+      "annotation2v2": "Enterocytes-MT-hi",
+      "fraction": "epi",
+      "n_cells": 887,
+      "mean_value": 0.4442492127418518
+    },
+    {
+      "feature": "bile_acid_transport_mean",
+      "rank": 2,
+      "annotation2v2": "Enterocyte-FABP-hi",
+      "fraction": "imu",
+      "n_cells": 12031,
+      "mean_value": 0.42783814668655396
+    },
+    {
+      "feature": "bile_acid_transport_mean",
+      "rank": 3,
+      "annotation2v2": "Enterocyte-FABP-hi",
+      "fraction": "epi",
+      "n_cells": 9937,
+      "mean_value": 0.38958433270454407
+    },
+    {
+      "feature": "bile_acid_transport_mean",
+      "rank": 4,
+      "annotation2v2": "Enterocyte-ANPEP-hi",
+      "fraction": "imu",
+      "n_cells": 22210,
+      "mean_value": 0.36132028698921204
+    },
+    {
+      "feature": "bile_acid_transport_mean",
+      "rank": 5,
+      "annotation2v2": "Enterocyte-ANPEP-hi",
+      "fraction": "epi",
+      "n_cells": 26837,
+      "mean_value": 0.33448725938796997
+    },
+    {
+      "feature": "ecm_remodeling_mean",
+      "rank": 1,
+      "annotation2v2": "Trophocyte-TGFBI hi",
+      "fraction": "imu",
+      "n_cells": 854,
+      "mean_value": 1.0334417819976807
+    },
+    {
+      "feature": "ecm_remodeling_mean",
+      "rank": 2,
+      "annotation2v2": "Telocyte",
+      "fraction": "imu",
+      "n_cells": 1117,
+      "mean_value": 0.9877971410751343
+    },
+    {
+      "feature": "ecm_remodeling_mean",
+      "rank": 3,
+      "annotation2v2": "Myofibroblasts",
+      "fraction": "imu",
+      "n_cells": 643,
+      "mean_value": 0.9601224064826965
+    },
+    {
+      "feature": "ecm_remodeling_mean",
+      "rank": 4,
+      "annotation2v2": "Pericytes",
+      "fraction": "imu",
+      "n_cells": 481,
+      "mean_value": 0.8149912357330322
+    },
+    {
+      "feature": "ecm_remodeling_mean",
+      "rank": 5,
+      "annotation2v2": "Trophocyte",
+      "fraction": "imu",
+      "n_cells": 2882,
+      "mean_value": 0.7744920253753662
+    },
+    {
+      "feature": "epithelial_repair_mean",
+      "rank": 1,
+      "annotation2v2": "Goblet cells",
+      "fraction": "imu",
+      "n_cells": 10497,
+      "mean_value": 1.0876928567886353
+    },
+    {
+      "feature": "epithelial_repair_mean",
+      "rank": 2,
+      "annotation2v2": "Paneth cells",
+      "fraction": "epi",
+      "n_cells": 1189,
+      "mean_value": 1.053883671760559
+    },
+    {
+      "feature": "epithelial_repair_mean",
+      "rank": 3,
+      "annotation2v2": "Goblet cells",
+      "fraction": "epi",
+      "n_cells": 6381,
+      "mean_value": 1.0400395393371582
+    },
+    {
+      "feature": "epithelial_repair_mean",
+      "rank": 4,
+      "annotation2v2": "Paneth cells",
+      "fraction": "imu",
+      "n_cells": 2332,
+      "mean_value": 0.9578081369400024
+    },
+    {
+      "feature": "epithelial_repair_mean",
+      "rank": 5,
+      "annotation2v2": "Enterocytes-MT-hi",
+      "fraction": "epi",
+      "n_cells": 887,
+      "mean_value": 0.9299333691596985
+    },
+    {
+      "feature": "fatty_acid_metabolism_mean",
+      "rank": 1,
+      "annotation2v2": "Enterocyte-FABP-hi",
+      "fraction": "imu",
+      "n_cells": 12031,
+      "mean_value": 0.6206232905387878
+    },
+    {
+      "feature": "fatty_acid_metabolism_mean",
+      "rank": 2,
+      "annotation2v2": "Enterocyte-ANPEP-hi",
+      "fraction": "imu",
+      "n_cells": 22210,
+      "mean_value": 0.5959649085998535
+    },
+    {
+      "feature": "fatty_acid_metabolism_mean",
+      "rank": 3,
+      "annotation2v2": "Enterocytes-MT-hi",
+      "fraction": "epi",
+      "n_cells": 887,
+      "mean_value": 0.5782726407051086
+    },
+    {
+      "feature": "fatty_acid_metabolism_mean",
+      "rank": 4,
+      "annotation2v2": "Enterocyte-FABP-hi",
+      "fraction": "epi",
+      "n_cells": 9937,
+      "mean_value": 0.5542663931846619
+    },
+    {
+      "feature": "fatty_acid_metabolism_mean",
+      "rank": 5,
+      "annotation2v2": "Enterocyte-ANPEP-hi",
+      "fraction": "epi",
+      "n_cells": 26837,
+      "mean_value": 0.531089186668396
+    },
+    {
+      "feature": "glycolysis_mean",
+      "rank": 1,
+      "annotation2v2": "Cycling T cells",
+      "fraction": "imu",
+      "n_cells": 628,
+      "mean_value": 0.4107741415500641
+    },
+    {
+      "feature": "glycolysis_mean",
+      "rank": 2,
+      "annotation2v2": "Monocyte",
+      "fraction": "imu",
+      "n_cells": 2119,
+      "mean_value": 0.34904196858406067
+    },
+    {
+      "feature": "glycolysis_mean",
+      "rank": 3,
+      "annotation2v2": "Colonocytes-LGALS4-hi",
+      "fraction": "epi",
+      "n_cells": 13343,
+      "mean_value": 0.3116360902786255
+    },
+    {
+      "feature": "glycolysis_mean",
+      "rank": 4,
+      "annotation2v2": "Monocyte-FPR1-hi",
+      "fraction": "imu",
+      "n_cells": 1198,
+      "mean_value": 0.30339500308036804
+    },
+    {
+      "feature": "glycolysis_mean",
+      "rank": 5,
+      "annotation2v2": "Monocyte-HSP-hi",
+      "fraction": "imu",
+      "n_cells": 391,
+      "mean_value": 0.2993740141391754
+    },
+    {
+      "feature": "hypoxia_mean",
+      "rank": 1,
+      "annotation2v2": "Monocyte",
+      "fraction": "imu",
+      "n_cells": 2119,
+      "mean_value": 0.38108333945274353
+    },
+    {
+      "feature": "hypoxia_mean",
+      "rank": 2,
+      "annotation2v2": "Monocyte-HSP-hi",
+      "fraction": "imu",
+      "n_cells": 391,
+      "mean_value": 0.32821542024612427
+    },
+    {
+      "feature": "hypoxia_mean",
+      "rank": 3,
+      "annotation2v2": "Cycling T cells",
+      "fraction": "imu",
+      "n_cells": 628,
+      "mean_value": 0.2426999807357788
+    },
+    {
+      "feature": "hypoxia_mean",
+      "rank": 4,
+      "annotation2v2": "Monocyte-FPR1-hi",
+      "fraction": "imu",
+      "n_cells": 1198,
+      "mean_value": 0.23612377047538757
+    },
+    {
+      "feature": "hypoxia_mean",
+      "rank": 5,
+      "annotation2v2": "NAMPThi-Neutrophils",
+      "fraction": "imu",
+      "n_cells": 1632,
+      "mean_value": 0.22289516031742096
+    },
+    {
+      "feature": "inflammation_mean",
+      "rank": 1,
+      "annotation2v2": "Neutrophils",
+      "fraction": "epi",
+      "n_cells": 666,
+      "mean_value": 1.419433832168579
+    },
+    {
+      "feature": "inflammation_mean",
+      "rank": 2,
+      "annotation2v2": "Neutrophils",
+      "fraction": "imu",
+      "n_cells": 3259,
+      "mean_value": 1.3829222917556763
+    },
+    {
+      "feature": "inflammation_mean",
+      "rank": 3,
+      "annotation2v2": "Monocyte-HSP-hi",
+      "fraction": "imu",
+      "n_cells": 391,
+      "mean_value": 0.9258996248245239
+    },
+    {
+      "feature": "inflammation_mean",
+      "rank": 4,
+      "annotation2v2": "Monocyte",
+      "fraction": "imu",
+      "n_cells": 2119,
+      "mean_value": 0.8262997269630432
+    },
+    {
+      "feature": "inflammation_mean",
+      "rank": 5,
+      "annotation2v2": "NAMPThi-Neutrophils",
+      "fraction": "imu",
+      "n_cells": 1632,
+      "mean_value": 0.7662138342857361
+    },
+    {
+      "feature": "oxidative_phosphorylation_mean",
+      "rank": 1,
+      "annotation2v2": "Ribo-hi subset",
+      "fraction": "imu",
+      "n_cells": 1698,
+      "mean_value": 0.5832905769348145
+    },
+    {
+      "feature": "oxidative_phosphorylation_mean",
+      "rank": 2,
+      "annotation2v2": "Ribo-hi subset",
+      "fraction": "epi",
+      "n_cells": 4315,
+      "mean_value": 0.5474697947502136
+    },
+    {
+      "feature": "oxidative_phosphorylation_mean",
+      "rank": 3,
+      "annotation2v2": "Colonocytes-LGALS4-hi",
+      "fraction": "epi",
+      "n_cells": 13343,
+      "mean_value": 0.5248664617538452
+    },
+    {
+      "feature": "oxidative_phosphorylation_mean",
+      "rank": 4,
+      "annotation2v2": "Stem-like cells-OLFM4-hi",
+      "fraction": "epi",
+      "n_cells": 5385,
+      "mean_value": 0.4933174252510071
+    },
+    {
+      "feature": "oxidative_phosphorylation_mean",
+      "rank": 5,
+      "annotation2v2": "Stem-like cells-OLFM4-hi",
+      "fraction": "imu",
+      "n_cells": 15995,
+      "mean_value": 0.45610272884368896
+    },
+    {
+      "feature": "retinoid_vitamin_a_mean",
+      "rank": 1,
+      "annotation2v2": "Trophocyte",
+      "fraction": "imu",
+      "n_cells": 2882,
+      "mean_value": 0.11521068960428238
+    },
+    {
+      "feature": "retinoid_vitamin_a_mean",
+      "rank": 2,
+      "annotation2v2": "Lymphatic endothelium",
+      "fraction": "imu",
+      "n_cells": 826,
+      "mean_value": 0.09697999805212021
+    },
+    {
+      "feature": "retinoid_vitamin_a_mean",
+      "rank": 3,
+      "annotation2v2": "Trophocyte-TGFBI hi",
+      "fraction": "imu",
+      "n_cells": 854,
+      "mean_value": 0.07863126695156097
+    },
+    {
+      "feature": "retinoid_vitamin_a_mean",
+      "rank": 4,
+      "annotation2v2": "Telocyte",
+      "fraction": "imu",
+      "n_cells": 1117,
+      "mean_value": 0.06706896424293518
+    },
+    {
+      "feature": "retinoid_vitamin_a_mean",
+      "rank": 5,
+      "annotation2v2": "Tissue fibroblast",
+      "fraction": "imu",
+      "n_cells": 1830,
+      "mean_value": 0.055458907037973404
+    },
+    {
+      "feature": "epithelial_bile_urea_transport_mean",
+      "rank": 1,
+      "annotation2v2": "Enterocytes-MT-hi",
+      "fraction": "epi",
+      "n_cells": 887,
+      "mean_value": 0.42232847213745117
+    },
+    {
+      "feature": "epithelial_bile_urea_transport_mean",
+      "rank": 2,
+      "annotation2v2": "Enterocyte-ANPEP-hi",
+      "fraction": "imu",
+      "n_cells": 22210,
+      "mean_value": 0.3165224492549896
+    },
+    {
+      "feature": "epithelial_bile_urea_transport_mean",
+      "rank": 3,
+      "annotation2v2": "Enterocyte-ANPEP-hi",
+      "fraction": "epi",
+      "n_cells": 26837,
+      "mean_value": 0.3130878806114197
+    },
+    {
+      "feature": "epithelial_bile_urea_transport_mean",
+      "rank": 4,
+      "annotation2v2": "Enterocyte-FABP-hi",
+      "fraction": "epi",
+      "n_cells": 9937,
+      "mean_value": 0.23053957521915436
+    },
+    {
+      "feature": "epithelial_bile_urea_transport_mean",
+      "rank": 5,
+      "annotation2v2": "Enterocyte-FABP-hi",
+      "fraction": "imu",
+      "n_cells": 12031,
+      "mean_value": 0.19836558401584625
+    },
+    {
+      "feature": "fibrotic_amino_acid_transport_mean",
+      "rank": 1,
+      "annotation2v2": "M2-like macrophage-A2M-hi",
+      "fraction": "imu",
+      "n_cells": 550,
+      "mean_value": 0.2711119055747986
+    },
+    {
+      "feature": "fibrotic_amino_acid_transport_mean",
+      "rank": 2,
+      "annotation2v2": "M2-like macrophage",
+      "fraction": "imu",
+      "n_cells": 1716,
+      "mean_value": 0.21071963012218475
+    },
+    {
+      "feature": "fibrotic_amino_acid_transport_mean",
+      "rank": 3,
+      "annotation2v2": "CD63+CD81+ macrophage",
+      "fraction": "imu",
+      "n_cells": 1419,
+      "mean_value": 0.1713128536939621
+    },
+    {
+      "feature": "fibrotic_amino_acid_transport_mean",
+      "rank": 4,
+      "annotation2v2": "Monocyte-HSP-hi",
+      "fraction": "imu",
+      "n_cells": 391,
+      "mean_value": 0.17111143469810486
+    },
+    {
+      "feature": "fibrotic_amino_acid_transport_mean",
+      "rank": 5,
+      "annotation2v2": "GZMB-hi B cell",
+      "fraction": "imu",
+      "n_cells": 304,
+      "mean_value": 0.1548725664615631
+    }
+  ],
+  "largest_fibrotic_minus_normal_differences": [
+    {
+      "annotation2v2": "Enterocytes-COX-hi",
+      "fraction": "imu",
+      "feature": "epithelial_repair_mean",
+      "normal_mean": 1.4107251167297363,
+      "fibrotic_mean": 0.4670291543006897,
+      "fibrotic_minus_normal": -0.9436959624290466,
+      "inflamed_mean": NaN,
+      "inflamed_minus_normal": NaN
+    },
+    {
+      "annotation2v2": "Inflammatory fibroblasts",
+      "fraction": "imu",
+      "feature": "ecm_remodeling_mean",
+      "normal_mean": 0.28038182854652405,
+      "fibrotic_mean": 0.936764657497406,
+      "fibrotic_minus_normal": 0.656382828950882,
+      "inflamed_mean": 0.5047069787979126,
+      "inflamed_minus_normal": 0.22432515025138855
+    },
+    {
+      "annotation2v2": "Monocyte-CCL3-4-hi",
+      "fraction": "imu",
+      "feature": "inflammation_mean",
+      "normal_mean": 1.1573193073272705,
+      "fibrotic_mean": 1.6566221714019775,
+      "fibrotic_minus_normal": 0.49930286407470703,
+      "inflamed_mean": NaN,
+      "inflamed_minus_normal": NaN
+    },
+    {
+      "annotation2v2": "Goblet cells-DEF-hi",
+      "fraction": "imu",
+      "feature": "bile_acid_transport_mean",
+      "normal_mean": 0.4491610527038574,
+      "fibrotic_mean": 0.0,
+      "fibrotic_minus_normal": -0.4491610527038574,
+      "inflamed_mean": NaN,
+      "inflamed_minus_normal": NaN
+    },
+    {
+      "annotation2v2": "Pericytes",
+      "fraction": "imu",
+      "feature": "ecm_remodeling_mean",
+      "normal_mean": 0.47112902998924255,
+      "fibrotic_mean": 0.8969382047653198,
+      "fibrotic_minus_normal": 0.42580917477607727,
+      "inflamed_mean": 0.45430833101272583,
+      "inflamed_minus_normal": -0.016820698976516724
+    },
+    {
+      "annotation2v2": "Goblet cells-DEF-hi",
+      "fraction": "imu",
+      "feature": "oxidative_phosphorylation_mean",
+      "normal_mean": 0.5039297342300415,
+      "fibrotic_mean": 0.10395679622888565,
+      "fibrotic_minus_normal": -0.39997293800115585,
+      "inflamed_mean": NaN,
+      "inflamed_minus_normal": NaN
+    },
+    {
+      "annotation2v2": "Pericytes",
+      "fraction": "epi",
+      "feature": "ecm_remodeling_mean",
+      "normal_mean": 1.6513257026672363,
+      "fibrotic_mean": 1.2627359628677368,
+      "fibrotic_minus_normal": -0.3885897397994995,
+      "inflamed_mean": NaN,
+      "inflamed_minus_normal": NaN
+    },
+    {
+      "annotation2v2": "Enterocytes-COX-hi",
+      "fraction": "imu",
+      "feature": "oxidative_phosphorylation_mean",
+      "normal_mean": 0.6760510802268982,
+      "fibrotic_mean": 0.30710479617118835,
+      "fibrotic_minus_normal": -0.36894628405570984,
+      "inflamed_mean": NaN,
+      "inflamed_minus_normal": NaN
+    },
+    {
+      "annotation2v2": "Collagen-hi tissue fibroblast",
+      "fraction": "imu",
+      "feature": "ecm_remodeling_mean",
+      "normal_mean": 0.921025812625885,
+      "fibrotic_mean": 1.2892553806304932,
+      "fibrotic_minus_normal": 0.36822956800460815,
+      "inflamed_mean": NaN,
+      "inflamed_minus_normal": NaN
+    },
+    {
+      "annotation2v2": "Tissue macrophage-KRT-hi",
+      "fraction": "epi",
+      "feature": "epithelial_repair_mean",
+      "normal_mean": 0.2033364474773407,
+      "fibrotic_mean": 0.5711520314216614,
+      "fibrotic_minus_normal": 0.3678155839443207,
+      "inflamed_mean": 0.0,
+      "inflamed_minus_normal": -0.2033364474773407
+    },
+    {
+      "annotation2v2": "Myofibroblasts",
+      "fraction": "epi",
+      "feature": "ecm_remodeling_mean",
+      "normal_mean": 0.51739501953125,
+      "fibrotic_mean": 0.8769737482070923,
+      "fibrotic_minus_normal": 0.3595787286758423,
+      "inflamed_mean": NaN,
+      "inflamed_minus_normal": NaN
+    },
+    {
+      "annotation2v2": "Enterocyte-FABP-hi",
+      "fraction": "epi",
+      "feature": "epithelial_repair_mean",
+      "normal_mean": 0.5000186562538147,
+      "fibrotic_mean": 0.8488807082176208,
+      "fibrotic_minus_normal": 0.34886205196380615,
+      "inflamed_mean": 0.3549530804157257,
+      "inflamed_minus_normal": -0.145065575838089
+    },
+    {
+      "annotation2v2": "Colonocytes-CAECAM-hi",
+      "fraction": "epi",
+      "feature": "oxidative_phosphorylation_mean",
+      "normal_mean": 0.49794018268585205,
+      "fibrotic_mean": 0.16487549245357513,
+      "fibrotic_minus_normal": -0.3330646902322769,
+      "inflamed_mean": 0.14609651267528534,
+      "inflamed_minus_normal": -0.3518436700105667
+    },
+    {
+      "annotation2v2": "Tissue fibroblast",
+      "fraction": "epi",
+      "feature": "ecm_remodeling_mean",
+      "normal_mean": 0.6368837952613831,
+      "fibrotic_mean": 0.3085117042064667,
+      "fibrotic_minus_normal": -0.3283720910549164,
+      "inflamed_mean": NaN,
+      "inflamed_minus_normal": NaN
+    },
+    {
+      "annotation2v2": "Colonocytes-LGALS4-hi",
+      "fraction": "epi",
+      "feature": "epithelial_repair_mean",
+      "normal_mean": 0.6961816549301147,
+      "fibrotic_mean": 1.0129477977752686,
+      "fibrotic_minus_normal": 0.3167661428451538,
+      "inflamed_mean": 0.6141660213470459,
+      "inflamed_minus_normal": -0.08201563358306885
+    },
+    {
+      "annotation2v2": "Myofibroblasts",
+      "fraction": "epi",
+      "feature": "fibrotic_amino_acid_transport_mean",
+      "normal_mean": 0.29077547788619995,
+      "fibrotic_mean": 0.0,
+      "fibrotic_minus_normal": -0.29077547788619995,
+      "inflamed_mean": NaN,
+      "inflamed_minus_normal": NaN
+    },
+    {
+      "annotation2v2": "Goblet cells-DEF-hi",
+      "fraction": "imu",
+      "feature": "fatty_acid_metabolism_mean",
+      "normal_mean": 0.3978777229785919,
+      "fibrotic_mean": 0.12285803258419037,
+      "fibrotic_minus_normal": -0.27501969039440155,
+      "inflamed_mean": NaN,
+      "inflamed_minus_normal": NaN
+    },
+    {
+      "annotation2v2": "Collagen-hi tissue fibroblast",
+      "fraction": "epi",
+      "feature": "epithelial_repair_mean",
+      "normal_mean": 0.0,
+      "fibrotic_mean": 0.26878052949905396,
+      "fibrotic_minus_normal": 0.26878052949905396,
+      "inflamed_mean": NaN,
+      "inflamed_minus_normal": NaN
+    },
+    {
+      "annotation2v2": "NAMPThi-Neutrophils",
+      "fraction": "epi",
+      "feature": "inflammation_mean",
+      "normal_mean": 0.8381010293960571,
+      "fibrotic_mean": 0.5810588002204895,
+      "fibrotic_minus_normal": -0.2570422291755676,
+      "inflamed_mean": 0.5759689807891846,
+      "inflamed_minus_normal": -0.26213204860687256
+    },
+    {
+      "annotation2v2": "Trophocyte",
+      "fraction": "imu",
+      "feature": "ecm_remodeling_mean",
+      "normal_mean": 0.7400733232498169,
+      "fibrotic_mean": 0.9887983798980713,
+      "fibrotic_minus_normal": 0.2487250566482544,
+      "inflamed_mean": 0.8435420393943787,
+      "inflamed_minus_normal": 0.10346871614456177
+    }
+  ]
+}
